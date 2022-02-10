@@ -83,3 +83,48 @@ public abstract class Manager<T, E> : Manager, IManager<E> where T : class, new(
 
     #endregion
 }
+
+// public class dinosor : IUpdaptable
+// {
+//     public void Init()
+//     {
+//         throw new System.NotImplementedException();
+//     }
+//
+//     public void PostInit()
+//     {
+//         throw new System.NotImplementedException();
+//     }
+//
+//     public void Refresh()
+//     {
+//         throw new System.NotImplementedException();
+//     }
+//
+//     public void FixedRefresh()
+//     {
+//         throw new System.NotImplementedException();
+//     }
+// }
+//
+//
+// public class DinosorManager : Manager<DinosorManager, dinosor>
+// {
+//     public override void Init()
+//     {
+//         
+//     }
+//
+//     public override void PostInit()
+//     {
+//         throw new System.NotImplementedException();
+//     }
+// }
+//
+// public class MainEntry
+// {
+//     public void createDinsosor()
+//     {
+//         DinosorManager.Instance.Add(new dinosor());
+//     }
+// }

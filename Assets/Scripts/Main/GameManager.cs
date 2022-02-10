@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    List<Manager> managers;
+    List<Manager> managers = new List<Manager>();
 
     #region GameFlow (MainEntry)
     private void Awake()
     {
-
-        InitManagers();  
+        InitManagers();
     }
 
     private void Start()
