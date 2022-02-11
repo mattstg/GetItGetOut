@@ -1,26 +1,50 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Inputs : MonoBehaviour
 {
-    public InputActionReference triggerReference = null;
+    public InputActionReference leftTriggerReference = null;
+    public InputActionReference leftGripReference = null;
+    public InputActionReference rightTriggerReference = null;
+    public InputActionReference rightGripReference = null;
+    
+    public Hands leftHand = null;
+    public Hands rightHand = null;
 
     private void Awake()
     {
-        triggerReference.action.performed += OnTriggerValueChanged;
+        leftTriggerReference.action.performed += OnLeftTriggerValueChanged;
+        leftGripReference.action.performed += OnLeftGripValueChanged;
+        rightTriggerReference.action.performed += OnRightTriggerValueChanged;
+        rightGripReference.action.performed += OnRightGripValueChanged;
     }
 
     private void OnDestroy()
     {
-        triggerReference.action.performed -= OnTriggerValueChanged;
+        leftTriggerReference.action.performed -= OnLeftTriggerValueChanged;
+        leftGripReference.action.performed -= OnLeftGripValueChanged;
+        rightTriggerReference.action.performed -= OnRightTriggerValueChanged;
+        rightGripReference.action.performed -= OnRightGripValueChanged;
     }
 
-    private void OnTriggerValueChanged(InputAction.CallbackContext context)
+    private void OnLeftTriggerValueChanged(InputAction.CallbackContext context)
     {
-        float value = triggerReference.action.ReadValue<float>();
-        Debug.Log(value);
+        leftHand.TriggerTarget = leftTriggerReference.action.ReadValue<float>();
+    }
+
+    private void OnLeftGripValueChanged(InputAction.CallbackContext context)
+    {
+        leftHand.GripTarget = leftGripReference.action.ReadValue<float>();
+    }
+    
+    private void OnRightTriggerValueChanged(InputAction.CallbackContext context)
+    {
+        rightHand.TriggerTarget = rightTriggerReference.action.ReadValue<float>();
+    }
+
+    private void OnRightGripValueChanged(InputAction.CallbackContext context)
+    {
+        rightHand.GripTarget = rightGripReference.action.ReadValue<float>();
     }
 }

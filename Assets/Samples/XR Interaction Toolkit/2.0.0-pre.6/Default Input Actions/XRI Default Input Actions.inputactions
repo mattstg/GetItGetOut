@@ -1087,13 +1087,40 @@
             ]
         },
         {
-            "name": "Gun",
+            "name": "Hands",
             "id": "ec6b303a-3592-4364-8066-7902d14938fc",
             "actions": [
                 {
-                    "name": "Trigger",
+                    "name": "LeftTrigger",
                     "type": "Value",
                     "id": "80965a0e-0e2e-46a9-bc6c-e2d7430ac343",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LeftGrip",
+                    "type": "Value",
+                    "id": "5130825c-97e3-4f68-8af3-47486fbf23d0",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightTrigger",
+                    "type": "Value",
+                    "id": "508bbf6b-bc3f-4f4f-a8d2-328f43ea6401",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightGrip",
+                    "type": "Value",
+                    "id": "579164fc-7f08-4cb5-93af-ccc1b2bd5090",
                     "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
@@ -1104,11 +1131,44 @@
                 {
                     "name": "",
                     "id": "e9a2d4bf-7688-4438-bdc3-6d3dc58e5ca9",
-                    "path": "<OculusTouchController>/trigger",
+                    "path": "<OculusTouchController>{LeftHand}/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Trigger",
+                    "action": "LeftTrigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7e5b48ec-a321-4e7a-8f9b-baed1a612d1f",
+                    "path": "<OculusTouchController>{LeftHand}/grip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftGrip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0302c68-4539-4711-b9b6-7dcef5d81f54",
+                    "path": "<OculusTouchController>{RightHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightTrigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "982f464a-b736-46bd-9123-fe9a25f3782f",
+                    "path": "<OculusTouchController>{RightHand}/grip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightGrip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
