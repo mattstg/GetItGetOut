@@ -1,11 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Inputs : MonoBehaviour
 {
-    public void OnTrigger()
+    public InputActionReference triggerReference = null;
+
+    private void Awake()
     {
-        Debug.Log("Trigger pressed");
+        triggerReference.action.performed += OnTriggerValueChanged;
+    }
+
+    private void OnDestroy()
+    {
+        triggerReference.action.performed -= OnTriggerValueChanged;
+    }
+
+    private void OnTriggerValueChanged(InputAction.CallbackContext context)
+    {
+        float value = triggerReference.action.ReadValue<float>();
+        Debug.Log(value);
     }
 }
