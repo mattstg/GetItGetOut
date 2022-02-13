@@ -12,6 +12,9 @@ public class Inputs : MonoBehaviour
     public Hands leftHand = null;
     public Hands rightHand = null;
 
+    public Gun gun1 = null;
+    public Gun gun2 = null;
+    
     private void Awake()
     {
         leftTriggerReference.action.performed += OnLeftTriggerValueChanged;
@@ -31,6 +34,7 @@ public class Inputs : MonoBehaviour
     private void OnLeftTriggerValueChanged(InputAction.CallbackContext context)
     {
         leftHand.TriggerTarget = leftTriggerReference.action.ReadValue<float>();
+        
     }
 
     private void OnLeftGripValueChanged(InputAction.CallbackContext context)
