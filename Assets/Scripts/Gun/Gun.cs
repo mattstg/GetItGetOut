@@ -19,21 +19,43 @@ public class Gun : MonoBehaviour
 
     public InputActionReference selectButton;
     public GameObject player;
+    public Rigidbody playerRB;
     private SpringJoint jointToPlayer;
+    private SpringJoint jointTreasureToPlayer;
 
     [System.NonSerialized]
     public bool isShoot;
+    Vector3 pos2;
 
-    private void LateUpdate()
+    private void Start()
+    {
+            
+    }
+    private void FixedUpdate()
     {
         if (bullet.hit)
         {
-            if (selectButton.action.ReadValue<float>() == 1 )
+            if (selectButton.action.ReadValue<float>() == 1 && bullet.collisionObj.gameObject.tag== "Grappable")
             {
                 player.GetComponent<Rigidbody>().AddForce((bullet.collitionPositon - player.transform.position) * force * Time.deltaTime);
-
+                Debug.Log("hey");
             }
-            DrawRope(bullet.joint.connectedAnchor);
+            //if (selectButton.action.ReadValue<float>() == 1 && bullet.collisionObj.gameObject.tag == "Treasure")
+            //{
+            //     bullet.collisionObj.gameObject.GetComponent<Rigidbody>().AddForce((player.transform.position- bullet.collisionObj.gameObject.transform.position) * force * Time.deltaTime);
+
+            //    Debug.Log("hey ");
+            //}
+        }
+
+    }
+    private void LateUpdate()
+    {
+        pos2 = bullet.transform.position;
+        if (bullet.hit)
+        {
+
+            DrawRope(pos2);
         }
 
         if (!isShoot)
@@ -63,6 +85,8 @@ public class Gun : MonoBehaviour
         bullet.DestroyJoint();
         lr.positionCount = 0;
         Destroy(jointToPlayer);
+        Destroy(jointTreasureToPlayer);
+
 
     }
     private void Update()
@@ -85,12 +109,31 @@ public class Gun : MonoBehaviour
         float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
 
         jointToPlayer.maxDistance = distanceFromPoint * 0.7f;
-        jointToPlayer.minDistance = 0;
+        jointToPlayer.minDistance = distanceFromPoint * 0.1f;
 
 
         jointToPlayer.spring = 4.5f;
         jointToPlayer.damper = 7f;
         jointToPlayer.massScale = 4.5f;
+
+    }
+    public void AddSpringJointToTreasure(Vector3 PointToSwing, Rigidbody rbConnected,GameObject TreasureGameObject)
+    {
+        jointTreasureToPlayer = TreasureGameObject.AddComponent<SpringJoint>();
+        jointTreasureToPlayer.autoConfigureConnectedAnchor = false;
+        jointTreasureToPlayer.connectedBody = playerRB;
+        jointTreasureToPlayer.connectedAnchor =new Vector3(0,0,0);
+        jointTreasureToPlayer.anchor = new Vector3(0, 0, 0);
+        // jointToPlayer.connectedAnchor = PointToSwing;
+        float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
+
+        jointTreasureToPlayer.maxDistance = distanceFromPoint * 0.7f;
+        jointTreasureToPlayer.minDistance = distanceFromPoint * 0.1f;
+
+
+        jointTreasureToPlayer.spring = 4.5f;
+        jointTreasureToPlayer.damper = 7f;
+        jointTreasureToPlayer.massScale = 5f;
 
     }
 
