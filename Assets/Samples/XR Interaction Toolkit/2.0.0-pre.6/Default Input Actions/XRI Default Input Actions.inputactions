@@ -212,7 +212,7 @@
                     "id": "d68c6e27-c2cf-4754-998f-e8ac24f20a62",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -586,7 +586,7 @@
                     "path": "<OculusTouchController>{LeftHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "force",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -756,7 +756,7 @@
                     "id": "916fac3f-a330-4b13-b5d1-7294678cb1a1",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -1119,7 +1119,7 @@
                     "path": "<XRController>{RightHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "Force",
                     "isComposite": false,
                     "isPartOfComposite": false

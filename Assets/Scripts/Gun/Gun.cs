@@ -33,6 +33,7 @@ public class Gun : MonoBehaviour
                 player.GetComponent<Rigidbody>().AddForce((bullet.collitionPositon - player.transform.position) * force * Time.deltaTime);
 
             }
+            DrawRope(bullet.joint.connectedAnchor);
         }
 
         if (!isShoot)
@@ -41,7 +42,7 @@ public class Gun : MonoBehaviour
             bullet.gameObject.transform.rotation = barrel.rotation;
 
         }
-        DrawRope(bullet.collitionPositon);
+        
     }
 
     //  public XRController controller;
@@ -56,11 +57,13 @@ public class Gun : MonoBehaviour
         BulletRB.velocity = speed * barrel.forward;
 
     }
-    public void CancelGrappling()
+    public void DestroySpringJoint()
     {
         isShoot = false;
         bullet.DestroyJoint();
-        StopSWing();
+        lr.positionCount = 0;
+        Destroy(jointToPlayer);
+
     }
     private void Update()
     {
@@ -71,7 +74,7 @@ public class Gun : MonoBehaviour
         MakeRayCastToHit();
     }
 
-    public void Swing(Vector3 PointToSwing, Rigidbody rbConnected)
+    public void AddSpringJoint(Vector3 PointToSwing, Rigidbody rbConnected)
     {
         jointToPlayer = player.gameObject.AddComponent<SpringJoint>();
         jointToPlayer.autoConfigureConnectedAnchor = false;
@@ -81,8 +84,8 @@ public class Gun : MonoBehaviour
         // jointToPlayer.connectedAnchor = PointToSwing;
         float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
 
-        jointToPlayer.maxDistance = distanceFromPoint * 0.8f;
-        jointToPlayer.minDistance = distanceFromPoint * 0.25f;
+        jointToPlayer.maxDistance = distanceFromPoint * 0.7f;
+        jointToPlayer.minDistance = 0;
 
 
         jointToPlayer.spring = 4.5f;
@@ -91,13 +94,6 @@ public class Gun : MonoBehaviour
 
     }
 
-     void StopSWing()
-    {
-        lr.positionCount = 0;
-
-        Destroy(jointToPlayer);
-
-    }
     void DrawRope(Vector3 hitPoint)
     {
         if (!bullet.hit) return;
@@ -112,9 +108,13 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         Ray ray = new Ray(barrel.position, (bullet.gameObject.transform.position - player.transform.position).normalized);
         if (Physics.Raycast(ray, out hit, Vector3.Distance(barrel.position, bullet.gameObject.transform.position) - 1))
-            CancelGrappling();
+            if (hit.transform.gameObject.tag =="Grappable")
+            {
+                DestroySpringJoint();
+            }
 
     }
      
+
 
 }

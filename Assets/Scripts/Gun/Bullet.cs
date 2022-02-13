@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    FixedJoint joint;
+    public FixedJoint joint;
     //   public GameObject chain;
     public Transform barrel;
     public Gun chainGrapGun;
@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (chainGrapGun.isShoot)
+        if (chainGrapGun.isShoot && hit ==false )
         {
             if (collision.gameObject.tag == "Grappable")
             {
@@ -32,10 +32,14 @@ public class Bullet : MonoBehaviour
 
 
                 chainGrapGun.lr.positionCount = 2;
-                chainGrapGun.Swing(collitionPositon, collision.gameObject.GetComponent<Rigidbody>());
+                chainGrapGun.AddSpringJoint(collitionPositon, collision.gameObject.GetComponent<Rigidbody>());
             }
 
         }
+
+    }
+    void MakeFixedJoint()
+    {
 
     }
     public void DestroyJoint()
@@ -43,6 +47,7 @@ public class Bullet : MonoBehaviour
         hit = false;
         Destroy(joint);
     }
+
 
 
 }
