@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (chainGrapGun.isShoot)
+        if (chainGrapGun.isShoot && hit ==false )
         {
             if (collision.gameObject.tag == "Grappable")
             {
@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
 
 
                 chainGrapGun.lr.positionCount = 2;
-                chainGrapGun.Swing(collitionPositon, collision.gameObject.GetComponent<Rigidbody>());
+                chainGrapGun.AddSpringJoint(collitionPositon, collision.gameObject.GetComponent<Rigidbody>());
             }
 
         }
