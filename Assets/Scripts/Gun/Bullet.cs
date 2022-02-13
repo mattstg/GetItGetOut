@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    FixedJoint joint;
+    public FixedJoint joint;
     //   public GameObject chain;
     public Transform barrel;
     public Gun chainGrapGun;
@@ -38,11 +38,16 @@ public class Bullet : MonoBehaviour
         }
 
     }
+    void MakeFixedJoint()
+    {
+
+    }
     public void DestroyJoint()
     {
         hit = false;
         Destroy(joint);
     }
+
 
 
 }

@@ -33,6 +33,7 @@ public class Gun : MonoBehaviour
                 player.GetComponent<Rigidbody>().AddForce((bullet.collitionPositon - player.transform.position) * force * Time.deltaTime);
 
             }
+            DrawRope(bullet.joint.connectedAnchor);
         }
 
         if (!isShoot)
@@ -41,7 +42,7 @@ public class Gun : MonoBehaviour
             bullet.gameObject.transform.rotation = barrel.rotation;
 
         }
-        DrawRope(bullet.collitionPositon);
+        
     }
 
     //  public XRController controller;
