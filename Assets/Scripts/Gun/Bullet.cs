@@ -14,11 +14,12 @@ public class Bullet : MonoBehaviour
         public bool hit;
     [System.NonSerialized]
     public Vector3 collitionPositon;
-    
+    public Collision collisionObj;
 
 
     private void OnCollisionEnter(Collision collision)
     {
+        collisionObj = collision;
         if (chainGrapGun.isShoot && hit ==false )
         {
             if (collision.gameObject.tag == "Grappable")
@@ -34,14 +35,24 @@ public class Bullet : MonoBehaviour
                 chainGrapGun.lr.positionCount = 2;
                 chainGrapGun.AddSpringJoint(collitionPositon, collision.gameObject.GetComponent<Rigidbody>());
             }
+            if (collision.gameObject.tag == "Treasure")
+            {               
+                joint = gameObject.AddComponent<FixedJoint>();
+                joint.connectedBody = collision.gameObject.GetComponent<Rigidbody>();
+                collitionPositon = collision.contacts[0].point;
+                joint.connectedAnchor = collitionPositon;
+                hit = true;
+
+
+
+                chainGrapGun.lr.positionCount = 2;
+                chainGrapGun.AddSpringJointToTreasure(collitionPositon, collision.gameObject.GetComponent<Rigidbody>(), collision.gameObject);
+            }
 
         }
 
     }
-    void MakeFixedJoint()
-    {
 
-    }
     public void DestroyJoint()
     {
         hit = false;

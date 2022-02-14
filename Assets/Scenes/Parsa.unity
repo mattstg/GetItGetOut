@@ -2038,7 +2038,7 @@ MonoBehaviour:
   lr: {fileID: 19125383}
   selectButton: {fileID: -3051461004423495335, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   player: {fileID: 483322780}
-  playerRB: {fileID: 483322786}
+  playerRB: {fileID: 0}
 --- !u!1 &19401414
 GameObject:
   m_ObjectHideFlags: 0
@@ -35841,7 +35841,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.40655398, y: 2.042049, z: 0.36428964}
   m_Center: {x: -0.296723, y: -0.5210242, z: -0.31785518}
 --- !u!54 &483322786
 Rigidbody:
@@ -123505,7 +123505,7 @@ MonoBehaviour:
   lr: {fileID: 1778421937}
   selectButton: {fileID: -662924140691606098, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   player: {fileID: 483322780}
-  playerRB: {fileID: 483322786}
+  playerRB: {fileID: 0}
 --- !u!1 &1779092394
 GameObject:
   m_ObjectHideFlags: 0
