@@ -33,7 +33,7 @@ public class Gun : MonoBehaviour
                 player.GetComponent<Rigidbody>().AddForce((bullet.collitionPositon - player.transform.position) * force * Time.deltaTime);
 
             }
-            DrawRope(bullet.joint.connectedAnchor);
+            DrawRope(bullet.joint.connectedBody.transform.position);
         }
 
         if (!isShoot)
