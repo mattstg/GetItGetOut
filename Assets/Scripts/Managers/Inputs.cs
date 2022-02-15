@@ -1,8 +1,5 @@
-using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
-using UnityEngine.XR;
 
 public class Inputs : MonoBehaviour
 {
@@ -15,9 +12,15 @@ public class Inputs : MonoBehaviour
     public InputActionReference rightTriggerToggle= null;
     public InputActionReference rightGripReference = null;
     public InputActionReference rightGripToggle = null;
+
+    public InputActionReference A = null;
+    public InputActionReference X = null;
     
     public Hands leftHand = null;
     public Hands rightHand = null;
+
+    public Transform leftHolsterSnap = null;
+    public Transform rightHolsterSnap = null;
 
     public Gun gun1 = null;
     public Gun gun2 = null;
@@ -95,18 +98,11 @@ public class Inputs : MonoBehaviour
     private void OnRightGripCancelled(InputAction.CallbackContext context)
     {
         haveGunRight = false;
+        gun2.transform.position = rightHolsterSnap.gameObject.transform.position;
+        gun2.transform.eulerAngles = rightHolsterSnap.gameObject.transform.eulerAngles;
+        gun2.gameObject.transform.parent = rightHolsterSnap.gameObject.transform;
     }
     
- 
-
-    private void Shoot(Gun gun, Hands hand, Transform rotationController)
-    {
-        gun.gameObject.transform.rotation = rotationController.transform.rotation;
-        gun.gameObject.transform.parent = hand.gameObject.transform ;
-        gun.gameObject.transform.position = hand.gameObject.transform.position;
-    }
-    
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void OnLeftTriggerValueChanged(InputAction.CallbackContext context)
     {
         float leftTriggerValue_ = leftTriggerReference.action.ReadValue<float>();
@@ -140,6 +136,16 @@ public class Inputs : MonoBehaviour
     private void OnLeftGripCancelled(InputAction.CallbackContext context)
     {
         haveGunLeft = false;
+        gun1.transform.position = leftHolsterSnap.gameObject.transform.position;
+        gun1.transform.eulerAngles = leftHolsterSnap.gameObject.transform.eulerAngles;
+        gun1.gameObject.transform.parent = leftHolsterSnap.gameObject.transform;
+    }
+    
+    private void Shoot(Gun gun, Hands hand, Transform rotationController)
+    {
+        gun.gameObject.transform.rotation = rotationController.transform.rotation;
+        gun.gameObject.transform.parent = hand.gameObject.transform ;
+        gun.gameObject.transform.position = hand.gameObject.transform.position;
     }
 
 }
