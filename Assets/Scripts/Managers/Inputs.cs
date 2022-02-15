@@ -1,35 +1,55 @@
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using UnityEngine.XR;
 
 public class Inputs : MonoBehaviour
 {
     public InputActionReference leftTriggerReference = null;
     public InputActionReference leftGripReference = null;
+    public InputActionReference leftTriggerToggle = null;
+    public InputActionReference leftGripToggle = null;
+    
     public InputActionReference rightTriggerReference = null;
+    public InputActionReference rightTriggerToggle= null;
     public InputActionReference rightGripReference = null;
     public InputActionReference rightGripToggle = null;
-    public InputActionReference rightTriggerPressed= null;
     
     public Hands leftHand = null;
     public Hands rightHand = null;
 
     public Gun gun1 = null;
     public Gun gun2 = null;
-    public GameObject o;
+    public Transform gun2Forward = null;
+    public Transform gun1Forward = null;
 
-    private bool haveGun;
+    public Transform rightControllerRotation;
+    public Transform leftControllerRotation;
+    private bool haveGunRight = false;
+    private bool haveGunLeft = false;
+    
     private void Awake()
     {
-        leftTriggerReference.action.performed += OnLeftTriggerValueChanged;
-        leftGripReference.action.performed += OnLeftGripValueChanged;
         rightTriggerReference.action.performed += OnRightTriggerValueChanged;
         rightGripReference.action.performed += OnRightGripValueChanged;
+        
         rightGripToggle.action.performed += OnRightGripPressed;
         rightGripToggle.action.canceled += OnRightGripCancelled;
-        rightTriggerPressed.action.performed += OnRightTriggerPressed;
-        rightTriggerPressed.action.canceled += OnRightTriggerCancelled;
+        
+        rightTriggerToggle.action.performed += OnRightTriggerPressed;
+        rightTriggerToggle.action.canceled += OnRightTriggerCancelled;
+        
+        //left
+        leftTriggerReference.action.performed += OnLeftTriggerValueChanged;
+        leftGripReference.action.performed += OnLeftGripValueChanged;
+
+        leftGripToggle.action.performed += OnLeftGripPressed;
+        leftGripToggle.action.canceled += OnLeftGripCancelled;
+
+        leftTriggerToggle.action.performed += OnLeftTriggerPressed;
+        leftTriggerToggle.action.canceled += OnLeftTriggerCancelled;
+
     }
 
     private void OnDestroy()
@@ -39,19 +59,7 @@ public class Inputs : MonoBehaviour
         rightTriggerReference.action.performed -= OnRightTriggerValueChanged;
         rightGripReference.action.performed -= OnRightGripValueChanged;
         rightGripToggle.action.performed -= OnRightGripPressed;
-        rightTriggerPressed.action.performed -= OnRightTriggerPressed;
-    }
-
-    private void OnLeftTriggerValueChanged(InputAction.CallbackContext context)
-    {
-        float leftTriggerValue = leftTriggerReference.action.ReadValue<float>();
-        leftHand.TriggerTarget = leftTriggerValue;
-
-    }
-
-    private void OnLeftGripValueChanged(InputAction.CallbackContext context)
-    {
-        leftHand.GripTarget = leftGripReference.action.ReadValue<float>();
+        rightTriggerToggle.action.performed -= OnRightTriggerPressed;
     }
     
     private void OnRightTriggerValueChanged(InputAction.CallbackContext context)
@@ -62,11 +70,9 @@ public class Inputs : MonoBehaviour
     
     private void OnRightTriggerPressed(InputAction.CallbackContext context)
     {
-        Debug.Log(string.Format("Canceled: {0}, toString {1}, contextValueType {2}, readValue {3}", context.canceled, context.ToString() ,context.valueType,context.ReadValue<float>()));
-        
-        if (haveGun)
+        if (haveGunRight)
         {
-            gun1.FireBullet();
+            gun2.FireBullet();
         }
     }
 
@@ -77,18 +83,63 @@ public class Inputs : MonoBehaviour
 
     private void OnRightGripPressed(InputAction.CallbackContext context)
     {
-        o.transform.parent = rightHand.gameObject.transform ;
-        o.transform.position = rightHand.gameObject.transform.position;
-        haveGun = true;
+        Shoot(gun2, rightHand, rightControllerRotation);
+        haveGunRight = true;
     }
 
     private void OnRightTriggerCancelled(InputAction.CallbackContext context)
     {
-        gun1.DestroySpringJoint();
+        gun2.DestroySpringJoint();
     }
     
     private void OnRightGripCancelled(InputAction.CallbackContext context)
     {
-        
+        haveGunRight = false;
     }
+    
+ 
+
+    private void Shoot(Gun gun, Hands hand, Transform rotationController)
+    {
+        gun.gameObject.transform.rotation = rotationController.transform.rotation;
+        gun.gameObject.transform.parent = hand.gameObject.transform ;
+        gun.gameObject.transform.position = hand.gameObject.transform.position;
+    }
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private void OnLeftTriggerValueChanged(InputAction.CallbackContext context)
+    {
+        float leftTriggerValue_ = leftTriggerReference.action.ReadValue<float>();
+        leftHand.TriggerTarget = leftTriggerValue_;
+    }    
+    
+    private void OnLeftTriggerPressed(InputAction.CallbackContext context)
+    {
+        if (haveGunLeft)
+        {
+            gun1.FireBullet();
+        }
+    }
+
+    private void OnLeftGripValueChanged(InputAction.CallbackContext context)
+    {
+        leftHand.GripTarget = leftGripReference.action.ReadValue<float>();
+    }
+
+    private void OnLeftGripPressed(InputAction.CallbackContext context)
+    {
+        Shoot(gun1, leftHand, leftControllerRotation);
+        haveGunLeft = true;
+    }
+
+    private void OnLeftTriggerCancelled(InputAction.CallbackContext context)
+    {
+        gun1.DestroySpringJoint();
+    }
+    
+    private void OnLeftGripCancelled(InputAction.CallbackContext context)
+    {
+        haveGunLeft = false;
+    }
+
 }

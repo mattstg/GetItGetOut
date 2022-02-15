@@ -1127,29 +1127,11 @@
             ]
         },
         {
-            "name": "Hands",
+            "name": "RightHands",
             "id": "ec6b303a-3592-4364-8066-7902d14938fc",
             "actions": [
                 {
-                    "name": "LeftTrigger",
-                    "type": "Value",
-                    "id": "80965a0e-0e2e-46a9-bc6c-e2d7430ac343",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "LeftGrip",
-                    "type": "Value",
-                    "id": "5130825c-97e3-4f68-8af3-47486fbf23d0",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "RightTrigger",
+                    "name": "Trigger",
                     "type": "Value",
                     "id": "508bbf6b-bc3f-4f4f-a8d2-328f43ea6401",
                     "expectedControlType": "Analog",
@@ -1158,13 +1140,31 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "RightGrip",
+                    "name": "TriggerToggle",
+                    "type": "Button",
+                    "id": "4736ddd2-6bbe-4e9d-b09b-df9c22a9bee2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Grip",
                     "type": "Value",
                     "id": "579164fc-7f08-4cb5-93af-ccc1b2bd5090",
                     "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "GripToggle",
+                    "type": "Button",
+                    "id": "7d91254b-a5e0-454b-a5f5-2bd9e100f794",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "A",
@@ -1174,67 +1174,9 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "X",
-                    "type": "Button",
-                    "id": "edce6219-7f2e-4a19-9109-a07e7ad478ce",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "RightGripToggle",
-                    "type": "Button",
-                    "id": "7d91254b-a5e0-454b-a5f5-2bd9e100f794",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "RightTriggerPressed",
-                    "type": "Button",
-                    "id": "4736ddd2-6bbe-4e9d-b09b-df9c22a9bee2",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "RightTriggerReleased",
-                    "type": "Button",
-                    "id": "962922d5-80f0-4eb4-8206-832e262177c4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "e9a2d4bf-7688-4438-bdc3-6d3dc58e5ca9",
-                    "path": "<OculusTouchController>{LeftHand}/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LeftTrigger",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7e5b48ec-a321-4e7a-8f9b-baed1a612d1f",
-                    "path": "<OculusTouchController>{LeftHand}/grip",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LeftGrip",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "c0302c68-4539-4711-b9b6-7dcef5d81f54",
@@ -1242,7 +1184,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RightTrigger",
+                    "action": "Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -1253,7 +1195,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RightGrip",
+                    "action": "Grip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -1270,23 +1212,12 @@
                 },
                 {
                     "name": "",
-                    "id": "7e9992b3-52a9-4132-951e-d78d78f3d693",
-                    "path": "<XRController>{LeftHand}/primaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "X",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "22d9d8b3-80ce-48d5-bcc8-897081e9a753",
                     "path": "<XRController>{RightHand}/gripPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RightGripToggle",
+                    "action": "GripToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -1297,18 +1228,115 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "RightTriggerPressed",
+                    "action": "TriggerToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "LeftHands",
+            "id": "447c564c-86f7-46e0-9255-de8eb69a5ba1",
+            "actions": [
+                {
+                    "name": "Trigger",
+                    "type": "Value",
+                    "id": "36d1e24a-c18d-4617-9945-2d82fdaa94c9",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "TriggerToggle",
+                    "type": "Button",
+                    "id": "9136b52a-619b-4696-ba04-eff35eb333a4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Grip",
+                    "type": "Value",
+                    "id": "3b8ad9de-5762-4f07-827d-cf3536253a2a",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "GripToggle",
+                    "type": "Button",
+                    "id": "97103ff0-a6ac-4b0c-940c-8a6c98872c8a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "X",
+                    "type": "Button",
+                    "id": "3770f9f4-c771-49b8-8a42-af22bfdaf31f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c7bd65b8-4d90-4906-932b-b592afed0236",
+                    "path": "<OculusTouchController>{LeftHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "3110c95e-007a-4992-9e26-4774fff1e35e",
-                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "id": "7b67d218-8aa4-4cf0-834d-9bee6e85a156",
+                    "path": "<OculusTouchController>{LeftHand}/grip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f9428833-494f-4077-b189-8ebe31548246",
+                    "path": "<XRController>{LeftHand}/gripPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "RightTriggerReleased",
+                    "action": "GripToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "79369318-2294-44ea-bc98-f0a89afa3973",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "X",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b55cc9bb-afce-4911-ac0a-f74c4f323aa9",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "TriggerToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

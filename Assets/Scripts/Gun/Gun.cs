@@ -54,6 +54,7 @@ public class Gun : MonoBehaviour
         pos2 = bullet.transform.position;
         if (bullet.hit)
         {
+            Debug.Log(pos2);
 
             DrawRope(pos2);
         }
