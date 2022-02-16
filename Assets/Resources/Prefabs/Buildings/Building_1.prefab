@@ -90,6 +90,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: building_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33efcdbe13e7f3b4399ba9058dd37635, type: 3}
+      propertyPath: m_TagString
+      value: Grappable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33efcdbe13e7f3b4399ba9058dd37635, type: 3}
 --- !u!1 &5914499419507707538 stripped
