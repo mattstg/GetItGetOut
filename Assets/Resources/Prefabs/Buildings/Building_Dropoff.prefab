@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 997287327729072552}
   - component: {fileID: 1004973444007647008}
   - component: {fileID: 3817262001057999289}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_I_2
   m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &986227361187805440
 Transform:
@@ -122,12 +122,12 @@ GameObject:
   - component: {fileID: 985877939070993512}
   - component: {fileID: 996536353590033382}
   - component: {fileID: 1005212286467007098}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fire_escape_leader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &985877939070993512
 Transform:
@@ -207,12 +207,12 @@ GameObject:
   - component: {fileID: 4512306915161375268}
   - component: {fileID: 1940715277575201050}
   - component: {fileID: 3919201466901935602}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: building_02 (1)
   m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1103326337244610861
 Transform:
@@ -302,12 +302,12 @@ GameObject:
   - component: {fileID: 1214586446464081467}
   - component: {fileID: 3052656104209438355}
   - component: {fileID: 5436989173273530164}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: building_02 (6)
   m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &799231160080897563
 Transform:
@@ -397,12 +397,12 @@ GameObject:
   - component: {fileID: 1382602510339923647}
   - component: {fileID: 3804146274082433653}
   - component: {fileID: 6007247644741992380}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: building_02
   m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2630144226361397530
 Transform:
@@ -489,12 +489,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2831952703541859314}
-  m_Layer: 0
+  - component: {fileID: 754637772332944801}
+  m_Layer: 10
   m_Name: Building_Dropoff
   m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2831952703541859314
 Transform:
@@ -522,6 +523,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &754637772332944801
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4693841558804413038}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5026338135426141553
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,12 +551,12 @@ GameObject:
   - component: {fileID: 5022025326372592439}
   - component: {fileID: 5014187551412379139}
   - component: {fileID: 3296896495328769659}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_A1
   m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5032442136073753641
 Transform:
@@ -637,12 +654,12 @@ GameObject:
   - component: {fileID: 6226896501055884954}
   - component: {fileID: 1838956404735994991}
   - component: {fileID: 8951948292638187143}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: building_02 (4)
   m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5441346446441209860
 Transform:
@@ -732,12 +749,12 @@ GameObject:
   - component: {fileID: 8082728018851229336}
   - component: {fileID: 6327391480023980626}
   - component: {fileID: 846602138714114511}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: building_06
   m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5153320677796110653
 Transform:
@@ -827,12 +844,12 @@ GameObject:
   - component: {fileID: 5841192041346059065}
   - component: {fileID: 5129232637740571410}
   - component: {fileID: 6260981034567462733}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_A1 (1)
   m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &9156153978701942967
 Transform:
@@ -930,12 +947,12 @@ GameObject:
   - component: {fileID: 7270917045853804928}
   - component: {fileID: 4828856943816879434}
   - component: {fileID: 13855164023560276}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: building_02
   m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6001230203441763877
 Transform:
@@ -1025,12 +1042,12 @@ GameObject:
   - component: {fileID: 8681830182039239421}
   - component: {fileID: 4164124055890996838}
   - component: {fileID: 1264728282641493653}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: building_02 (5)
   m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6728545859179824024
 Transform:
@@ -1120,12 +1137,12 @@ GameObject:
   - component: {fileID: 1685196430427157160}
   - component: {fileID: 8785721461905442571}
   - component: {fileID: 6699322765248081667}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: building_02 (2)
   m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2902748801391936837
 Transform:
@@ -1215,12 +1232,12 @@ GameObject:
   - component: {fileID: 3998319764118568725}
   - component: {fileID: 1122380971788032908}
   - component: {fileID: 1148494774330443346}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: building_02 (3)
   m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1501292241225378520
 Transform:
