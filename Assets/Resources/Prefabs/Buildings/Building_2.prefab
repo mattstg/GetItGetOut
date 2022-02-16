@@ -82,14 +82,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 87aacd72bc2e46046bc6f30c92eb5719, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9db90062b4af0004b94c5754b65e4379, type: 2}
     - target: {fileID: 919132149155446097, guid: 87aacd72bc2e46046bc6f30c92eb5719, type: 3}
       propertyPath: m_Name
       value: building_02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87aacd72bc2e46046bc6f30c92eb5719, type: 3}
+--- !u!1 &9082378754977362802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 87aacd72bc2e46046bc6f30c92eb5719, type: 3}
+  m_PrefabInstance: {fileID: 8271562799104642595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8448972768766765512 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 87aacd72bc2e46046bc6f30c92eb5719, type: 3}
   m_PrefabInstance: {fileID: 8271562799104642595}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1505845467639390124
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9082378754977362802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.10723409, y: 0.10716716, z: 0.2141616}
+  m_Center: {x: 0.0003668014, y: 0.0000056792064, z: 0.1070808}
