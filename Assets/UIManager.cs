@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     {
         if (gameHasStarted)
         {
-            Physics.gravity = new Vector3(0, 9.8F, 0);
+            Physics.gravity = new Vector3(0, 3F, 0);
         }
     }
     public void StartMainCsene()
