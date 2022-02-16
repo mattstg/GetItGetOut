@@ -1,6 +1,4 @@
-using UnityEngine;
-
-public class FlockWeights : MonoBehaviour
+public class FlockWeights
 {
     public float targetPos;
     public float cohesion;
@@ -11,11 +9,11 @@ public class FlockWeights : MonoBehaviour
 
     public FlockWeights()
     {
-       targetPos = 10;
-       cohesion = 10;
-       avoidance = 10;
-       alignment = 10;
-       obstacleAvoidance = 10;
-       lavaAvoidance = 10;
+       targetPos = 5f;
+       cohesion = 5f;
+       avoidance = 5f;
+       alignment = 5f;
+       obstacleAvoidance = 5f;
+       lavaAvoidance = 5f;
     }
 }
