@@ -104,10 +104,11 @@ public class Gun : MonoBehaviour
 
     public void AddSpringJoint(Vector3 PointToSwing, Rigidbody rbConnected)
     {
+        Transform obj = rbConnected.GetComponent<Transform>();
         jointToPlayer = player.gameObject.AddComponent<SpringJoint>();
         jointToPlayer.autoConfigureConnectedAnchor = false;
         jointToPlayer.connectedBody = rbConnected;
-        jointToPlayer.connectedAnchor = rbConnected.gameObject.transform.position - PointToSwing;
+        jointToPlayer.connectedAnchor =new Vector3(( rbConnected.gameObject.transform.position.x- PointToSwing.x)/ obj.localScale.x, (rbConnected.gameObject.transform.position.y - PointToSwing.y) /obj.localScale.y, (rbConnected.gameObject.transform.position.z - PointToSwing.z) / obj.localScale.z);
         jointToPlayer.anchor = new Vector3(0, 0, 0);
         // jointToPlayer.connectedAnchor = PointToSwing;
         float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
