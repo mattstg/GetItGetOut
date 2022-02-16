@@ -26,7 +26,9 @@ public class Gun : MonoBehaviour
     [System.NonSerialized]
     public bool isShoot;
     Vector3 pos2;
-
+    
+    private float mindis = 1;
+    private float maxdis = 1;
     private void Start()
     {
             
@@ -37,8 +39,9 @@ public class Gun : MonoBehaviour
         {
             if (selectButton.action.ReadValue<float>() == 1 && bullet.collisionObj.gameObject.tag== "Grappable")
             {
-                player.GetComponent<Rigidbody>().AddForce((bullet.collitionPositon - player.transform.position).normalized * force * Time.deltaTime);
-                Debug.Log("hey");
+                jointToPlayer.maxDistance /=2;
+                jointToPlayer.minDistance /=2;
+                Debug.Log(maxdis);
             }
             //if (selectButton.action.ReadValue<float>() == 1 && bullet.collisionObj.gameObject.tag == "Treasure")
             //{
@@ -54,7 +57,7 @@ public class Gun : MonoBehaviour
         pos2 = bullet.transform.position;
         if (bullet.hit)
         {
-            Debug.Log(pos2);
+          //  Debug.Log(pos2);
 
             DrawRope(pos2);
         }
