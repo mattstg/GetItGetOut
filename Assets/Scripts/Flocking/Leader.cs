@@ -19,6 +19,6 @@ public class Leader : Dinosaur
         {
             currentWaypoint = waypoint.GetRandomWayPoint();
         }
-        return ((currentWaypoint - transform.position).normalized) * weights.targetPos;
+        return (currentWaypoint - transform.position) * weights.targetPos;
     }
 }
