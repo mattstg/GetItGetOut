@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2451901488306408689}
   m_Layer: 0
   m_Name: Building_4
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
