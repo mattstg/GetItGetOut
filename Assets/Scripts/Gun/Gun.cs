@@ -39,8 +39,8 @@ public class Gun : MonoBehaviour
         {
             if (selectButton.action.ReadValue<float>() == 1 && bullet.collisionObj.gameObject.tag== "Grappable")
             {
-                jointToPlayer.maxDistance /=2;
-                jointToPlayer.minDistance /=2;
+                jointToPlayer.maxDistance -=100*Time.fixedDeltaTime;
+                jointToPlayer.minDistance -=100*Time.fixedDeltaTime;
                 Debug.Log(maxdis);
             }
             //if (selectButton.action.ReadValue<float>() == 1 && bullet.collisionObj.gameObject.tag == "Treasure")
