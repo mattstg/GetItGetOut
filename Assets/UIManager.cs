@@ -4,10 +4,36 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
+    bool gameHasStarted;
+    public  Animator houseAnimation;
+    public Transform player;
+    float yPosition=2;
 
-   public void StartMainCsene()
+    private void Update()
     {
-        SceneManager.LoadScene("TestMapWIthParsa");
+        if (gameHasStarted)
+        {
+            Physics.gravity = new Vector3(0, 9.8F, 0);
+        }
+    }
+    public void StartMainCsene()
+    {
+        gameHasStarted = true;
+        HouseCelingGetsOpen();
+        Invoke("StartGame", 5);
 
+    }
+
+    void StartGame()
+    {
+        Physics.gravity = new Vector3(0, -5F, 0);
+
+        SceneManager.LoadScene("TestMapWIthParsa");
+    }
+
+    void HouseCelingGetsOpen()
+    {
+
+        houseAnimation.enabled = true;
     }
 }
