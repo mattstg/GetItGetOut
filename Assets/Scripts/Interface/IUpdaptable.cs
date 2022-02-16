@@ -4,8 +4,8 @@ using UnityEngine;
 
 public interface IUpdaptable 
 {
-    public abstract void Init();
-    public abstract void PostInit();
-    public abstract void Refresh();
-    public abstract void FixedRefresh();
+  void Init();
+  void PostInit();
+  void Refresh();
+  void FixedRefresh();
 }
