@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7332263664268220176}
-  m_Layer: 0
+  - component: {fileID: -5063116198312348001}
+  m_Layer: 10
   m_Name: Building_6
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7332263664268220176
 Transform:
@@ -31,6 +32,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &-5063116198312348001
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630066825954659683}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &7229424283861679071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89,6 +106,18 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b5cc2814305e8bd449628b0008b0e23f, type: 3}
       propertyPath: m_Name
       value: building_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5cc2814305e8bd449628b0008b0e23f, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5cc2814305e8bd449628b0008b0e23f, type: 3}
+      propertyPath: m_TagString
+      value: Grappable
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5cc2814305e8bd449628b0008b0e23f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5cc2814305e8bd449628b0008b0e23f, type: 3}

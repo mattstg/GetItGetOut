@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Leader : Dinasour
+public class Leader : Dinosaur
 {
     WaypointManager waypoint;
     Vector3 currentWaypoint;
@@ -19,6 +19,6 @@ public class Leader : Dinasour
         {
             currentWaypoint = waypoint.GetRandomWayPoint();
         }
-        return (currentWaypoint - transform.position).normalized;
+        return ((currentWaypoint - transform.position).normalized) * weights.targetPos;
     }
 }
