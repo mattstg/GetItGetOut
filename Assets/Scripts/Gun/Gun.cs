@@ -37,7 +37,7 @@ public class Gun : MonoBehaviour
         {
             if (selectButton.action.ReadValue<float>() == 1 && bullet.collisionObj.gameObject.tag== "Grappable")
             {
-                player.GetComponent<Rigidbody>().AddForce((bullet.collitionPositon - player.transform.position) * force * Time.deltaTime);
+                player.GetComponent<Rigidbody>().AddForce((bullet.collitionPositon - player.transform.position).normalized * force * Time.deltaTime);
                 Debug.Log("hey");
             }
             //if (selectButton.action.ReadValue<float>() == 1 && bullet.collisionObj.gameObject.tag == "Treasure")
@@ -54,6 +54,7 @@ public class Gun : MonoBehaviour
         pos2 = bullet.transform.position;
         if (bullet.hit)
         {
+            Debug.Log(pos2);
 
             DrawRope(pos2);
         }
