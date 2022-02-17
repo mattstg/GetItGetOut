@@ -7,11 +7,10 @@ public class HolsterManager : Manager
     { }
     #endregion
     
-    public GameLinks links;
     private Holster holster;
     public override void Init()
     {
-        holster = links.holster;
+        holster = GameLinks.Instance.holster;
         holster.Init();
     }
 
