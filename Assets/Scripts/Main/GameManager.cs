@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
         Instance = this;
         GameObject.FindObjectOfType<GameLinks>().SetupGameLinks();
 
-        
         managers.Add(HolsterManager.Instance);
+        managers.Add(PlayerManager.Instance);
         InitManagers();
     }
 

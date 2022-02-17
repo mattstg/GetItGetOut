@@ -24,6 +24,7 @@ public class Inputs : MonoBehaviour
 
     public Gun gun1 = null;
     public Gun gun2 = null;
+
     public Transform gun2Forward = null;
     public Transform gun1Forward = null;
 
@@ -34,6 +35,8 @@ public class Inputs : MonoBehaviour
     
     private void Awake()
     {
+
+
         rightTriggerReference.action.performed += OnRightTriggerValueChanged;
         rightGripReference.action.performed += OnRightGripValueChanged;
         
@@ -54,6 +57,7 @@ public class Inputs : MonoBehaviour
         leftTriggerToggle.action.canceled += OnLeftTriggerCancelled;
 
     }
+
 
     private void OnDestroy()
     {
