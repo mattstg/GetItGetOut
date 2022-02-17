@@ -9,11 +9,10 @@ public class GameManager : MonoBehaviour
     #region GameFlow (MainEntry)
     private void Awake()
     {
-        //TODO : ADD MANAGERS TO LIST
-        managers.Add(HolsterManager.Instance);
-
-
         GameObject.FindObjectOfType<GameLinks>().SetupGameLinks();
+        managers.Add(HolsterManager.Instance);
+        managers.Add(PlayerManager.Instance);
+        //managers.Add(LavaManager.Instance);
         InitManagers();
     }
 
