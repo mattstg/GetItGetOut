@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameLinks links;
+    public static GameManager Instance;
+    //public GameLinks links;
+
     
     List<Manager> managers = new List<Manager>();
 
     #region GameFlow (MainEntry)
     private void Awake()
     {
-        HolsterManager.Instance.links = links;
+        Instance = this;
+        GameObject.FindObjectOfType<GameLinks>().SetupGameLinks();
+
+        
         managers.Add(HolsterManager.Instance);
         InitManagers();
     }
