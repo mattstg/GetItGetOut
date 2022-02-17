@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33867558787308652}
   - component: {fileID: 23281512312108124}
   - component: {fileID: 64704879964407052}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_I_1
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 4341463962134164}
   - component: {fileID: 33233246556032734}
   - component: {fileID: 23576632602889396}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fire_escape_leader
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4421704745708670}
   - component: {fileID: 6652115287679934146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_I_1_prefab
   m_TagString: Grappable
   m_Icon: {fileID: 0}

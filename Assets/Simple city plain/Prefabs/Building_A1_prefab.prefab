@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4541227407256296}
   - component: {fileID: -5445058171149382126}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_A1_prefab
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 33244346602585646}
   - component: {fileID: 23137990866090778}
   - component: {fileID: 64343789311641464}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_A1
   m_TagString: Grappable
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33637381823808560}
   - component: {fileID: 23776185747029052}
   - component: {fileID: 64875578417754578}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: street
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4533943726500818}
   - component: {fileID: -1932743850577360252}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Street 3 Prefab
   m_TagString: Grappable
   m_Icon: {fileID: 0}
