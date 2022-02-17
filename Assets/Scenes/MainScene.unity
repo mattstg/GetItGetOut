@@ -11335,7 +11335,7 @@ Transform:
   m_GameObject: {fileID: 154607871}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.50294, y: -0.09, z: 1.93}
-  m_LocalScale: {x: 3.5558248, y: 1.05, z: 1.087065}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 340995282}
   - {fileID: 1768885072}
@@ -25141,13 +25141,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340995278}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.930056, y: 3.1647618, z: 3.1644843}
-  m_LocalScale: {x: 0.28122872, y: 0.95238096, z: 0.9199082}
+  m_LocalRotation: {x: -0, y: -0, z: -0.24123381, w: 0.9704671}
+  m_LocalPosition: {x: -9.2, y: 15.12, z: 3.1644843}
+  m_LocalScale: {x: 0.28122872, y: 31.663614, z: 0.9199082}
   m_Children: []
   m_Father: {fileID: 154607875}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -27.919}
 --- !u!54 &340995283
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25159,7 +25159,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -97115,6 +97115,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 483322786, guid: 59c82f4ff58dd3545a67b85aa80187fc, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3599189904097756688, guid: 59c82f4ff58dd3545a67b85aa80187fc, type: 3}
       propertyPath: gun1
       value: 

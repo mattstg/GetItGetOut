@@ -5,60 +5,60 @@ using UnityEngine;
 public class Flock : MonoBehaviour, IUpdaptable
 {
     public Leader leader;
-    public Dinasour[] dinasours;
+    public Dinosaur[] dinosaurs;
 
-    List<Dinasour> dinasoursInFlock;
+    List<Dinosaur> dinosaursInFlock;
 
     public void Init()
     {
-        dinasoursInFlock = new List<Dinasour>();
+        dinosaursInFlock = new List<Dinosaur>();
         leader.Init();
-        dinasoursInFlock.Add(leader);
 
-        foreach (Dinasour dinasour in transform.GetComponentsInChildren<Dinasour>())
+        dinosaursInFlock.Add(leader);
+
+        foreach (Dinosaur dinosaur in transform.GetComponentsInChildren<Dinosaur>())
         {
             // add them to the list then the array
         }
 
-        foreach (Dinasour dinasour in dinasours)
+        foreach (Dinosaur dinosaur in dinosaurs)
         {
-            dinasour.Init();
-            //dinasour.ourFlock = dinasour.LinkToFlock(this);
-            dinasoursInFlock.Add(dinasour);
+            dinosaur.Init();
+            dinosaursInFlock.Add(dinosaur);
         }
     }
 
     public void PostInit()
     {
         leader.PostInit();
-        foreach (Dinasour dinasour in dinasours)
+        foreach (Dinosaur dinosaur in dinosaurs)
         {
-            dinasour.PostInit();
+            dinosaur.PostInit();
         }
     }
 
     public void Refresh()
     {
         leader.Refresh();
-        foreach (Dinasour dinasour in dinasours)
+        foreach (Dinosaur dinosaur in dinosaurs)
         {
-            dinasour.Refresh();
+            dinosaur.Refresh();
         }
     }
 
     public void FixedRefresh()
     {
         leader.FixedRefresh();
-        foreach (Dinasour dinasour in dinasours)
+        foreach (Dinosaur dinosaur in dinosaurs)
         {
-            dinasour.FixedRefresh();
+            dinosaur.FixedRefresh();
         }
     }
 
-    public List<Dinasour> GetOtherDinasoursInFlock(Dinasour dinasour)
+    public List<Dinosaur> GetOtherDinosaursInFlock(Dinosaur dinosaur)
     {
-        List<Dinasour> temp = new List<Dinasour>(dinasoursInFlock);
-        temp.Remove(dinasour);
+        List<Dinosaur> temp = new List<Dinosaur>(dinosaursInFlock);
+        temp.Remove(dinosaur);
         return temp;
     }
 }

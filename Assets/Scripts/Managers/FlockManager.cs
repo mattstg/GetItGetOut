@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlockManager : Manager<FlockManager, Flock>
 {
-    public Dinasour[] GetAllDinasours()
+    public Dinosaur[] GetAllDinosaurs()
     {
         Debug.Log("GetAllDinasours");
         return null;

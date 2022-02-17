@@ -41,7 +41,7 @@ public class Gun : MonoBehaviour
             {
                 jointToPlayer.maxDistance -=100*Time.fixedDeltaTime;
                 jointToPlayer.minDistance -=100*Time.fixedDeltaTime;
-                Debug.Log(maxdis);
+             //   Debug.Log(maxdis);
             }
             //if (selectButton.action.ReadValue<float>() == 1 && bullet.collisionObj.gameObject.tag == "Treasure")
             //{
@@ -108,7 +108,7 @@ public class Gun : MonoBehaviour
         jointToPlayer = player.gameObject.AddComponent<SpringJoint>();
         jointToPlayer.autoConfigureConnectedAnchor = false;
         jointToPlayer.connectedBody = rbConnected;
-        jointToPlayer.connectedAnchor =new Vector3(( rbConnected.gameObject.transform.position.x- PointToSwing.x)/ obj.localScale.x, (rbConnected.gameObject.transform.position.y - PointToSwing.y) /obj.localScale.y, (rbConnected.gameObject.transform.position.z - PointToSwing.z) / obj.localScale.z);
+        jointToPlayer.connectedAnchor = obj.InverseTransformPoint(PointToSwing);
         jointToPlayer.anchor = new Vector3(0, 0, 0);
         // jointToPlayer.connectedAnchor = PointToSwing;
         float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
