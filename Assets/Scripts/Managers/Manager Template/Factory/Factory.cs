@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -35,14 +34,14 @@ public abstract class Factory<T, E, A> : IFactory where T : class, new() where E
 
     public abstract void PostInit();
 
-    public E Create(E type, A args)
+   /*public E Create(E type, A args)
     {
         E toReturn;
-        toReturn = (E)ObjectPool.
+        toReturn = (E)ObjectPool.Instance.Depool(type);
 
         return 
     }
-    
+    */
 
 
 
