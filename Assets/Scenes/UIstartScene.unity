@@ -5451,12 +5451,17 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149666799}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.42, z: -0.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD:Assets/Scenes/UIstartScene.unity
   m_Father: {fileID: 0}
   m_RootOrder: 3
+=======
+  m_Father: {fileID: 591695980}
+  m_RootOrder: 6
+>>>>>>> 9908d4c398ab53c2bc0be0aca0ea4d02e30a23f5:Assets/Scenes/UI start Scene.unity
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &151848527
 GameObject:
@@ -5830,6 +5835,7 @@ Transform:
   - {fileID: 1760303066}
   - {fileID: 1105728823}
   - {fileID: 568534928}
+  - {fileID: 149666802}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7756,6 +7762,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295975588}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD:Assets/Scenes/UIstartScene.unity
+=======
+--- !u!114 &1438327183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3599189905317465094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a236155907ee8746aad9572a58df78c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  gun1: {fileID: 0}
+  gun2: {fileID: 0}
+>>>>>>> 9908d4c398ab53c2bc0be0aca0ea4d02e30a23f5:Assets/Scenes/UI start Scene.unity
 --- !u!54 &1438327216
 Rigidbody:
   m_ObjectHideFlags: 0
