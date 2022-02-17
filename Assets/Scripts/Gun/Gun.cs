@@ -31,7 +31,10 @@ public class Gun : MonoBehaviour
     private float maxdis = 1;
     private void Start()
     {
-            
+        player = GameLinks.Instance.XROrigin;
+        playerRB = GameLinks.Instance.XROriginRb;
+
+
     }
     private void FixedUpdate()
     {
