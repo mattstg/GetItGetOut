@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InitialGameSettings : MonoBehaviour
+public enum GunType { Gun1, Gun2, Gun3 }
+public static class InitialGameSettings
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GunType guntype = GunType.Gun1;
+    public static void ChangeGunType(GunType type) 
     {
-        
+        guntype = type;
+        Debug.Log("gun type changed "+ type.ToString());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+
+
+
+
+
