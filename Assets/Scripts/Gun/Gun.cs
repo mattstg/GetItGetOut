@@ -115,7 +115,7 @@ public class Gun : MonoBehaviour
         jointToPlayer.anchor = new Vector3(0, 0, 0);
         // jointToPlayer.connectedAnchor = PointToSwing;
         float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
-
+        jointToPlayer.enableCollision = true;
         jointToPlayer.maxDistance = distanceFromPoint * 0.7f;
         jointToPlayer.minDistance = distanceFromPoint * 0.1f;
 
@@ -137,6 +137,7 @@ public class Gun : MonoBehaviour
 
         jointTreasureToPlayer.maxDistance = distanceFromPoint * 0.7f;
         jointTreasureToPlayer.minDistance = distanceFromPoint * 0.1f;
+        jointToPlayer.enableCollision = true;
 
 
         jointTreasureToPlayer.spring = 4.5f;

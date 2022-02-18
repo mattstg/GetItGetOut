@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     public Transform barrel;
     public Gun chainGrapGun;
     public GameObject gun;
+    public Rigidbody gunRB;
 
     [System.NonSerialized]
         public bool hit;
@@ -31,9 +32,10 @@ public class Bullet : MonoBehaviour
                 hit = true;
 
 
-
+                this.transform.position = collision.contacts[0].point;
+                
                 chainGrapGun.lr.positionCount = 2;
-                chainGrapGun.AddSpringJoint(collitionPositon, collision.gameObject.GetComponent<Rigidbody>());
+                chainGrapGun.AddSpringJoint(collitionPositon +collision.contacts[0].normal, collision.gameObject.GetComponent<Rigidbody>());
                 Debug.Log("hitBuilding");
             }
             if (collision.gameObject.tag == "Treasure")
@@ -45,7 +47,7 @@ public class Bullet : MonoBehaviour
                 hit = true;
 
 
-
+                this.transform.position = collision.contacts[0].point;
                 chainGrapGun.lr.positionCount = 2;
                 chainGrapGun.AddSpringJointToTreasure(collitionPositon+ collision.contacts[0].normal , collision.gameObject.GetComponent<Rigidbody>(), collision.gameObject);
             }
