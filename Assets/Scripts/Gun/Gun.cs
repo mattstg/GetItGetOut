@@ -158,8 +158,8 @@ public class Gun : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = new Ray(barrel.position, (bullet.gameObject.transform.position - player.transform.position).normalized);
-        if (Physics.Raycast(ray, out hit, Vector3.Distance(barrel.position, bullet.gameObject.transform.position) - 1))
-            if (hit.transform.gameObject.tag =="Grappable")
+        if (Physics.Raycast(ray, out hit, Vector3.Distance(barrel.position, bullet.gameObject.transform.position) - 1)&& bullet.hit)
+            if (hit.transform.gameObject != hit.transform.gameObject)
             {
                 DestroySpringJoint();
             }

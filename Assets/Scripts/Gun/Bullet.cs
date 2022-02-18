@@ -34,6 +34,7 @@ public class Bullet : MonoBehaviour
 
                 chainGrapGun.lr.positionCount = 2;
                 chainGrapGun.AddSpringJoint(collitionPositon, collision.gameObject.GetComponent<Rigidbody>());
+                Debug.Log("hitBuilding");
             }
             if (collision.gameObject.tag == "Treasure")
             {               
@@ -46,7 +47,7 @@ public class Bullet : MonoBehaviour
 
 
                 chainGrapGun.lr.positionCount = 2;
-                chainGrapGun.AddSpringJointToTreasure(collitionPositon, collision.gameObject.GetComponent<Rigidbody>(), collision.gameObject);
+                chainGrapGun.AddSpringJointToTreasure(collitionPositon+ collision.contacts[0].normal , collision.gameObject.GetComponent<Rigidbody>(), collision.gameObject);
             }
 
         }

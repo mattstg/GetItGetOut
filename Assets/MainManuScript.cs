@@ -23,7 +23,7 @@ public class MainManuScript : MonoBehaviour
     {
          
         Physics.gravity = new Vector3(0, -5F, 0);
-        SceneManager.LoadScene("TestMapWIthParsa");
+        SceneManager.LoadScene("MainScene");
     }
 
     void HouseCelingGetsOpen()
