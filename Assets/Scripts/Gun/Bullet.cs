@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour
     [System.NonSerialized]
     public Vector3 collitionPositon;
     public Collision collisionObj;
+    public Rigidbody ConnectedRBToBullet;
 
 
     private void OnCollisionEnter(Collision collision)
@@ -23,35 +24,46 @@ public class Bullet : MonoBehaviour
         collisionObj = collision;
         if (chainGrapGun.isShoot && hit ==false )
         {
-            if (collision.gameObject.tag == "Grappable")
-            {
-                joint = gameObject.AddComponent<FixedJoint>();
-                joint.connectedBody = collision.gameObject.GetComponent<Rigidbody>();
-                collitionPositon = collision.contacts[0].point;
-                joint.connectedAnchor = collitionPositon;
-                hit = true;
+            SwingToBuildings(collisionObj);
+            SwingTheTreasures(collision);
+
+        }
+
+    }
+    void SwingToBuildings(Collision collision)
+    {
+        if (collision.gameObject.tag == "Grappable")
+        {
+            ConnectedRBToBullet = collision.gameObject.GetComponent<Rigidbody>();
+            joint = gameObject.AddComponent<FixedJoint>();
+            joint.connectedBody = ConnectedRBToBullet;
+            collitionPositon = collision.contacts[0].point;
+            joint.connectedAnchor = collitionPositon;
+            hit = true;
 
 
-                this.transform.position = collision.contacts[0].point;
-                
-                chainGrapGun.lr.positionCount = 2;
-                chainGrapGun.AddSpringJoint(collitionPositon +collision.contacts[0].normal, collision.gameObject.GetComponent<Rigidbody>());
-                Debug.Log("hitBuilding");
-            }
-            if (collision.gameObject.tag == "Treasure")
-            {               
-                joint = gameObject.AddComponent<FixedJoint>();
-                joint.connectedBody = collision.gameObject.GetComponent<Rigidbody>();
-                collitionPositon = collision.contacts[0].point;
-                joint.connectedAnchor = collitionPositon;
-                hit = true;
+            this.transform.position = collision.contacts[0].point;
 
+            chainGrapGun.lr.positionCount = 2;
+            chainGrapGun.AddSpringJoint(collitionPositon + collision.contacts[0].normal, collision.gameObject.GetComponent<Rigidbody>());
+            Debug.Log("hitBuilding");
+        }
+    }
+    void SwingTheTreasures(Collision collision)
+    {
+        if (collision.gameObject.tag == "Treasure")
+        {
+            ConnectedRBToBullet = collision.gameObject.GetComponent<Rigidbody>();
+            joint = gameObject.AddComponent<FixedJoint>();
+            joint.connectedBody = ConnectedRBToBullet;
+            collitionPositon = collision.contacts[0].point;
+            joint.connectedAnchor = collitionPositon;
+            hit = true;
+            
 
-                this.transform.position = collision.contacts[0].point;
-                chainGrapGun.lr.positionCount = 2;
-                chainGrapGun.AddSpringJointToTreasure(collitionPositon+ collision.contacts[0].normal , collision.gameObject.GetComponent<Rigidbody>(), collision.gameObject);
-            }
-
+            this.transform.position = collision.contacts[0].point;
+            chainGrapGun.lr.positionCount = 2;
+            chainGrapGun.AddSpringJointToTreasure(collitionPositon + collision.contacts[0].normal, collision.gameObject.GetComponent<Rigidbody>(), collision.gameObject);
         }
 
     }

@@ -26,6 +26,7 @@ public class Gun : MonoBehaviour
     [System.NonSerialized]
     public bool isShoot;
     Vector3 pos2;
+
     
     private float mindis = 1;
     private float maxdis = 1;
@@ -98,10 +99,7 @@ public class Gun : MonoBehaviour
     }
     private void Update()
     {
-        //if (ChechIfActivated(controller))
-        //{
-        //    Debug.Log("isPressed");
-        //}
+        CheckIfObjectStillExistToGrap();
         MakeRayCastToHit();
     }
 
@@ -164,6 +162,20 @@ public class Gun : MonoBehaviour
             {
                 DestroySpringJoint();
             }
+
+    }
+    void CheckIfObjectStillExistToGrap()
+    {
+        //if(bullet.hit) {
+        //    if (bullet.collisionObj.contacts[0].otherCollider.gameObject.(//////destuctionFunction ==true )
+        //    {
+        //        DestroySpringJoint();
+        //    }
+
+
+        //}
+        
+    
 
     }
      
