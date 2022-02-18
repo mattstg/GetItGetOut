@@ -4,7 +4,6 @@ using UnityEngine;
 public class Dinosaur : MonoBehaviour, IUpdaptable
 {
     protected float maxSpeed = 10f;
-    protected Vector3 desireDir;
     protected Rigidbody rb;
     protected FlockWeights weights;
     protected Flock ourFlock;
@@ -25,36 +24,40 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     {
     }
 
-    public void Refresh()
+    public virtual void Refresh()
     {
-        desireDir = NeighborsAvoidance();
+        Vector3 desireDir = WayPointAttraction();
+        desireDir += NeighborsAvoidance();
         desireDir += NeighborsCohesion();
-        desireDir += WayPointAttraction();
         //desireDir += LeaderAlignment();
 
         desireDir /= 3f;
+        ApplyForces(desireDir);
     }
 
     public void FixedRefresh()
     {
-        ApplyForces(desireDir);
+        // fixed refresh does not work at all
     }
 
-    private void ApplyForces(Vector3 dir)
+    protected virtual void ApplyForces(Vector3 dir)
     {
         rb.AddForce(dir.normalized);
     }
 
 
     #region Flocking Calculations
-    //const float distanceToAvoidNeighbour = 10f;
 
-    public virtual Vector3 WayPointAttraction() { return Vector3.zero; }
+    public virtual Vector3 WayPointAttraction()
+    {
+        return (ourFlock.leader.transform.position - transform.position) * weights.alignment;
+    }
 
     public virtual Vector3 LeaderAlignment()
     {
-        //Vector3 facingDirection;
-        return Vector3.zero;
+        Vector3 facingDirection = Vector3.zero;
+        facingDirection += ourFlock.leader.transform.forward;
+        return facingDirection * weights.alignment;
     }
 
     public virtual Vector3 NeighborsCohesion()
@@ -74,16 +77,17 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     public virtual Vector3 NeighborsAvoidance()
     {
         Vector3 avoidanceVector = Vector3.zero;
+        float avoidanceVectorSqrManitude;
         int numToAvoid = 0;
-        float sqrDistanceToAvoid = 10f;
+        float sqrDistanceToAvoid = 25f;
 
         foreach (Dinosaur dinasour in GetOtherDinosaursInFlock)
         {
             if (Vector3.SqrMagnitude(transform.position - dinasour.transform.position) < sqrDistanceToAvoid)
             {
                 numToAvoid++;
-                avoidanceVector += transform.position - dinasour.transform.position;
-                // need to recalculate the avoidance dir.
+                avoidanceVectorSqrManitude = (sqrDistanceToAvoid - Vector3.SqrMagnitude(transform.position - dinasour.transform.position)) / sqrDistanceToAvoid;
+                avoidanceVector += (transform.position - dinasour.transform.position) * avoidanceVectorSqrManitude;
             }
         }
 

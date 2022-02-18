@@ -13,8 +13,7 @@ public class Flock : MonoBehaviour, IUpdaptable
     {
         dinosaursInFlock = new List<Dinosaur>();
         leader.Init();
-
-        dinosaursInFlock.Add(leader);
+        //dinosaursInFlock.Add(leader);
 
         foreach (Dinosaur dinosaur in transform.GetComponentsInChildren<Dinosaur>())
         {
