@@ -63,7 +63,7 @@ public class Bullet : MonoBehaviour
 
             this.transform.position = collision.contacts[0].point;
             chainGrapGun.lr.positionCount = 2;
-            chainGrapGun.AddSpringJointToTreasure(collitionPositon + collision.contacts[0].normal, collision.gameObject.GetComponent<Rigidbody>(), collision.gameObject);
+            chainGrapGun.AddSpringJointToTreasure(collitionPositon + collision.contacts[0].normal, gunRB, collision.gameObject);
         }
 
     }

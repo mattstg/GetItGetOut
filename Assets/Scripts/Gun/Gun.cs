@@ -89,11 +89,12 @@ public class Gun : MonoBehaviour
     }
     public void DestroySpringJoint()
     {
+        Destroy(jointToPlayer);
+      //  Destroy(jointTreasureToPlayer);
         isShoot = false;
         bullet.DestroyJoint();
         lr.positionCount = 0;
-        Destroy(jointToPlayer);
-        Destroy(jointTreasureToPlayer);
+
 
 
     }
@@ -128,19 +129,22 @@ public class Gun : MonoBehaviour
         jointTreasureToPlayer = TreasureGameObject.AddComponent<SpringJoint>();
         jointTreasureToPlayer.autoConfigureConnectedAnchor = false;
         jointTreasureToPlayer.connectedBody = playerRB;
-        jointTreasureToPlayer.connectedAnchor =new Vector3(0,0,0);
+        jointTreasureToPlayer.connectedAnchor = new Vector3(0, 0, 0);
         jointTreasureToPlayer.anchor = new Vector3(0, 0, 0);
         // jointToPlayer.connectedAnchor = PointToSwing;
         float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
 
-        jointTreasureToPlayer.maxDistance = distanceFromPoint * 0.7f;
-        jointTreasureToPlayer.minDistance = distanceFromPoint * 0.1f;
+        jointTreasureToPlayer.maxDistance = distanceFromPoint;
+        jointTreasureToPlayer.minDistance = 0;
         jointToPlayer.enableCollision = true;
 
 
-        jointTreasureToPlayer.spring = 4.5f;
+        jointTreasureToPlayer.spring = 500f;
         jointTreasureToPlayer.damper = 7f;
-        jointTreasureToPlayer.massScale = 5f;
+        jointTreasureToPlayer.massScale = 0.001f;
+
+
+
 
     }
 
