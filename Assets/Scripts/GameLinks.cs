@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class GameLinks : MonoBehaviour
     public GameObject XROrigin;
     public Rigidbody XROriginRb;
     public Inputs inputs;
+    public TMP_Text UITime;
 
     public void SetupGameLinks()
     {

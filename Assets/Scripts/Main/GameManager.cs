@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
         GameObject.FindObjectOfType<GameLinks>().SetupGameLinks();
         managers.Add(HolsterManager.Instance);
         managers.Add(PlayerManager.Instance);
+        managers.Add(WatchManager.Instance);
         //managers.Add(LavaManager.Instance);
         InitManagers();
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,13 +19,12 @@ public class Bullet : MonoBehaviour
     public Collision collisionObj;
     public Rigidbody ConnectedRBToBullet;
 
-    private new readonly Audio.Bullet audio;
-
+    private readonly Audio.Bullet audio = new Audio.Bullet();
 
     private void OnCollisionEnter(Collision collision)
     {
         collisionObj = collision;
-        if (chainGrapGun.isShoot && hit ==false )
+        if (chainGrapGun.isShoot && hit == false)
         {
             SwingToBuildings(collisionObj);
             SwingTheTreasures(collision);
