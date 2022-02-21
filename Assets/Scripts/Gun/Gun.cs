@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
     public Rigidbody BulletRB;
     public Transform barrel;
     public LineRenderer lr;
-   
+
     //force
 
     public InputActionReference selectButton;
@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
     public bool isShoot;
     Vector3 pos2;
 
-    
+
     private float mindis = 1;
     private float maxdis = 1;
     private void Start()
@@ -37,31 +37,21 @@ public class Gun : MonoBehaviour
 
 
     }
-    private void FixedUpdate()
+
+    public void Reeling()
     {
-        if (bullet.hit)
+
+        if (bullet.hit && bullet.collisionObj.gameObject.tag == "Grappable")
         {
-            if (selectButton.action.ReadValue<float>() == 1 && bullet.collisionObj.gameObject.tag== "Grappable")
-            {
-                jointToPlayer.maxDistance -=100*Time.fixedDeltaTime;
-                jointToPlayer.minDistance -=100*Time.fixedDeltaTime;
-             //   Debug.Log(maxdis);
-            }
-            //if (selectButton.action.ReadValue<float>() == 1 && bullet.collisionObj.gameObject.tag == "Treasure")
-            //{
-            //     bullet.collisionObj.gameObject.GetComponent<Rigidbody>().AddForce((player.transform.position- bullet.collisionObj.gameObject.transform.position) * force * Time.deltaTime);
-
-            //    Debug.Log("hey ");
-            //}
+            jointToPlayer.maxDistance -= 100 * Time.fixedDeltaTime;
         }
-
     }
     private void LateUpdate()
     {
         pos2 = bullet.transform.position;
         if (bullet.hit)
         {
-          //  Debug.Log(pos2);
+            //  Debug.Log(pos2);
 
             DrawRope(pos2);
         }
@@ -72,7 +62,7 @@ public class Gun : MonoBehaviour
             bullet.gameObject.transform.rotation = barrel.rotation;
 
         }
-        
+
     }
 
     //  public XRController controller;
@@ -80,6 +70,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     public void FireBullet()
     {
+        //sound
         bullet.gameObject.transform.position = barrel.position;
         bullet.gameObject.transform.rotation = barrel.rotation;
         //  controller.gameObject.GetComponent<XRDirectInteractor>().playHapticsOnSelectEnter = true;
@@ -89,13 +80,13 @@ public class Gun : MonoBehaviour
     }
     public void DestroySpringJoint()
     {
-        Destroy(jointToPlayer);
-      //  Destroy(jointTreasureToPlayer);
+
         isShoot = false;
         bullet.DestroyJoint();
         lr.positionCount = 0;
+        Destroy(jointToPlayer);
+        Destroy(jointTreasureToPlayer);
 
-        //POTENTIAL SOUND EVENT TO STOP THE SHOOTING EVENT
 
     }
     private void Update()
@@ -119,12 +110,12 @@ public class Gun : MonoBehaviour
         jointToPlayer.minDistance = distanceFromPoint * 0.1f;
 
 
-        jointToPlayer.spring = 4.5f;
+        jointToPlayer.spring = 100f;
         jointToPlayer.damper = 7f;
-        jointToPlayer.massScale = 4.5f;
+        //  jointToPlayer.massScale = 4.5f;
 
     }
-    public void AddSpringJointToTreasure(Vector3 PointToSwing, Rigidbody rbConnected,GameObject TreasureGameObject)
+    public void AddSpringJointToTreasure(Vector3 PointToSwing, Rigidbody rbConnected, GameObject TreasureGameObject)
     {
         jointTreasureToPlayer = TreasureGameObject.AddComponent<SpringJoint>();
         jointTreasureToPlayer.autoConfigureConnectedAnchor = false;
@@ -135,13 +126,13 @@ public class Gun : MonoBehaviour
         float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
 
         jointTreasureToPlayer.maxDistance = distanceFromPoint;
-        jointTreasureToPlayer.minDistance = 0;
-        jointToPlayer.enableCollision = true;
+        jointTreasureToPlayer.minDistance = distanceFromPoint;
+        jointTreasureToPlayer.enableCollision = true;
 
 
-        jointTreasureToPlayer.spring = 500f;
+        jointTreasureToPlayer.spring = 60f;
         jointTreasureToPlayer.damper = 7f;
-        jointTreasureToPlayer.massScale = 0.001f;
+        //  jointTreasureToPlayer.massScale = 1f;
 
 
 
@@ -161,7 +152,7 @@ public class Gun : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = new Ray(barrel.position, (bullet.gameObject.transform.position - player.transform.position).normalized);
-        if (Physics.Raycast(ray, out hit, Vector3.Distance(barrel.position, bullet.gameObject.transform.position) - 1)&& bullet.hit)
+        if (Physics.Raycast(ray, out hit, Vector3.Distance(barrel.position, bullet.gameObject.transform.position) - 1) && bullet.hit)
             if (hit.transform.gameObject != hit.transform.gameObject)
             {
                 DestroySpringJoint();
@@ -178,11 +169,11 @@ public class Gun : MonoBehaviour
 
 
         //}
-        
-    
+
+
 
     }
-     
+
 
 
 }

@@ -7,9 +7,12 @@ namespace Audio
 
     public class Bullet
     {
-        private readonly string hookImpactEvent = "Grappling_Impact";
+        private readonly AK.Wwise.Event Grappling_Impact;
 
-        //AK.Wwise.Event
+        public void PlayGrapplingImpact(GameObject gameObject)
+        {
+            Grappling_Impact.Post(gameObject);
+        }
 
     }
 }
