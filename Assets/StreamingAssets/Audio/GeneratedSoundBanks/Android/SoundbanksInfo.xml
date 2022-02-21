@@ -16,12 +16,12 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1464457293">
+		<SoundBank Id="3161908922" Language="SFX" Hash="3777165545">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="981501359" Name="Grappling_Fire_Play" ObjectPath="\Events\Default Work Unit\Grappling_Fire_Play" DurationType="Infinite">
+				<Event Id="981501359" Name="Grappling_Fire_Play" ObjectPath="\Events\Default Work Unit\Grappling_Fire_Play" MaxAttenuation="200." DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="44020876" Language="SFX">
 							<ShortName>B7K3LFC-grappling-gun-shoot-55067.wav</ShortName>
@@ -46,7 +46,7 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="3740708781" Name="Grappling_Fire_Stop" ObjectPath="\Events\Default Work Unit\Grappling_Fire_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="1879650260" Name="Grappling_Impact" ObjectPath="\Events\Default Work Unit\Grappling_Impact" DurationType="OneShot" DurationMin="0.387555" DurationMax="1.067872">
+				<Event Id="1879650260" Name="Grappling_Impact" ObjectPath="\Events\Default Work Unit\Grappling_Impact" MaxAttenuation="200." DurationType="OneShot" DurationMin="0.387555" DurationMax="1.067872">
 					<IncludedMemoryFiles>
 						<File Id="509653952" Language="SFX">
 							<ShortName>XVBDQX8-grappling-hook-impact-55073.wav</ShortName>

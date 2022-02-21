@@ -100,7 +100,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 46551bf89598214eaf4f6d4e06b3b350
     GuidInternal: 
-    m_lastTime: -8585561454111007927
+    m_lastTime: -8585561300974965435
     List:
     - name: Main
       guid: b8c06a53765809428cd5b17accf3ff5d
@@ -144,7 +144,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: c73bf055b25331429eaa8aec566e9c33
       Path: Events\Default Work Unit\Grappling_Fire_Play
-      maxAttenuation: 0
+      maxAttenuation: 200
       maxDuration: -1
       minDuration: -1
     - name: Grappling_Fire_Stop
@@ -178,7 +178,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 165935bcc8856f41a0a8ebe05319af39
       Path: Events\Default Work Unit\Grappling_Impact
-      maxAttenuation: 0
+      maxAttenuation: 200
       maxDuration: 1.067872
       minDuration: 0.387555
   RtpcWwu:
@@ -238,7 +238,7 @@ MonoBehaviour:
     m_lastTime: -8585564502341730478
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0c0000000d000000
+  ExpandedWaapiItemIds: 05000000060000000c0000000d000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
