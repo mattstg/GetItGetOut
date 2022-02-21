@@ -90,7 +90,7 @@ public class Gun : MonoBehaviour
     public void DestroySpringJoint()
     {
         Destroy(jointToPlayer);
-      //  Destroy(jointTreasureToPlayer);
+         Destroy(jointTreasureToPlayer);
         isShoot = false;
         bullet.DestroyJoint();
         lr.positionCount = 0;
@@ -134,7 +134,7 @@ public class Gun : MonoBehaviour
         // jointToPlayer.connectedAnchor = PointToSwing;
         float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
 
-        jointTreasureToPlayer.maxDistance = distanceFromPoint;
+        jointTreasureToPlayer.maxDistance = 1;
         jointTreasureToPlayer.minDistance = 0;
         jointToPlayer.enableCollision = true;
 
