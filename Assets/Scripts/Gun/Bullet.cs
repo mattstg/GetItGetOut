@@ -18,6 +18,8 @@ public class Bullet : MonoBehaviour
     public Collision collisionObj;
     public Rigidbody ConnectedRBToBullet;
 
+    private new readonly Audio.Bullet audio;
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -26,8 +28,7 @@ public class Bullet : MonoBehaviour
         {
             SwingToBuildings(collisionObj);
             SwingTheTreasures(collision);
-            //sound
-
+            audio.PlayGrapplingImpact(gameObject);
         }
 
     }
