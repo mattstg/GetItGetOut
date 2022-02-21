@@ -162,8 +162,8 @@ MonoBehaviour:
         guid: 2bc103a5f22d4f44b55f5801cfe201ed
       Path: Events\Default Work Unit\Grappling_Fire_Stop
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Grappling_Impact
       guid: 165935bcc8856f41a0a8ebe05319af39
       id: 1879650260
@@ -179,8 +179,8 @@ MonoBehaviour:
         guid: 165935bcc8856f41a0a8ebe05319af39
       Path: Events\Default Work Unit\Grappling_Impact
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.067872
+      minDuration: 0.387555
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
