@@ -11,6 +11,13 @@
 
 namespace AK
 {
+    namespace EVENTS
+    {
+        static const AkUniqueID GRAPPLING_FIRE_PLAY = 981501359U;
+        static const AkUniqueID GRAPPLING_FIRE_STOP = 3740708781U;
+        static const AkUniqueID GRAPPLING_IMPACT = 1879650260U;
+    } // namespace EVENTS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;

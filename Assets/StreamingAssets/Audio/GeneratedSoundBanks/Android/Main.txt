@@ -1,0 +1,15 @@
+Event	ID	Name			Wwise Object Path	Notes
+	981501359	Grappling_Fire_Play			\Default Work Unit\Grappling_Fire_Play	
+	1879650260	Grappling_Impact			\Default Work Unit\Grappling_Impact	
+	3740708781	Grappling_Fire_Stop			\Default Work Unit\Grappling_Fire_Stop	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	44020876	grappling-gun-shoot02	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\B7K3LFC-grappling-gun-shoot-55067_B28BB383.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\FireGrappling\RopeExtending\grappling-gun-shoot02		262852
+	509653952	grappling-hook-impact2	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\XVBDQX8-grappling-hook-impact-55073_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\HookImpact\grappling-hook-impact2		91320
+	586683046	grappling-gun-shoot00	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\Grapple Shot + lineExtend+Impact_BCE0790B.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\FireGrappling\RopeExtending\grappling-gun-shoot00		185292
+	694376916	grappling-gun-shoot01	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\DBZ3KQ3-grappling-gun-shoot-55069_1C35D30F.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\FireGrappling\FireShoot\grappling-gun-shoot01		41404
+	704706914	grappling-gun-shoot00	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\Grapple Shot + lineExtend+Impact_F78AC45C.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\FireGrappling\FireShoot\grappling-gun-shoot00		26640
+	735211357	grappling-hook-impact1	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\KWR93A5-grappling-hook-impact-55076_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\HookImpact\grappling-hook-impact1		141184
+	886720638	grappling-hook-impact0	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\57PX6L5-grappling-hook-impact-55075_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\HookImpact\grappling-hook-impact0		141184
+	1072113921	grappling-gun-shoot02	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\B7K3LFC-grappling-gun-shoot-55067_4F480BCA.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\FireGrappling\FireShoot\grappling-gun-shoot02		21560
+

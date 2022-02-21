@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="1651251722">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX" Hash="2473313827">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="981501359" Name="Grappling_Fire_Play" ObjectPath="\Events\Default Work Unit\Grappling_Fire_Play" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="44020876" Language="SFX">
+							<ShortName>B7K3LFC-grappling-gun-shoot-55067.wav</ShortName>
+							<Path>SFX\B7K3LFC-grappling-gun-shoot-55067_B28BB383.wem</Path>
+						</File>
+						<File Id="586683046" Language="SFX">
+							<ShortName>Grapple Shot + lineExtend+Impact.wav</ShortName>
+							<Path>SFX\Grapple Shot + lineExtend+Impact_BCE0790B.wem</Path>
+						</File>
+						<File Id="694376916" Language="SFX">
+							<ShortName>DBZ3KQ3-grappling-gun-shoot-55069.wav</ShortName>
+							<Path>SFX\DBZ3KQ3-grappling-gun-shoot-55069_1C35D30F.wem</Path>
+						</File>
+						<File Id="704706914" Language="SFX">
+							<ShortName>Grapple Shot + lineExtend+Impact.wav</ShortName>
+							<Path>SFX\Grapple Shot + lineExtend+Impact_F78AC45C.wem</Path>
+						</File>
+						<File Id="1072113921" Language="SFX">
+							<ShortName>B7K3LFC-grappling-gun-shoot-55067.wav</ShortName>
+							<Path>SFX\B7K3LFC-grappling-gun-shoot-55067_4F480BCA.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3740708781" Name="Grappling_Fire_Stop" ObjectPath="\Events\Default Work Unit\Grappling_Fire_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1879650260" Name="Grappling_Impact" ObjectPath="\Events\Default Work Unit\Grappling_Impact" DurationType="OneShot" DurationMin="0.387555" DurationMax="1.067872">
+					<IncludedMemoryFiles>
+						<File Id="509653952" Language="SFX">
+							<ShortName>XVBDQX8-grappling-hook-impact-55073.wav</ShortName>
+							<Path>SFX\XVBDQX8-grappling-hook-impact-55073_10C4C929.wem</Path>
+						</File>
+						<File Id="735211357" Language="SFX">
+							<ShortName>KWR93A5-grappling-hook-impact-55076.wav</ShortName>
+							<Path>SFX\KWR93A5-grappling-hook-impact-55076_10C4C929.wem</Path>
+						</File>
+						<File Id="886720638" Language="SFX">
+							<ShortName>57PX6L5-grappling-hook-impact-55075.wav</ShortName>
+							<Path>SFX\57PX6L5-grappling-hook-impact-55075_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
