@@ -532,4 +532,5 @@ MonoBehaviour:
   barrel: {fileID: 1302317138634458560}
   chainGrapGun: {fileID: 4792800311837656777}
   gun: {fileID: 1302317138168320099}
-  ems: {fileID: 7441708837334716775}
+  gunRB: {fileID: 0}
+  ConnectedRBToBullet: {fileID: 0}
