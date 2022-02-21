@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -35,8 +36,6 @@ public class Inputs : MonoBehaviour
     
     private void Awake()
     {
-
-
         rightTriggerReference.action.performed += OnRightTriggerValueChanged;
         rightGripReference.action.performed += OnRightGripValueChanged;
         
@@ -56,6 +55,19 @@ public class Inputs : MonoBehaviour
         leftTriggerToggle.action.performed += OnLeftTriggerPressed;
         leftTriggerToggle.action.canceled += OnLeftTriggerCancelled;
 
+    }
+
+    private void Update()
+    {
+        if (haveGunRight && A.action.ReadValue<float>() > 0.1f)
+        {
+            gun2.Reeling();
+        }
+
+        if (haveGunLeft && X.action.ReadValue<float>() > 0.1f)
+        {
+            gun1.Reeling();
+        }
     }
 
 
