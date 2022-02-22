@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 public class ReturnButton : MonoBehaviour
 {
     public Transform player;
@@ -11,8 +8,9 @@ public class ReturnButton : MonoBehaviour
     public void StartMainCsene()
     {
         Physics.gravity = new Vector3(0, 3F, 0);
-        Invoke("StartGame", 5);
-
+        
+        Invoke(nameof(StartGame), 5);
+        
     }
 
     void StartGame()

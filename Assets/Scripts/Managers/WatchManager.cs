@@ -1,6 +1,7 @@
-
-using System;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WatchManager : Manager
 {
@@ -10,13 +11,19 @@ public class WatchManager : Manager
     private WatchManager() {}
     #endregion
 
+    private int cachedTime = 0;
+    private int cachedMoney = 0;
+    
     private TMP_Text UITime;
     private TMP_Text UIMoney;
+    private Button button;
     
     public override void Init()
     {
         UITime = GameLinks.Instance.UITime;
         UIMoney = GameLinks.Instance.UIMoney;
+        button = GameLinks.Instance.button;
+        button?.onClick.AddListener(LoadMainScene);
     }
 
     public override void PostInit()
@@ -26,14 +33,19 @@ public class WatchManager : Manager
     
     public override void Refresh()
     {
-        if (UITime)
+        int time = (int) LavaManager.Instance.TimeRemaining;
+        int money = Shop.Instance.inventory.money;
+        
+        if (UITime && cachedTime != time)
         {
-            UITime.SetText(SecondToDigitalTime((int)LavaManager.Instance.TimeRemaining));
+            cachedTime = time;
+            UITime.SetText(SecondToDigitalTime(time));
         }
 
-        if (UIMoney)
+        if (UIMoney && cachedMoney != money)
         {
-            UIMoney.SetText("$1000");
+            cachedMoney = money;
+            UIMoney.SetText(IntToDigitalMoney(money));
         }
     }
 
@@ -64,5 +76,23 @@ public class WatchManager : Manager
         sec += seconds.ToString();
 
         return $"{min}:{sec}";
+    }
+
+    private string IntToDigitalMoney(int money)
+    {
+        return $"${money}";
+    }
+
+
+    private void SaveMoney()
+    {
+        Shop.Instance.inventory.money += 1000;
+        Shop.Instance.WriteJSON();
+    }
+
+    private void LoadMainScene()
+    {
+        SaveMoney();
+        SceneManager.LoadScene("UIstartScene");
     }
 }

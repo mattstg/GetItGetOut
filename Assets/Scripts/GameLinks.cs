@@ -1,6 +1,6 @@
 using TMPro;
-using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameLinks : MonoBehaviour
 {
@@ -13,6 +13,7 @@ public class GameLinks : MonoBehaviour
     public Inputs inputs;
     public TMP_Text UITime;
     public TMP_Text UIMoney;
+    public Button button;
 
     public void SetupGameLinks()
     {
