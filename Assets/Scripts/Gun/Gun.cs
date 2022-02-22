@@ -30,12 +30,15 @@ public class Gun : MonoBehaviour
 
     private float mindis = 1;
     private float maxdis = 1;
+
+    //Audio
+    public Audio.GrapplingGun Audio { get; private set; }
+
     private void Start()
     {
         player = GameLinks.Instance.XROrigin;
         playerRB = GameLinks.Instance.XROriginRb;
-
-
+        Audio = new Audio.GrapplingGun();
     }
 
     public void Reeling()
@@ -76,8 +79,9 @@ public class Gun : MonoBehaviour
         //  controller.gameObject.GetComponent<XRDirectInteractor>().playHapticsOnSelectEnter = true;
         isShoot = true;
         BulletRB.velocity = speed * barrel.forward;
-
+        Audio.PlayShoot(gameObject);
     }
+
     public void DestroySpringJoint()
     {
 
@@ -86,7 +90,7 @@ public class Gun : MonoBehaviour
         lr.positionCount = 0;
         Destroy(jointToPlayer);
         Destroy(jointTreasureToPlayer);
-
+        Audio.StopShoot(gameObject);
 
     }
     private void Update()
