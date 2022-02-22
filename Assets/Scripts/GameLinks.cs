@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameLinks : MonoBehaviour
 {
     public static GameLinks Instance;
-
+    public Transform[] respawnPositions;
     public Holster holster;
     public Lava lava;
     public GameObject XROrigin;
