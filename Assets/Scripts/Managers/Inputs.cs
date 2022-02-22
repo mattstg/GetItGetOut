@@ -161,7 +161,7 @@ public class Inputs : MonoBehaviour
 
     private void OnAPerformed(InputAction.CallbackContext context)
     {
-        if (haveGunRight)
+        if (haveGunRight && gunRight.bullet.hit)
         {
             gunRight.Audio.PlayReelIn(gunRight.gameObject);
         }
@@ -172,7 +172,7 @@ public class Inputs : MonoBehaviour
     }
     private void OnXPerformed(InputAction.CallbackContext context)
     {
-        if (haveGunLeft)
+        if (haveGunLeft && gunLeft.bullet.hit)
         {
             gunLeft.Audio.PlayReelIn(gunLeft.gameObject);
         }
