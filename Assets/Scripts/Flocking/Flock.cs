@@ -6,7 +6,6 @@ public class Flock : MonoBehaviour, IUpdaptable
 {
     public Leader leader;
     public Dinosaur[] dinosaurs;
-
     List<Dinosaur> dinosaursInFlock;
 
     public void Init()

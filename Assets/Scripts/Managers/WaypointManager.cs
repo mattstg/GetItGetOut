@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class WaypointManager : MonoBehaviour, IUpdaptable
 {
-    float minimum = 5f;
-    float maximum = 10f;
+    float minimum = 2f;
+    float maximum = 4f;
     float timer;
     int currentWaypointIndex;
     public List<Transform> wayPoints;

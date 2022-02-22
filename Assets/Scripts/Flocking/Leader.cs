@@ -4,7 +4,7 @@ public class Leader : Dinosaur
 {
     WaypointManager waypoint;
     Vector3 currentWaypoint;
-    float dire;
+    float direction;
 
     public override void Init()
     {
@@ -16,13 +16,17 @@ public class Leader : Dinosaur
 
     public override void Refresh()
     {
+        UnityEngine.Debug.DrawRay(transform.position, transform.forward, Color.red);
         ApplyForces(WayPointAttraction());
     }
 
     protected override void ApplyForces(Vector3 dir)
     {
-        //dire = Vector3.Angle(transform.forward, dir);
-        rb.AddForce(dir.normalized);
+        //direction = Vector3.Angle(transform.forward, dir);
+        //rb.velocity += dir.normalized * speed *Time.deltaTime;
+        //if(transform.forward - dir )
+        transform.forward = dir;
+        rb.AddForce(dir.normalized * speed);
     }
 
     public override Vector3 WayPointAttraction()
