@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
         managers.Add(PlayerManager.Instance);
         managers.Add(WatchManager.Instance);
         managers.Add(DestructionManager.Instance);
-        //managers.Add(LavaManager.Instance);
+        managers.Add(LavaManager.Instance);
         InitManagers();
     }
 

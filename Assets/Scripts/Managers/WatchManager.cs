@@ -28,7 +28,7 @@ public class WatchManager : Manager
     {
         if (UITime)
         {
-            UITime.SetText(MillisecondToDigitalTime(300000));
+            UITime.SetText(SecondToDigitalTime((int)LavaManager.Instance.TimeRemaining));
         }
 
         if (UIMoney)
@@ -42,10 +42,10 @@ public class WatchManager : Manager
         
     }
 
-    private string MillisecondToDigitalTime(int time)
+    private string SecondToDigitalTime(int time)
     {
-        int minutes = time / 60000;
-        int seconds = (time % 60000) / 1000;
+        int minutes = time / 60;
+        int seconds = time % 60;
         string min = "";
         string sec = "";
 

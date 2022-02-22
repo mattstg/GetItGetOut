@@ -8938,7 +8938,7 @@ GameObject:
   - component: {fileID: 282546642}
   - component: {fileID: 282546641}
   - component: {fileID: 282546644}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lavaTexture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21711,6 +21711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 752131898}
+  - component: {fileID: 752131899}
   m_Layer: 0
   m_Name: lava
   m_TagString: Untagged
@@ -21733,6 +21734,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &752131899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752131897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6023787ed0d9b184c9c7aec48020aeb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &753370350
 GameObject:
   m_ObjectHideFlags: 0
@@ -25374,6 +25387,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6009447707776134602, guid: 1c1cad2fcdcf0b54891508910f0aa475, type: 3}
+      propertyPath: lava
+      value: 
+      objectReference: {fileID: 752131899}
     - target: {fileID: 6009447707776134602, guid: 1c1cad2fcdcf0b54891508910f0aa475, type: 3}
       propertyPath: UITime
       value: 
