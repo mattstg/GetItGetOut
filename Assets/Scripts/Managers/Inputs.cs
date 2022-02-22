@@ -31,6 +31,7 @@ public class Inputs : MonoBehaviour
 
     public Transform rightControllerRotation;
     public Transform leftControllerRotation;
+    
     private bool haveGunRight = false;
     private bool haveGunLeft = false;
     
@@ -44,6 +45,9 @@ public class Inputs : MonoBehaviour
         
         rightTriggerToggle.action.performed += OnRightTriggerPressed;
         rightTriggerToggle.action.canceled += OnRightTriggerCancelled;
+
+        A.action.performed += OnAPerformed;
+        A.action.canceled += OnACancelled;
         
         //left
         leftTriggerReference.action.performed += OnLeftTriggerValueChanged;
@@ -55,6 +59,8 @@ public class Inputs : MonoBehaviour
         leftTriggerToggle.action.performed += OnLeftTriggerPressed;
         leftTriggerToggle.action.canceled += OnLeftTriggerCancelled;
 
+        X.action.performed += OnXPerformed;
+        X.action.canceled += OnXCancelled;
     }
 
     private void Update()
@@ -114,6 +120,7 @@ public class Inputs : MonoBehaviour
     private void OnRightGripCancelled(InputAction.CallbackContext context)
     {
         haveGunRight = false;
+        gun2.DestroySpringJoint();
         gun2.transform.position = rightHolsterSnap.gameObject.transform.position;
         gun2.transform.eulerAngles = rightHolsterSnap.gameObject.transform.eulerAngles;
         gun2.gameObject.transform.parent = rightHolsterSnap.gameObject.transform;
@@ -148,10 +155,33 @@ public class Inputs : MonoBehaviour
     {
         gun1.DestroySpringJoint();
     }
+
+    private void OnAPerformed(InputAction.CallbackContext context)
+    {
+        if (haveGunRight)
+        {
+        }
+    }
+    private void OnACancelled(InputAction.CallbackContext context)
+    {
+        
+    }
+    private void OnXPerformed(InputAction.CallbackContext context)
+    {
+        if (haveGunLeft)
+        {
+        }
+    }
+    private void OnXCancelled(InputAction.CallbackContext context)
+    {
+        
+    }
     
+
     private void OnLeftGripCancelled(InputAction.CallbackContext context)
     {
         haveGunLeft = false;
+        gun1.DestroySpringJoint();
         gun1.transform.position = leftHolsterSnap.gameObject.transform.position;
         gun1.transform.eulerAngles = leftHolsterSnap.gameObject.transform.eulerAngles;
         gun1.gameObject.transform.parent = leftHolsterSnap.gameObject.transform;

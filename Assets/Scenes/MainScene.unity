@@ -25383,6 +25383,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 483322784}
     - target: {fileID: 6009447707776134602, guid: 1c1cad2fcdcf0b54891508910f0aa475, type: 3}
+      propertyPath: UIMoney
+      value: 
+      objectReference: {fileID: 1391344492}
+    - target: {fileID: 6009447707776134602, guid: 1c1cad2fcdcf0b54891508910f0aa475, type: 3}
       propertyPath: holster
       value: 
       objectReference: {fileID: 1370510733}
@@ -40042,6 +40046,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382633947}
   m_Mesh: {fileID: -7111120208456080258, guid: 633a5b1ed0910a94f8abd86770773c8c, type: 3}
+--- !u!114 &1391344492 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2045458673, guid: 59c82f4ff58dd3545a67b85aa80187fc, type: 3}
+  m_PrefabInstance: {fileID: 1370510732}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1392158800
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,10 +11,12 @@ public class WatchManager : Manager
     #endregion
 
     private TMP_Text UITime;
+    private TMP_Text UIMoney;
     
     public override void Init()
     {
         UITime = GameLinks.Instance.UITime;
+        UIMoney = GameLinks.Instance.UIMoney;
     }
 
     public override void PostInit()
@@ -24,7 +26,15 @@ public class WatchManager : Manager
     
     public override void Refresh()
     {
-        UITime.SetText(MillisecondToDigitalTime(1000000));
+        if (UITime)
+        {
+            UITime.SetText(MillisecondToDigitalTime(300000));
+        }
+
+        if (UIMoney)
+        {
+            UIMoney.SetText("$1000");
+        }
     }
 
     public override void FixedRefresh()

@@ -12,6 +12,7 @@ public class GameLinks : MonoBehaviour
     public Rigidbody XROriginRb;
     public Inputs inputs;
     public TMP_Text UITime;
+    public TMP_Text UIMoney;
 
     public void SetupGameLinks()
     {
