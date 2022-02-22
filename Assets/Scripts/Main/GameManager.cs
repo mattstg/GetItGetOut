@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
         managers.Add(HolsterManager.Instance);
         managers.Add(PlayerManager.Instance);
         managers.Add(WatchManager.Instance);
+        managers.Add(DestructionManager.Instance);
         //managers.Add(LavaManager.Instance);
         InitManagers();
     }

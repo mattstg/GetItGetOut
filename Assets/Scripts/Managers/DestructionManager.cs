@@ -6,9 +6,9 @@ using System.Linq;
 public class DestructionManager : Manager
 {
     #region singleton
-    private DestructionManager instance;
-    public DestructionManager Instance => instance ??= instance = new DestructionManager();
-    protected DestructionManager() { }
+    private static  DestructionManager instance;
+    public static DestructionManager Instance => instance ??= instance = new DestructionManager();
+    private DestructionManager() { }
     #endregion
 
     private List<DestroyBuilding> destructibleBuildings = new List<DestroyBuilding>();
@@ -32,8 +32,10 @@ public class DestructionManager : Manager
     {
         foreach (DestroyBuilding building in destructibleBuildings)
         {
-            building.Explosion();
-            building.lavaCollision();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                building.Explosion();
+            }
         }
     }
 

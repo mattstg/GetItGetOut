@@ -15,17 +15,17 @@ public class DestroyBuilding : MonoBehaviour
         parts = GetComponentsInChildren<Rigidbody>();
     } 
 
-
     public void Explosion()
     {
         for (int i = 0; i < parts.Length; i++)
         {
             Vector3 direction = new Vector3(Random.Range(num1, num2), Random.Range(num1, num2), Random.Range(num1, num2));
-            parts[i].isKinematic = false;
-            parts[i].AddForce(direction, ForceMode.Impulse);
-            //parts[i].rig set rb to true
             MeshCollider mesh = parts[i].GetComponent<MeshCollider>();
             mesh.enabled = true;
+            parts[i].isKinematic = false;
+            parts[i].AddForce(direction, ForceMode.Impulse);
+            
+            
         }
     }
 
