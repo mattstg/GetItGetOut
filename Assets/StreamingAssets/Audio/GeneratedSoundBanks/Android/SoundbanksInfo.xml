@@ -5,18 +5,18 @@
 		<SourceFilesRoot>C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\</SourceFilesRoot>
 		<SoundBanksRoot>C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\GeneratedSoundBanks\Android\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\charl\GitHub\GetItGetOut\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Android</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\GeneratedSoundBanks\Android</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3328900175">
+		<SoundBank Id="1355168291" Language="SFX" Hash="3656821229">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3776385188">
+		<SoundBank Id="3161908922" Language="SFX" Hash="963431707">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -25,19 +25,19 @@
 					<IncludedMemoryFiles>
 						<File Id="586683046" Language="SFX">
 							<ShortName>Grapple Shot + lineExtend+Impact.wav</ShortName>
-							<Path>SFX\Grapple Shot + lineExtend+Impact_BCE0790B.wem</Path>
+							<Path>SFX\Grapple Shot + lineExtend+Impact_5E2C7EC4.wem</Path>
 						</File>
 						<File Id="694376916" Language="SFX">
 							<ShortName>DBZ3KQ3-grappling-gun-shoot-55069.wav</ShortName>
-							<Path>SFX\DBZ3KQ3-grappling-gun-shoot-55069_1C35D30F.wem</Path>
+							<Path>SFX\DBZ3KQ3-grappling-gun-shoot-55069_893E3009.wem</Path>
 						</File>
 						<File Id="704706914" Language="SFX">
 							<ShortName>Grapple Shot + lineExtend+Impact.wav</ShortName>
-							<Path>SFX\Grapple Shot + lineExtend+Impact_F78AC45C.wem</Path>
+							<Path>SFX\Grapple Shot + lineExtend+Impact_A5769BED.wem</Path>
 						</File>
 						<File Id="1072113921" Language="SFX">
 							<ShortName>B7K3LFC-grappling-gun-shoot-55067.wav</ShortName>
-							<Path>SFX\B7K3LFC-grappling-gun-shoot-55067_4F480BCA.wem</Path>
+							<Path>SFX\B7K3LFC-grappling-gun-shoot-55067_211DE044.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -62,7 +62,7 @@
 					<IncludedMemoryFiles>
 						<File Id="1025440588" Language="SFX">
 							<ShortName>Grapple Recharge+Shoot.wav</ShortName>
-							<Path>SFX\Grapple Recharge+Shoot_6EEDA829.wem</Path>
+							<Path>SFX\Grapple Recharge+Shoot_9F9A4DDC.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -70,7 +70,7 @@
 					<IncludedMemoryFiles>
 						<File Id="44020876" Language="SFX">
 							<ShortName>B7K3LFC-grappling-gun-shoot-55067.wav</ShortName>
-							<Path>SFX\B7K3LFC-grappling-gun-shoot-55067_B28BB383.wem</Path>
+							<Path>SFX\B7K3LFC-grappling-gun-shoot-55067_C53E6E9E.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
