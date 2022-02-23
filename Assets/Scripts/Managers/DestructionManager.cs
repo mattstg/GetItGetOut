@@ -3,44 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class DestructionManager : Manager
+public class DestructionManager : Manager <DestructionManager, DestroyBuilding>
 {
-    #region singleton
-    private static  DestructionManager instance;
-    public static DestructionManager Instance => instance ??= instance = new DestructionManager();
-    private DestructionManager() { }
-    #endregion
-
-    private List<DestroyBuilding> destructibleBuildings = new List<DestroyBuilding>();
-    
-
     public override void Init()
     {
-        destructibleBuildings = GameObject.FindObjectsOfType<DestroyBuilding>().ToList();
-        foreach (DestroyBuilding building in destructibleBuildings)
+        colletion = new HashSet<DestroyBuilding>(GameObject.FindObjectsOfType<DestroyBuilding>().ToList());
+        foreach (DestroyBuilding building in colletion)
         {
-            building.setParts();
+            building.Init();
         }
     }
 
     public override void PostInit()
     {
-        
-    }
-
-    public override void Refresh()
-    {
-        foreach (DestroyBuilding building in destructibleBuildings)
+        foreach (DestroyBuilding building in colletion)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                building.Explosion();
-            }
+            building.PostInit();
         }
-    }
-
-    public override void FixedRefresh()
-    {
-       
     }
 }
