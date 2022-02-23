@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5393169319560989198}
   - component: {fileID: 8780798998192769496}
   - component: {fileID: 4864034119610350761}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Submarine Sail
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 5241020957512151068}
   - component: {fileID: 7165890008716603978}
   - component: {fileID: 1274648189304696930}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Propeller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 5951002871683674859}
   - component: {fileID: 3589618672452548668}
   - component: {fileID: 6157067442312266180}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Submarine Hull
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 6846897763580093324}
   - component: {fileID: 6838717512233639006}
   - component: {fileID: 7973495438364896487}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Antenna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 6923596421958889397}
   - component: {fileID: 6389518832791844730}
   - component: {fileID: 978411391947657777}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rudder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5207614900327308931}
   - component: {fileID: 9112557047601432844}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: USOhioClassSubmarine
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 9054208240517433097}
   - component: {fileID: 2273502951907518222}
   - component: {fileID: 1801650770418109379}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Radar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 6997569969703454248}
   - component: {fileID: 2039558684053021516}
   - component: {fileID: 5930340753961724778}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Periscope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 3670186190758711968}
   - component: {fileID: 8487923434435252720}
   - component: {fileID: 3733773413102193677}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Diving Planes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
