@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class FlockManager : Manager<FlockManager, Flock>
 {
-    public Dinosaur[] GetAllDinosaurs()
-    {
-        Debug.Log("GetAllDinasours");
-        return null;
-    }
-
+    Flock[] allFlocks;
     public override void Init()
     {
-
-        Flock[] allFlocks = GameObject.FindObjectsOfType<Flock>();
+        allFlocks = GameObject.FindObjectsOfType<Flock>();
         foreach (Flock flock in allFlocks)
         {
             Add(flock);
@@ -23,6 +17,11 @@ public class FlockManager : Manager<FlockManager, Flock>
 
     public override void PostInit()
     {
+    }
+    public Dinosaur[] GetAllDinosaurs()
+    {
+        Debug.Log("GetAllDinasours");
+        return null;
     }
 
     //public override void Refresh()

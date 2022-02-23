@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using UnityEngine;
 
@@ -34,19 +35,51 @@ public class Shop : Manager
 
     private void ReadJSON()
     {
-        using (StreamReader r = new StreamReader("json/inventory.json"))
+        #if UNITY_EDITOR
+        
+        try
         {
-            string json = r.ReadToEnd();
-            inventory = (Inventory)JsonUtility.FromJson(json, typeof(Inventory));
+            using (StreamReader r = new StreamReader("json/inventory.json"))
+            {
+                string json = r.ReadToEnd();
+                inventory = (Inventory)JsonUtility.FromJson(json, typeof(Inventory));
+            }
         }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            inventory = new Inventory();
+            inventory.money = 1000;
+            throw;
+        }
+        #endif
+        
+        #if UNITY_ANDROID
+        inventory = new Inventory();
+        inventory.money = 1000;
+        #endif
+        
     }
 
     public void WriteJSON()
     {
-        using (StreamWriter w = new StreamWriter("json/inventory.json"))
+        #if UNITY_EDITOR
+        
+        try
         {
-            w.Flush();
-            w.Write(JsonUtility.ToJson(inventory));
+            using (StreamWriter w = new StreamWriter("json/inventory.json"))
+            {
+                w.Flush();
+                w.Write(JsonUtility.ToJson(inventory));
+            }
         }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+        
+        #endif
+
     }
 }
