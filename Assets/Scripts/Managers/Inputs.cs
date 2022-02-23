@@ -115,7 +115,10 @@ public class Inputs : MonoBehaviour
 
     private void OnRightTriggerCancelled(InputAction.CallbackContext context)
     {
-        gunRight.DestroySpringJoint();
+        if (haveGunRight)
+        {
+            gunRight.DestroySpringJoint();
+        }
     }
     
     private void OnRightGripCancelled(InputAction.CallbackContext context)
@@ -156,7 +159,10 @@ public class Inputs : MonoBehaviour
 
     private void OnLeftTriggerCancelled(InputAction.CallbackContext context)
     {
-        gunLeft.DestroySpringJoint();
+        if (haveGunLeft)
+        {
+            gunLeft.DestroySpringJoint();
+        }
     }
 
     private void OnAPerformed(InputAction.CallbackContext context)

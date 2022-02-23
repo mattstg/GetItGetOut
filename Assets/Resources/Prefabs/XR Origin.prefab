@@ -1256,10 +1256,10 @@ MonoBehaviour:
   rightHand: {fileID: 496979807}
   leftHolsterSnap: {fileID: 1578230221}
   rightHolsterSnap: {fileID: 317200052}
-  gun1: {fileID: 0}
-  gun2: {fileID: 0}
-  gun2Forward: {fileID: 3924989721159768839}
-  gun1Forward: {fileID: 1532298375}
+  gunLeft: {fileID: 0}
+  gunRight: {fileID: 0}
+  gunRightForward: {fileID: 0}
+  gunLeftForward: {fileID: 0}
   rightControllerRotation: {fileID: 3599189904869181533}
   leftControllerRotation: {fileID: 3599189905580929810}
 --- !u!65 &483322785

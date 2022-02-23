@@ -20,8 +20,8 @@ public class Gun : MonoBehaviour
     public InputActionReference selectButton;
     public GameObject player;
     public Rigidbody playerRB;
-    private SpringJoint jointToPlayer;
-    private SpringJoint jointTreasureToPlayer;
+    public SpringJoint jointToPlayer;
+    public SpringJoint jointTreasureToPlayer;
 
     [System.NonSerialized]
     public bool isShoot;
@@ -46,7 +46,17 @@ public class Gun : MonoBehaviour
 
         if (bullet.hit && bullet.collisionObj.gameObject.tag == "Grappable")
         {
-            jointToPlayer.maxDistance -= 100 * Time.fixedDeltaTime;
+            if (jointToPlayer)
+            {
+                jointToPlayer.maxDistance -= 100 * Time.fixedDeltaTime;
+            }
+            
+        }
+        if (bullet.hit && bullet.collisionObj.gameObject.tag == "Treasure")
+        {
+            Debug.Log("hey0");
+
+            jointTreasureToPlayer.maxDistance -= 10* Time.fixedDeltaTime;
         }
     }
     private void LateUpdate()
@@ -110,12 +120,12 @@ public class Gun : MonoBehaviour
         // jointToPlayer.connectedAnchor = PointToSwing;
         float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
         jointToPlayer.enableCollision = true;
-        jointToPlayer.maxDistance = distanceFromPoint * 0.7f;
-        jointToPlayer.minDistance = distanceFromPoint * 0.1f;
+        jointToPlayer.maxDistance = distanceFromPoint * 0.9f;
+        jointToPlayer.minDistance =3;
 
 
         jointToPlayer.spring = 100f;
-        jointToPlayer.damper = 7f;
+        jointToPlayer.damper = 60f;
         //  jointToPlayer.massScale = 4.5f;
 
     }
@@ -130,12 +140,12 @@ public class Gun : MonoBehaviour
         float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
 
         jointTreasureToPlayer.maxDistance = distanceFromPoint;
-        jointTreasureToPlayer.minDistance = distanceFromPoint;
+        jointTreasureToPlayer.minDistance = 0;
         jointTreasureToPlayer.enableCollision = true;
 
 
         jointTreasureToPlayer.spring = 60f;
-        jointTreasureToPlayer.damper = 7f;
+        jointTreasureToPlayer.damper = 30f;
         //  jointTreasureToPlayer.massScale = 1f;
 
 
@@ -157,10 +167,14 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         Ray ray = new Ray(barrel.position, (bullet.gameObject.transform.position - player.transform.position).normalized);
         if (Physics.Raycast(ray, out hit, Vector3.Distance(barrel.position, bullet.gameObject.transform.position) - 1) && bullet.hit)
-            if (hit.transform.gameObject != hit.transform.gameObject)
-            {
-                DestroySpringJoint();
-            }
+        {
+            //if (hit.transform.gameObject != hit.transform.gameObject)
+            //{
+            //    DestroySpringJoint();
+            //}
+
+        }
+           
 
     }
     void CheckIfObjectStillExistToGrap()

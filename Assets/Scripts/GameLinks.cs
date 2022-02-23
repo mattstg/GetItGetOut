@@ -6,6 +6,7 @@ public class GameLinks : MonoBehaviour
 {
     public static GameLinks Instance;
     public Transform[] respawnPositions;
+    public Transform TreasursParents;
     public Holster holster;
     public Lava lava;
     public GameObject XROrigin;
