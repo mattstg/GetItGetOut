@@ -32,7 +32,6 @@ public class Player : MonoBehaviour ,IUpdaptable
 
     public void FixedRefresh()
     {
-        Debug.Log(rb.velocity);
     }
 
 
