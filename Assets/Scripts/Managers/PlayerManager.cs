@@ -15,7 +15,7 @@ public class PlayerManager : Manager
 
     public override void Init()
     {
-        player = new Player();
+        player = GameLinks.Instance.player;
         player.Init();
     }
 
