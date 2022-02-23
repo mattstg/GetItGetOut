@@ -14,12 +14,17 @@ public class Leader : Dinosaur
     public override void Refresh()
     {
         UnityEngine.Debug.DrawRay(transform.position, transform.forward, Color.red);
-        ApplyForces(WayPointAttraction());
+        ApplyForces(WayPointAttraction(), null);
     }
 
-    protected override void ApplyForces(Vector3 dir)
-    {
+    protected override void ApplyForces(Vector3 dir, DesireDirectionVectors desiredPkg)
+    {   
         transform.forward = dir;
+        if(dir.z < -100000 || dir.z > 100000)
+        {
+            Debug.Log("LEADER BROKEN");
+        }
+
         rb.AddForce(dir.normalized * speed);
     }
 
