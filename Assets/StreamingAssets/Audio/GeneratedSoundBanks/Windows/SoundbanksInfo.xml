@@ -5,7 +5,7 @@
 		<SourceFilesRoot>C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Windows\</SourceFilesRoot>
 		<SoundBanksRoot>C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\charl\GitHub\GetItGetOut\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Android</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -16,17 +16,13 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3777165545">
+		<SoundBank Id="3161908922" Language="SFX" Hash="3776385188">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
 				<Event Id="981501359" Name="Grappling_Fire_Play" ObjectPath="\Events\Default Work Unit\Grappling_Fire_Play" MaxAttenuation="200." DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="44020876" Language="SFX">
-							<ShortName>B7K3LFC-grappling-gun-shoot-55067.wav</ShortName>
-							<Path>SFX\B7K3LFC-grappling-gun-shoot-55067_B28BB383.wem</Path>
-						</File>
 						<File Id="586683046" Language="SFX">
 							<ShortName>Grapple Shot + lineExtend+Impact.wav</ShortName>
 							<Path>SFX\Grapple Shot + lineExtend+Impact_BCE0790B.wem</Path>
@@ -62,6 +58,24 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="4210482921" Name="Grappling_Recharge" ObjectPath="\Events\Default Work Unit\Grappling_Recharge" MaxAttenuation="200." DurationType="OneShot" DurationMin="0.231472" DurationMax="0.412437">
+					<IncludedMemoryFiles>
+						<File Id="1025440588" Language="SFX">
+							<ShortName>Grapple Recharge+Shoot.wav</ShortName>
+							<Path>SFX\Grapple Recharge+Shoot_6EEDA829.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1696368149" Name="Grappling_Reel_In_Play" ObjectPath="\Events\Default Work Unit\Grappling_Reel_In_Play" MaxAttenuation="200." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="44020876" Language="SFX">
+							<ShortName>B7K3LFC-grappling-gun-shoot-55067.wav</ShortName>
+							<Path>SFX\B7K3LFC-grappling-gun-shoot-55067_B28BB383.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4158331891" Name="Grappling_Reel_In_Stop" ObjectPath="\Events\Default Work Unit\Grappling_Reel_In_Stop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3785866374" Name="Stop_Audio" ObjectPath="\Events\Default Work Unit\Stop_Audio" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>
 		</SoundBank>
 	</SoundBanks>

@@ -9,11 +9,11 @@ public class FlockWeights
 
     public FlockWeights()
     {
-       targetPos = 5f;
-       cohesion = 8f;
-       avoidance = 1f;
-       alignment = 10f;
-       obstacleAvoidance = 5f;
-       lavaAvoidance = 5f;
+       targetPos = 10f;
+       cohesion = 10f;
+       avoidance = 20f;
+       alignment = 5f;
+       obstacleAvoidance = 10f;
+       lavaAvoidance = 10f;
     }
 }

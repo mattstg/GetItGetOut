@@ -16,6 +16,10 @@ namespace AK
         static const AkUniqueID GRAPPLING_FIRE_PLAY = 981501359U;
         static const AkUniqueID GRAPPLING_FIRE_STOP = 3740708781U;
         static const AkUniqueID GRAPPLING_IMPACT = 1879650260U;
+        static const AkUniqueID GRAPPLING_RECHARGE = 4210482921U;
+        static const AkUniqueID GRAPPLING_REEL_IN_PLAY = 1696368149U;
+        static const AkUniqueID GRAPPLING_REEL_IN_STOP = 4158331891U;
+        static const AkUniqueID STOP_AUDIO = 3785866374U;
     } // namespace EVENTS
 
     namespace BANKS

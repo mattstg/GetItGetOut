@@ -301,27 +301,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &4792800311837656777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302317138168320099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 152ae7ddb509032429dd6031f43b334e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 100
-  force: 300
-  bullet: {fileID: 4792800312453895828}
-  BulletRB: {fileID: 7088590405552682033}
-  barrel: {fileID: 1302317138634458560}
-  lr: {fileID: 4792800313183609091}
-  selectButton: {fileID: -3051461004423495335, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  player: {fileID: 0}
-  playerRB: {fileID: 0}
 --- !u!114 &2744015095180206512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +323,27 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &4792800311837656777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302317138168320099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152ae7ddb509032429dd6031f43b334e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 100
+  force: 300
+  bullet: {fileID: 4792800312453895828}
+  BulletRB: {fileID: 7088590405552682033}
+  barrel: {fileID: 1302317138634458560}
+  lr: {fileID: 4792800313183609091}
+  selectButton: {fileID: -3051461004423495335, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  player: {fileID: 0}
+  playerRB: {fileID: 0}
 --- !u!1001 &6928488942422637937
 PrefabInstance:
   m_ObjectHideFlags: 0

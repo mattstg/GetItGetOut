@@ -1,6 +1,7 @@
-
-using System;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WatchManager : Manager
 {
@@ -10,11 +11,19 @@ public class WatchManager : Manager
     private WatchManager() {}
     #endregion
 
+    private int cachedTime = 0;
+    private int cachedMoney = 0;
+    
     private TMP_Text UITime;
+    private TMP_Text UIMoney;
+    private Button button;
     
     public override void Init()
     {
         UITime = GameLinks.Instance.UITime;
+        UIMoney = GameLinks.Instance.UIMoney;
+        button = GameLinks.Instance.button;
+        button?.onClick.AddListener(LoadMainScene);
     }
 
     public override void PostInit()
@@ -24,7 +33,20 @@ public class WatchManager : Manager
     
     public override void Refresh()
     {
-        UITime.SetText(MillisecondToDigitalTime(1000000));
+        int time = (int) LavaManager.Instance.TimeRemaining;
+        int money = Shop.Instance.inventory.money;
+        
+        if (UITime && cachedTime != time)
+        {
+            cachedTime = time;
+            UITime.SetText(SecondToDigitalTime(time));
+        }
+
+        if (UIMoney && cachedMoney != money)
+        {
+            cachedMoney = money;
+            UIMoney.SetText(IntToDigitalMoney(money));
+        }
     }
 
     public override void FixedRefresh()
@@ -32,10 +54,10 @@ public class WatchManager : Manager
         
     }
 
-    private string MillisecondToDigitalTime(int time)
+    private string SecondToDigitalTime(int time)
     {
-        int minutes = time / 60000;
-        int seconds = (time % 60000) / 1000;
+        int minutes = time / 60;
+        int seconds = time % 60;
         string min = "";
         string sec = "";
 
@@ -54,5 +76,23 @@ public class WatchManager : Manager
         sec += seconds.ToString();
 
         return $"{min}:{sec}";
+    }
+
+    private string IntToDigitalMoney(int money)
+    {
+        return $"${money}";
+    }
+
+
+    private void SaveMoney()
+    {
+        Shop.Instance.inventory.money += 1000;
+        Shop.Instance.WriteJSON();
+    }
+
+    private void LoadMainScene()
+    {
+        SaveMoney();
+        SceneManager.LoadScene("UIstartScene");
     }
 }

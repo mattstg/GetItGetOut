@@ -23,14 +23,15 @@ public class Inputs : MonoBehaviour
     public Transform leftHolsterSnap = null;
     public Transform rightHolsterSnap = null;
 
-    public Gun gun1 = null;
-    public Gun gun2 = null;
+    public Gun gunLeft = null;
+    public Gun gunRight = null;
 
-    public Transform gun2Forward = null;
-    public Transform gun1Forward = null;
+    public Transform gunRightForward = null;
+    public Transform gunLeftForward = null;
 
     public Transform rightControllerRotation;
     public Transform leftControllerRotation;
+    
     private bool haveGunRight = false;
     private bool haveGunLeft = false;
     
@@ -44,6 +45,9 @@ public class Inputs : MonoBehaviour
         
         rightTriggerToggle.action.performed += OnRightTriggerPressed;
         rightTriggerToggle.action.canceled += OnRightTriggerCancelled;
+
+        A.action.performed += OnAPerformed;
+        A.action.canceled += OnACancelled;
         
         //left
         leftTriggerReference.action.performed += OnLeftTriggerValueChanged;
@@ -55,18 +59,20 @@ public class Inputs : MonoBehaviour
         leftTriggerToggle.action.performed += OnLeftTriggerPressed;
         leftTriggerToggle.action.canceled += OnLeftTriggerCancelled;
 
+        X.action.performed += OnXPerformed;
+        X.action.canceled += OnXCancelled;
     }
 
     private void Update()
     {
         if (haveGunRight && A.action.ReadValue<float>() > 0.1f)
         {
-            gun2.Reeling();
+            gunRight.Reeling();
         }
 
         if (haveGunLeft && X.action.ReadValue<float>() > 0.1f)
         {
-            gun1.Reeling();
+            gunLeft.Reeling();
         }
     }
 
@@ -91,7 +97,7 @@ public class Inputs : MonoBehaviour
     {
         if (haveGunRight)
         {
-            gun2.FireBullet();
+            gunRight.FireBullet();
         }
     }
 
@@ -102,21 +108,27 @@ public class Inputs : MonoBehaviour
 
     private void OnRightGripPressed(InputAction.CallbackContext context)
     {
-        Shoot(gun2, rightHand, rightControllerRotation);
+        Shoot(gunRight, rightHand, rightControllerRotation);
         haveGunRight = true;
+        gunRight.Audio.PlayRecharge(gunRight.gameObject);
     }
 
     private void OnRightTriggerCancelled(InputAction.CallbackContext context)
     {
-        gun2.DestroySpringJoint();
+        if (haveGunRight)
+        {
+            gunRight.DestroySpringJoint();
+        }
     }
     
     private void OnRightGripCancelled(InputAction.CallbackContext context)
     {
         haveGunRight = false;
-        gun2.transform.position = rightHolsterSnap.gameObject.transform.position;
-        gun2.transform.eulerAngles = rightHolsterSnap.gameObject.transform.eulerAngles;
-        gun2.gameObject.transform.parent = rightHolsterSnap.gameObject.transform;
+        gunRight.DestroySpringJoint();
+        gunRight.transform.position = rightHolsterSnap.gameObject.transform.position;
+        gunRight.transform.eulerAngles = rightHolsterSnap.gameObject.transform.eulerAngles;
+        gunRight.gameObject.transform.parent = rightHolsterSnap.gameObject.transform;
+        gunRight.Audio.StopAllAudio(gunRight.gameObject);
     }
     
     private void OnLeftTriggerValueChanged(InputAction.CallbackContext context)
@@ -129,7 +141,7 @@ public class Inputs : MonoBehaviour
     {
         if (haveGunLeft)
         {
-            gun1.FireBullet();
+            gunLeft.FireBullet();
         }
     }
 
@@ -140,21 +152,51 @@ public class Inputs : MonoBehaviour
 
     private void OnLeftGripPressed(InputAction.CallbackContext context)
     {
-        Shoot(gun1, leftHand, leftControllerRotation);
+        Shoot(gunLeft, leftHand, leftControllerRotation);
         haveGunLeft = true;
+        gunLeft.Audio.PlayRecharge(gunLeft.gameObject);
     }
 
     private void OnLeftTriggerCancelled(InputAction.CallbackContext context)
     {
-        gun1.DestroySpringJoint();
+        if (haveGunLeft)
+        {
+            gunLeft.DestroySpringJoint();
+        }
+    }
+
+    private void OnAPerformed(InputAction.CallbackContext context)
+    {
+        if (haveGunRight && gunRight.bullet.hit)
+        {
+            gunRight.Audio.PlayReelIn(gunRight.gameObject);
+        }
+    }
+    private void OnACancelled(InputAction.CallbackContext context)
+    {
+        gunRight.Audio.StopReelIn(gunRight.gameObject);
+    }
+    private void OnXPerformed(InputAction.CallbackContext context)
+    {
+        if (haveGunLeft && gunLeft.bullet.hit)
+        {
+            gunLeft.Audio.PlayReelIn(gunLeft.gameObject);
+        }
+    }
+    private void OnXCancelled(InputAction.CallbackContext context)
+    {
+        gunLeft.Audio.StopReelIn(gunLeft.gameObject);
     }
     
+
     private void OnLeftGripCancelled(InputAction.CallbackContext context)
     {
         haveGunLeft = false;
-        gun1.transform.position = leftHolsterSnap.gameObject.transform.position;
-        gun1.transform.eulerAngles = leftHolsterSnap.gameObject.transform.eulerAngles;
-        gun1.gameObject.transform.parent = leftHolsterSnap.gameObject.transform;
+        gunLeft.DestroySpringJoint();
+        gunLeft.transform.position = leftHolsterSnap.gameObject.transform.position;
+        gunLeft.transform.eulerAngles = leftHolsterSnap.gameObject.transform.eulerAngles;
+        gunLeft.gameObject.transform.parent = leftHolsterSnap.gameObject.transform;
+        gunLeft.Audio.StopAllAudio(gunLeft.gameObject);
     }
     
     private void Shoot(Gun gun, Hands hand, Transform rotationController)

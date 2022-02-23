@@ -28,6 +28,7 @@ public class Bullet : MonoBehaviour
         {
             SwingToBuildings(collisionObj);
             SwingTheTreasures(collision);
+            chainGrapGun.Audio.StopShoot(chainGrapGun.gameObject);
             audio.PlayGrapplingImpact(gameObject);
         }
 
@@ -36,7 +37,6 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Grappable")
         {
-            //wallsound
             ConnectedRBToBullet = collision.gameObject.GetComponent<Rigidbody>();
             joint = gameObject.AddComponent<FixedJoint>();
             joint.connectedBody = ConnectedRBToBullet;
@@ -56,7 +56,6 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Treasure")
         {
-            //treasure sound
             ConnectedRBToBullet = collision.gameObject.GetComponent<Rigidbody>();
             joint = gameObject.AddComponent<FixedJoint>();
             joint.connectedBody = ConnectedRBToBullet;

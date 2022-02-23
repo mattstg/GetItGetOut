@@ -19,8 +19,8 @@ public class Player : MonoBehaviour ,IUpdaptable
         {
             gun1 = GameObject.Instantiate(obj);
             gun2 = GameObject.Instantiate(obj);
-            GameLinks.Instance.inputs.gun1 = gun1.GetComponentInChildren<Gun>();
-            GameLinks.Instance.inputs.gun2 = gun2.GetComponentInChildren<Gun>();
+            GameLinks.Instance.inputs.gunLeft = gun1.GetComponentInChildren<Gun>();
+            GameLinks.Instance.inputs.gunRight = gun2.GetComponentInChildren<Gun>();
             
 
         }

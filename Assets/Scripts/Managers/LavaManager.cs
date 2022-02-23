@@ -10,26 +10,28 @@ public class LavaManager : Manager
     protected LavaManager() { }
     #endregion
 
-    public Lava Lava { get; private set; }
+    public Lava lava { get; private set; }
+
+    public float TimeRemaining => lava.TimeRemaining;
 
     public override void Init()
     {
-        Lava = GameLinks.Instance.lava;
-        Lava.Init();
+        lava = GameLinks.Instance.lava;
+        lava.Init();
     }
 
     public override void PostInit()
     {
-        Lava.PostInit();
+        lava.PostInit();
     }
 
     public override void Refresh()
     {
-        Lava.Refresh();
+        lava.Refresh();
     }
 
     public override void FixedRefresh()
     {
-        Lava.FixedRefresh();
+        lava.FixedRefresh();
     }
 }
