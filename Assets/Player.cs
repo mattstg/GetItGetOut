@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour ,IUpdaptable
@@ -7,12 +5,17 @@ public class Player : MonoBehaviour ,IUpdaptable
     public Rigidbody rb;
     public GameObject gun1;
     public GameObject gun2;
+
+    private Audio.Player audio;
+
     public void Init()
     {
     }
 
     public void PostInit()
     {
+        rb = GetComponent<Rigidbody>();
+        
         var obj = Resources.Load<GameObject>("Prefabs/Guns/" + InitialGameSettings.guntype.ToString());
 
         if (obj)
@@ -21,25 +24,30 @@ public class Player : MonoBehaviour ,IUpdaptable
             gun2 = GameObject.Instantiate(obj);
             GameLinks.Instance.inputs.gunLeft = gun1.GetComponentInChildren<Gun>();
             GameLinks.Instance.inputs.gunRight = gun2.GetComponentInChildren<Gun>();
-            
-
         }
         else
         {
             Debug.Log("Could not find gun: " + InitialGameSettings.guntype.ToString());
         }
+
+        InitAudio();
     }
 
 
 
     public void FixedRefresh()
     {
-
     }
 
 
     public void Refresh()
     {
+    }
+
+    private void InitAudio()
+    {
+        audio = new Audio.Player();
+        audio.PlayWind(gameObject);
     }
 
 }

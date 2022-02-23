@@ -22,6 +22,11 @@ namespace AK
         static const AkUniqueID STOP_AUDIO = 3785866374U;
     } // namespace EVENTS
 
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID PLAYER_SPEED = 1062779386U;
+    } // namespace GAME_PARAMETERS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;

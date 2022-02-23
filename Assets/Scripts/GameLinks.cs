@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class GameLinks : MonoBehaviour
 {
     public static GameLinks Instance;
+    public Player player;
     public Transform[] respawnPositions;
     public Transform TreasursParents;
     public Holster holster;

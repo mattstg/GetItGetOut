@@ -79,12 +79,30 @@ public class Inputs : MonoBehaviour
 
     private void OnDestroy()
     {
-        leftTriggerReference.action.performed -= OnLeftTriggerValueChanged;
-        leftGripReference.action.performed -= OnLeftGripValueChanged;
         rightTriggerReference.action.performed -= OnRightTriggerValueChanged;
         rightGripReference.action.performed -= OnRightGripValueChanged;
+        
         rightGripToggle.action.performed -= OnRightGripPressed;
+        rightGripToggle.action.canceled -= OnRightGripCancelled;
+        
         rightTriggerToggle.action.performed -= OnRightTriggerPressed;
+        rightTriggerToggle.action.canceled -= OnRightTriggerCancelled;
+
+        A.action.performed -= OnAPerformed;
+        A.action.canceled -= OnACancelled;
+        
+        //left
+        leftTriggerReference.action.performed -= OnLeftTriggerValueChanged;
+        leftGripReference.action.performed -= OnLeftGripValueChanged;
+
+        leftGripToggle.action.performed -= OnLeftGripPressed;
+        leftGripToggle.action.canceled -= OnLeftGripCancelled;
+
+        leftTriggerToggle.action.performed -= OnLeftTriggerPressed;
+        leftTriggerToggle.action.canceled -= OnLeftTriggerCancelled;
+
+        X.action.performed -= OnXPerformed;
+        X.action.canceled -= OnXCancelled;
     }
     
     private void OnRightTriggerValueChanged(InputAction.CallbackContext context)
