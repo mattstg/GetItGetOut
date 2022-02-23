@@ -6,12 +6,16 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     [Range(1f, 10f)]
     public float speed = 5f;
     protected float maxSpeed = 10f;
+    protected float sqrMaxDistance = 20f;
+
     protected Rigidbody rb;
     protected FlockWeights weights;
     protected Flock ourFlock;
+
     protected Dinosaur[] GetAllDinosaurs { get { return FlockManager.Instance.GetAllDinosaurs(); } }
     protected List<Dinosaur> GetOtherDinosaursInFlock { get { return ourFlock.GetOtherDinosaursInFlock(this); } }
-    protected float GetLavaHeight { get { Debug.Log("not implemented for lava height"); return 0; } } // get value from lava manager
+
+    protected float GetLavaHeight { get { return LavaManager.Instance.lava.transform.position.y; } }
     protected float SqrDistanceToLeader { get { return Vector3.SqrMagnitude(transform.position - ourFlock.leader.transform.position); } }
     //avoid obstacles by raycast
 
@@ -47,9 +51,20 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     protected virtual void ApplyForces(Vector3 dir)
     {
         transform.forward = ourFlock.leader.transform.forward;
+
+        float sqrMagnitudeOfDir = Vector3.SqrMagnitude(dir);
+        speed = (maxSpeed * sqrMagnitudeOfDir) / sqrMaxDistance;
+
         rb.AddForce(dir.normalized * speed);
     }
 
+    protected virtual void DinosaursDeath()
+    {
+        if (transform.position.y < GetLavaHeight)
+        {
+            // delete this poor dinosaur
+        }
+    }
 
     #region Flocking Calculations
 
@@ -116,10 +131,9 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         public Vector3 GetAverage()
         {
             Vector3 desireDir = Vector3.zero;
-            desireDir = neighborsCohesion;
+            desireDir += neighborsCohesion;
             desireDir += neighborsAvoidance;
-            desireDir += followLeader;
-            //desireDir += leaderAlignement;
+            desireDir += leaderAlignement;
             desireDir /= 3f;
 
             return desireDir;
@@ -127,10 +141,10 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
 
         public void OutputRays(Vector3 pos)
         {
-            //UnityEngine.Debug.DrawRay(pos, neighborsAvoidance* debugDrawMult, Color.green);
+            //UnityEngine.Debug.DrawRay(pos, neighborsAvoidance * debugDrawMult, Color.green);
             //UnityEngine.Debug.DrawRay(pos, neighborsCohesion * debugDrawMult, Color.red);
-            //UnityEngine.Debug.DrawRay(pos, followLeader      * debugDrawMult, Color.yellow);
-            //UnityEngine.Debug.DrawRay(pos, followLeader      * debugDrawMult, Color.black);
+            //UnityEngine.Debug.DrawRay(pos, followLeader * debugDrawMult, Color.yellow);
+            //UnityEngine.Debug.DrawRay(pos, followLeader * debugDrawMult, Color.black);
             UnityEngine.Debug.DrawRay(pos, GetAverage()      * debugDrawMult, Color.blue);
         }
 
@@ -139,5 +153,4 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
             return base.ToString();
         }
     }
-
 }

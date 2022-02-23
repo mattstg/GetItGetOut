@@ -14,6 +14,7 @@ public class GameLinks : MonoBehaviour
     public TMP_Text UITime;
     public TMP_Text UIMoney;
     public Button button;
+    public Transform[] dinosaurWayPoints;
 
     public void SetupGameLinks()
     {
