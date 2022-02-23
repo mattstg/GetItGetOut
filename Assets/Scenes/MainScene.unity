@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.08410243, g: 0.27906075, b: 0.483764, a: 1}
+  m_IndirectSpecularColor: {r: 0.08409969, g: 0.2790599, b: 0.483765, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17829,6 +17829,8 @@ GameObject:
   m_Component:
   - component: {fileID: 752131898}
   - component: {fileID: 752131899}
+  - component: {fileID: 752131901}
+  - component: {fileID: 752131900}
   m_Layer: 0
   m_Name: lava
   m_TagString: Untagged
@@ -17848,6 +17850,7 @@ Transform:
   m_LocalScale: {x: 650, y: 1, z: 650}
   m_Children:
   - {fileID: 282546640}
+  - {fileID: 1235810096}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17863,6 +17866,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6023787ed0d9b184c9c7aec48020aeb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEmitter: {fileID: 1235810094}
+--- !u!114 &752131900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752131897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146653b9a996ab0409cf0e0ea92bda64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &752131901
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752131897}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 53.82851, z: 1.0003555}
+  m_Center: {x: 0, y: 26.414255, z: 0.00017775316}
 --- !u!1 &758059830
 GameObject:
   m_ObjectHideFlags: 0
@@ -29583,6 +29612,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222684358}
   m_Mesh: {fileID: 6672540390151343682, guid: 87aacd72bc2e46046bc6f30c92eb5719, type: 3}
+--- !u!1 &1235810094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1235810096}
+  - component: {fileID: 1235810095}
+  m_Layer: 0
+  m_Name: SoundEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &1235810095
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235810094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1235810096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235810094}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 752131898}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1235920528
 GameObject:
   m_ObjectHideFlags: 0
