@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID GRAPPLING_RECHARGE = 4210482921U;
         static const AkUniqueID GRAPPLING_REEL_IN_PLAY = 1696368149U;
         static const AkUniqueID GRAPPLING_REEL_IN_STOP = 4158331891U;
+        static const AkUniqueID LAVA_PLAY = 2024110332U;
         static const AkUniqueID STOP_AUDIO = 3785866374U;
     } // namespace EVENTS
 
