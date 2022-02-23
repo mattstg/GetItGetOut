@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 3f77072788e1024a8bf319984716da14
     GuidInternal: 
-    m_lastTime: -8585561454110492612
+    m_lastTime: -8585560340283684379
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -100,7 +100,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 46551bf89598214eaf4f6d4e06b3b350
     GuidInternal: 
-    m_lastTime: -8585561300974965435
+    m_lastTime: -8585560340284394425
     List:
     - name: Main
       guid: b8c06a53765809428cd5b17accf3ff5d
@@ -128,7 +128,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 26858e3ef419cd4b803db2a31dcf191c
     GuidInternal: 
-    m_lastTime: -8585561454110262590
+    m_lastTime: -8585560340283454361
     List:
     - name: Grappling_Fire_Play
       guid: c73bf055b25331429eaa8aec566e9c33
@@ -181,6 +181,74 @@ MonoBehaviour:
       maxAttenuation: 200
       maxDuration: 1.067872
       minDuration: 0.387555
+    - name: Grappling_Recharge
+      guid: 5de86e9c41980746b58ceb88f9d7b3d8
+      id: 4210482921
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26858e3ef419cd4b803db2a31dcf191c
+      - ElementName: Grappling_Recharge
+        ObjectType: 3
+        guid: 5de86e9c41980746b58ceb88f9d7b3d8
+      Path: Events\Default Work Unit\Grappling_Recharge
+      maxAttenuation: 200
+      maxDuration: 0.412437
+      minDuration: 0.231472
+    - name: Grappling_Reel_In_Play
+      guid: 4eac70a94e136d40a57b2b837b5ebcd1
+      id: 1696368149
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26858e3ef419cd4b803db2a31dcf191c
+      - ElementName: Grappling_Reel_In_Play
+        ObjectType: 3
+        guid: 4eac70a94e136d40a57b2b837b5ebcd1
+      Path: Events\Default Work Unit\Grappling_Reel_In_Play
+      maxAttenuation: 200
+      maxDuration: -1
+      minDuration: -1
+    - name: Grappling_Reel_In_Stop
+      guid: a58a8a7c1c28bf4b84f0f22ab29cd181
+      id: 4158331891
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26858e3ef419cd4b803db2a31dcf191c
+      - ElementName: Grappling_Reel_In_Stop
+        ObjectType: 3
+        guid: a58a8a7c1c28bf4b84f0f22ab29cd181
+      Path: Events\Default Work Unit\Grappling_Reel_In_Stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_Audio
+      guid: 177ba112c141854cbad5b48ef8d11926
+      id: 3785866374
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26858e3ef419cd4b803db2a31dcf191c
+      - ElementName: Stop_Audio
+        ObjectType: 3
+        guid: 177ba112c141854cbad5b48ef8d11926
+      Path: Events\Default Work Unit\Stop_Audio
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -193,8 +261,22 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 9c749ab1c748524a91c2a8021865b28d
     GuidInternal: 
-    m_lastTime: -8585564502340610388
-    List: []
+    m_lastTime: -8585559719275047451
+    List:
+    - name: Player_Speed
+      guid: 23795c4f2508694c8059e93a66037506
+      id: 1062779386
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 9c749ab1c748524a91c2a8021865b28d
+      - ElementName: Player_Speed
+        ObjectType: 13
+        guid: 23795c4f2508694c8059e93a66037506
+      Path: Game Parameters\Default Work Unit\Player_Speed
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -238,7 +320,7 @@ MonoBehaviour:
     m_lastTime: -8585564502341730478
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 05000000060000000c0000000d000000
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

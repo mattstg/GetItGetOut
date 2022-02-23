@@ -7,6 +7,9 @@ public class Player : MonoBehaviour ,IUpdaptable
     public Rigidbody rb;
     public GameObject gun1;
     public GameObject gun2;
+
+    private Audio.Player audio;
+
     public void Init()
     {
     }
@@ -28,6 +31,8 @@ public class Player : MonoBehaviour ,IUpdaptable
         {
             Debug.Log("Could not find gun: " + InitialGameSettings.guntype.ToString());
         }
+
+        InitAudio();
     }
 
 
@@ -40,6 +45,12 @@ public class Player : MonoBehaviour ,IUpdaptable
 
     public void Refresh()
     {
+    }
+
+    private void InitAudio()
+    {
+        audio = new Audio.Player();
+        audio.PlayWind(gameObject);
     }
 
 }
