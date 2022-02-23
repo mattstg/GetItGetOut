@@ -137,9 +137,6 @@ PlayerSettings:
   bundleVersion: 0.1
   preloadedAssets:
   - {fileID: 11400000, guid: f1b4a7314d6ab084ab415ba5620965cb, type: 2}
-  - {fileID: 11400000, guid: c2340d255e56b454f8b7dba611099c07, type: 2}
-  - {fileID: -6813620337495110950, guid: 1f09533ab5b0a8f4495f6e004cea9984, type: 2}
-  - {fileID: 769729643463524171, guid: c4ea4a6971460464ebe49279a4a46f96, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -157,6 +154,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.DefaultCompany.GetItGetOut
     Standalone: com.DefaultCompany.GetItGetOut
   buildNumber:
     Standalone: 0
