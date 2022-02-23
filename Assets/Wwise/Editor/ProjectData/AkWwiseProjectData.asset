@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 3f77072788e1024a8bf319984716da14
     GuidInternal: 
-    m_lastTime: -8585560340283684379
+    m_lastTime: -8585559508217692798
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -100,7 +100,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 46551bf89598214eaf4f6d4e06b3b350
     GuidInternal: 
-    m_lastTime: -8585560340284394425
+    m_lastTime: -8585559508217512789
     List:
     - name: Main
       guid: b8c06a53765809428cd5b17accf3ff5d
@@ -128,7 +128,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 26858e3ef419cd4b803db2a31dcf191c
     GuidInternal: 
-    m_lastTime: -8585560340283454361
+    m_lastTime: -8585559508217852811
     List:
     - name: Grappling_Fire_Play
       guid: c73bf055b25331429eaa8aec566e9c33
@@ -232,6 +232,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Lava_Play
+      guid: bc4b1da16612c94faa4733a03155326a
+      id: 2024110332
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26858e3ef419cd4b803db2a31dcf191c
+      - ElementName: Lava_Play
+        ObjectType: 3
+        guid: bc4b1da16612c94faa4733a03155326a
+      Path: Events\Default Work Unit\Lava_Play
+      maxAttenuation: 500
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_Audio
       guid: 177ba112c141854cbad5b48ef8d11926
       id: 3785866374
@@ -249,6 +266,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Wind_Play
+      guid: 05a260c7c9ac604696d841fb0b63aa0e
+      id: 2477230596
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26858e3ef419cd4b803db2a31dcf191c
+      - ElementName: Wind_Play
+        ObjectType: 3
+        guid: 05a260c7c9ac604696d841fb0b63aa0e
+      Path: Events\Default Work Unit\Wind_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
