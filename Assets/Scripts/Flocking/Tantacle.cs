@@ -16,7 +16,7 @@ public class Tantacle : MonoBehaviour
     public float targetDist;
 
     public float smoothSpeed;
-    public float t;
+    public float trailSpeed;
 
     public float wiggleSpeed;
     public float wiggleMagnitude;
@@ -44,7 +44,7 @@ public class Tantacle : MonoBehaviour
 
         for (int i = 1; i < segmentPoses.Length; i++)
         {
-            segmentPoses[i] = Vector3.SmoothDamp(segmentPoses[i], segmentPoses[i - 1] + targetDir.right * targetDist, ref segmentV[i], smoothSpeed + 1 / t);
+            segmentPoses[i] = Vector3.SmoothDamp(segmentPoses[i], segmentPoses[i - 1] + targetDir.right * targetDist, ref segmentV[i], smoothSpeed + 1 / trailSpeed);
         }
 
         LineRenderer.SetPositions(segmentPoses);
