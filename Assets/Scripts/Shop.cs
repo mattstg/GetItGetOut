@@ -24,8 +24,9 @@ public class Shop : Manager
 
     public override void Init()
     {
+        inventory = new Inventory();
+        inventory.money = 0;
         ReadJSON();
-        Debug.Log(JsonUtility.ToJson(inventory));
     }
 
     public override void PostInit()
@@ -35,14 +36,12 @@ public class Shop : Manager
 
     private void ReadJSON()
     {
-        inventory = new Inventory();
-        inventory.money = 0;
-        
+        string filePath = Application.streamingAssetsPath + "/GameData/inventory.json";
+
         #if UNITY_EDITOR
-        
         try
         {
-            using (StreamReader r = new StreamReader("json/inventory.json"))
+            using (StreamReader r = new StreamReader(filePath))
             {
                 string json = r.ReadToEnd();
                 inventory = (Inventory)JsonUtility.FromJson(json, typeof(Inventory));
@@ -54,15 +53,28 @@ public class Shop : Manager
             throw;
         }
         #endif
+        
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            Debug.Log("aaa");
+            WWW reader = new WWW(filePath);
+            while (!reader.isDone) { }
+
+            string json;
+            json = reader.text;
+            inventory = (Inventory)JsonUtility.FromJson(json, typeof(Inventory));
+        }
     }
 
     public void WriteJSON()
     {
+        string filePath = Application.streamingAssetsPath + "/GameData/inventory.json";
+        
         #if UNITY_EDITOR
         
         try
         {
-            using (StreamWriter w = new StreamWriter("json/inventory.json"))
+            using (StreamWriter w = new StreamWriter(filePath))
             {
                 w.Flush();
                 w.Write(JsonUtility.ToJson(inventory));
@@ -80,6 +92,6 @@ public class Shop : Manager
 
     public override void Clean()
     {
-        return;
+        inventory = null;
     }
 }

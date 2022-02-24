@@ -31,7 +31,7 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     public virtual void Refresh()
     {
         DesireDirectionVectors theVector = new DesireDirectionVectors();
-        theVector.leaderAlignement = LeaderAlignment();
+        theVector.leaderAlignement += LeaderAlignment();
         theVector.neighborsAvoidance += NeighborsAvoidance();
         theVector.neighborsCohesion += NeighborsCohesion();
         theVector.buildingsAvoidance += BuildingAvoidance();
@@ -160,11 +160,12 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         raycast = new Ray(transform.position, direction);
         if (Physics.Raycast(raycast, out raycastHit, 10f))
         {
-            if (raycastHit.collider.tag == "Grappable")
-            {
-                adjustDir = - transform.forward; //raycastHit.collider.transform.right;
-                //Debug.Log("hits");
-            }
+            //GameObject g = raycastHit.transform.gameObject;
+            //if (raycastHit.transform.gameObject.layer == LayerMask.GetMask("Building"))
+            //{
+            //    adjustDir = -transform.forward; //raycastHit.collider.transform.right;
+            //    Debug.Log("hits");
+            //}
         }
 
         return adjustDir * weights.obstacleAvoidance;
