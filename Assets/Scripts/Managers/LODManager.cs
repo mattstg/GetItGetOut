@@ -3,51 +3,91 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class LODManager : Manager<LODManager, CubeTile>
+public class LODManager : Manager
 {
-    public Vector3 mainBox;
-    public GameObject box;
+    const int nbRegion = 10;
+    Player GetPlayer { get { return PlayerManager.Instance.player; } }
+    GameObject buildingParent { get { return GameLinks.Instance.staticBuildingParent; } }
+    int mapHeight { get { return GameLinks.Instance.heightOfMap; } } 
 
-    public Vector3 divBoxVariables;
 
-    float x;
-    float y;
-    float z;
-
+    List<Region> RegionList;
+    int regionHeight;
     public override void Init()
     {
+        regionHeight = mapHeight / nbRegion;
+        List<MeshRenderer> everyBuildingMesh = buildingParent.GetComponentsInChildren<MeshRenderer>().ToList();
+        //fullListOfMesh = buildingParent.GetComponentsInChildren<MeshRenderer>().ToList();
+        List<MeshRenderer> listToGiveToRegion = new List<MeshRenderer>();
 
-        
+        for (int i = 1; i < nbRegion + 1; i++)
+        {
+            int BottomOfRegion = (i * nbRegion) - regionHeight;
+            int topOfRegion = i * nbRegion;
+            listToGiveToRegion.Clear();
+
+            foreach (var mesh in everyBuildingMesh)
+            {
+                if (mesh.transform.position.y > BottomOfRegion && mesh.transform.position.y < topOfRegion)
+                {
+                    listToGiveToRegion.Add(mesh);
+                }
+            }
+            RegionList.Add(new Region(listToGiveToRegion, topOfRegion, BottomOfRegion));
+        }
+        //RegionList.
     }
 
     public override void PostInit()
     {
-        //*to rework
-        x = mainBox.x / divBoxVariables.x;
-        y = mainBox.y / divBoxVariables.y;
-        z = mainBox.z / divBoxVariables.z;
+        
 
-        Vector3 centerPos = new Vector3(-(mainBox.x / divBoxVariables.x) / 2, -(mainBox.y / divBoxVariables.y) / 2, -(mainBox.z / divBoxVariables.z) / 2);
-        for (int u = 0; u < divBoxVariables.x; u++)
-        {
-            centerPos.x += x;
-            for (int o = 0; o < divBoxVariables.y; o++)
-            {
-                centerPos.y += y;
-                for (int p = 0; p < divBoxVariables.z; p++)
-                {
-                    centerPos.z += z;
-                    box.transform.localScale = new Vector3(x, y, z);
-                    GameObject.Instantiate(box, new Vector3(centerPos.x, centerPos.y, centerPos.z), Quaternion.identity);
 
-                }
-
-                centerPos.z = -(mainBox.z / divBoxVariables.z) / 2;
-            }
-
-            centerPos.y = -(mainBox.y / divBoxVariables.y) / 2;
-        }
     }
 
+    public override void Refresh()
+    {
+        
+    }
 
+    public override void FixedRefresh()
+    {
+        
+    }
+
+    public override void Clean()
+    {
+        
+    }
+
+    private class Region
+    {
+        List<MeshRenderer> meshes;
+        int topHeight;
+        int bottomHeight;
+
+        public Region(List<MeshRenderer> meshes, int topHeight, int bottomHeight)
+        {
+            this.meshes = meshes;
+            this.topHeight = topHeight;
+            this.bottomHeight = bottomHeight;
+        }
+
+        public void ToggleMeshes(bool value)
+        {
+            foreach (var mesh in meshes)
+            {
+                mesh.enabled = value;
+            }
+        }
+
+        public void ToggleOffRegion()
+        {
+            foreach (var mesh in meshes)
+            {
+                mesh.gameObject.SetActive(false);
+            }
+        }
+
+    }
 }

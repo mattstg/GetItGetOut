@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 2035718475076549319}
   - component: {fileID: 1030087110957014594}
   - component: {fileID: 1030087110957014605}
+  - component: {fileID: 703730513584116780}
   m_Layer: 0
   m_Name: Building_I_cell.010
   m_TagString: Grappable
@@ -201,6 +202,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -9174228275681775616, guid: f2f0200c97a14c44592e68df29dfd075, type: 3}
+--- !u!114 &703730513584116780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030087110957014604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2976651704527524957
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +227,7 @@ GameObject:
   - component: {fileID: 3587277912386014398}
   - component: {fileID: 2976651704527524947}
   - component: {fileID: 2976651704527524946}
+  - component: {fileID: 9078363013381851184}
   m_Layer: 0
   m_Name: Building_I_cell.006
   m_TagString: Grappable
@@ -314,6 +328,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5297778811431662924, guid: f2f0200c97a14c44592e68df29dfd075, type: 3}
+--- !u!114 &9078363013381851184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976651704527524957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4048681538172447026
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +353,7 @@ GameObject:
   - component: {fileID: 6664373512404379}
   - component: {fileID: 4048681538172447024}
   - component: {fileID: 4048681538172447027}
+  - component: {fileID: 4553067913673110740}
   m_Layer: 0
   m_Name: Building_I_cell.003
   m_TagString: Grappable
@@ -427,6 +454,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1695794402537561291, guid: f2f0200c97a14c44592e68df29dfd075, type: 3}
+--- !u!114 &4553067913673110740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048681538172447026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4519079365753274403
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +479,7 @@ GameObject:
   - component: {fileID: 5652446630170292396}
   - component: {fileID: 4519079365753274401}
   - component: {fileID: 4519079365753274400}
+  - component: {fileID: 4838672926834582031}
   m_Layer: 0
   m_Name: Building_I_cell.001
   m_TagString: Grappable
@@ -540,6 +580,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3579307798873364252, guid: f2f0200c97a14c44592e68df29dfd075, type: 3}
+--- !u!114 &4838672926834582031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519079365753274403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5053046499238518899
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +605,7 @@ GameObject:
   - component: {fileID: 1038600651394367974}
   - component: {fileID: 5053046499238518897}
   - component: {fileID: 5053046499238518896}
+  - component: {fileID: 8503966822406876060}
   m_Layer: 0
   m_Name: Building_I_cell.040
   m_TagString: Grappable
@@ -653,6 +706,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6163349514445167171, guid: f2f0200c97a14c44592e68df29dfd075, type: 3}
+--- !u!114 &8503966822406876060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5053046499238518899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5740437824669441144
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +731,7 @@ GameObject:
   - component: {fileID: 7054188293691844949}
   - component: {fileID: 5740437824669441150}
   - component: {fileID: 5740437824669441145}
+  - component: {fileID: 7302249914642763097}
   m_Layer: 0
   m_Name: Building_I_cell.004
   m_TagString: Grappable
@@ -766,6 +832,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -434521116164984376, guid: f2f0200c97a14c44592e68df29dfd075, type: 3}
+--- !u!114 &7302249914642763097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5740437824669441144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6082242621997495216
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,6 +857,7 @@ GameObject:
   - component: {fileID: 2132626608009158141}
   - component: {fileID: 6082242621997495222}
   - component: {fileID: 6082242621997495217}
+  - component: {fileID: 1401170160631519589}
   m_Layer: 0
   m_Name: Building_I_cell.038
   m_TagString: Grappable
@@ -879,6 +958,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4573643875497851832, guid: f2f0200c97a14c44592e68df29dfd075, type: 3}
+--- !u!114 &1401170160631519589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6082242621997495216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6957055734880758232
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +983,7 @@ GameObject:
   - component: {fileID: 2987242536727200014}
   - component: {fileID: 6957055734880758238}
   - component: {fileID: 6957055734880758233}
+  - component: {fileID: 4405938856296360128}
   m_Layer: 0
   m_Name: Building_I_cell.002
   m_TagString: Grappable
@@ -992,6 +1084,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1866679361790379556, guid: f2f0200c97a14c44592e68df29dfd075, type: 3}
+--- !u!114 &4405938856296360128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6957055734880758232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7784446628157874390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,6 +1109,7 @@ GameObject:
   - component: {fileID: 8745824113515306675}
   - component: {fileID: 7784446628157874388}
   - component: {fileID: 7784446628157874391}
+  - component: {fileID: 2723725433529186351}
   m_Layer: 0
   m_Name: Building_I_cell
   m_TagString: Grappable
@@ -1105,6 +1210,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8842474466327225692, guid: f2f0200c97a14c44592e68df29dfd075, type: 3}
+--- !u!114 &2723725433529186351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784446628157874390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7817245110439920982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1235,7 @@ GameObject:
   - component: {fileID: 4770024060273982250}
   - component: {fileID: 7817245110439920980}
   - component: {fileID: 7817245110439920983}
+  - component: {fileID: 7584819248270932703}
   m_Layer: 0
   m_Name: Building_I_cell.009
   m_TagString: Grappable
@@ -1218,3 +1336,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5503933388638637263, guid: f2f0200c97a14c44592e68df29dfd075, type: 3}
+--- !u!114 &7584819248270932703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7817245110439920982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

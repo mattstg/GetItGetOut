@@ -17,6 +17,8 @@ public class GameLinks : MonoBehaviour
     public TMP_Text UIMoney;
     public Button button;
     public Transform[] dinosaurWayPoints;
+    public GameObject staticBuildingParent;
+    public int heightOfMap;
 
     public void SetupGameLinks()
     {
