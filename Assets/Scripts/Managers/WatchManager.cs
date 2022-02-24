@@ -11,8 +11,8 @@ public class WatchManager : Manager
     private WatchManager() {}
     #endregion
 
-    private int cachedTime = 0;
-    private int cachedMoney = 0;
+    private int cachedTime;
+    private int cachedMoney;
     
     private TMP_Text UITime;
     private TMP_Text UIMoney;
@@ -23,6 +23,8 @@ public class WatchManager : Manager
         UITime = GameLinks.Instance.UITime;
         UIMoney = GameLinks.Instance.UIMoney;
         button = GameLinks.Instance.button;
+        cachedMoney = 0;
+        cachedTime = 0;
     }
 
     public override void PostInit()
@@ -97,6 +99,7 @@ public class WatchManager : Manager
 
     private void LoadMainScene()
     {
+        Debug.Log(("LOAD MAIN SCENE CALLED"));
         SaveMoney();
         SceneManager.LoadScene("UIstartScene");
     }
