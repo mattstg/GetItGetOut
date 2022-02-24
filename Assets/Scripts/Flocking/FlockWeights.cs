@@ -13,7 +13,6 @@ public class FlockWeights
        cohesion = 10f;
        avoidance = 20f;
        alignment = 5f;
-       obstacleAvoidance = 20f;
-       lavaAvoidance = 10f;
+       obstacleAvoidance = 30f;
     }
 }

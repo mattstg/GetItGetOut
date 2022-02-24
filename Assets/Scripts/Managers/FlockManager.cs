@@ -5,23 +5,31 @@ using UnityEngine;
 public class FlockManager : Manager<FlockManager, Flock>
 {
     Flock[] allFlocks;
+    List <Dinosaur> allDinosaurs;
     public override void Init()
     {
+        allDinosaurs = new List<Dinosaur>();
         allFlocks = GameObject.FindObjectsOfType<Flock>();
+
         foreach (Flock flock in allFlocks)
         {
             Add(flock);
             flock.Init();
         }
+
+        foreach (Flock flock in allFlocks)
+        {
+            allDinosaurs.Add(flock.GetComponentInChildren<Dinosaur>());
+            //allDinosaurs.Add(flock.GetComponentInChildren<Leader>());
+        }
     }
 
     public override void PostInit()
+    { }
+
+    public List<Dinosaur> GetAllDinosaurs()
     {
-    }
-    public Dinosaur[] GetAllDinosaurs()
-    {
-        Debug.Log("GetAllDinasours");
-        return null;
+        return allDinosaurs;
     }
 
     //public override void Refresh()
