@@ -12,7 +12,7 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     protected FlockWeights weights;
     protected Flock ourFlock;
 
-    protected Dinosaur[] GetAllDinosaurs { get { return FlockManager.Instance.GetAllDinosaurs(); } }
+    protected List< Dinosaur> GetAllDinosaurs { get { return ourFlock.GetOtherFlocks(this, GetOtherDinosaursInFlock); } }
     protected List<Dinosaur> GetOtherDinosaursInFlock { get { return ourFlock.GetOtherDinosaursInFlock(this); } }
     protected float GetLavaHeight { get { return LavaManager.Instance.lava.transform.position.y; } }
     protected float SqrDistanceToLeader { get { return Vector3.SqrMagnitude(transform.position - ourFlock.leader.transform.position); } }
@@ -106,7 +106,7 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         float avoidanceVectorSqrManitude;
         int numToAvoid = 1;
         float sqrDistanceToAvoidNeighbors = 25f;
-        //float sqrDistanceToAvoidFlocks = 50f;
+        float sqrDistanceToAvoidFlocks = 50f;
 
         // for its own flock
         if (Vector3.SqrMagnitude(transform.position - ourFlock.leader.transform.position) < sqrDistanceToAvoidNeighbors)
@@ -126,17 +126,17 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
             }
         }
 
-        //// for other flocks
-        //foreach (Dinosaur dinosaur in d)
-        //{
-        //    if (Vector3.SqrMagnitude(transform.position - dinosaur.transform.position) < sqrDistanceToAvoidFlocks)
-        //    {
-        //        numToAvoid++;
-        //        currentSqrManitude = Vector3.SqrMagnitude(transform.position - dinosaur.transform.position);
-        //        avoidanceVectorSqrManitude = (sqrDistanceToAvoidFlocks - currentSqrManitude) / sqrDistanceToAvoidFlocks;
-        //        avoidanceVector += (transform.position - dinosaur.transform.position) * avoidanceVectorSqrManitude;
-        //    }
-        //}
+        // for other flocks
+        foreach (Dinosaur dinosaur in GetAllDinosaurs)
+        {
+            if (Vector3.SqrMagnitude(transform.position - dinosaur.transform.position) < sqrDistanceToAvoidFlocks)
+            {
+                numToAvoid++;
+                currentSqrManitude = Vector3.SqrMagnitude(transform.position - dinosaur.transform.position);
+                avoidanceVectorSqrManitude = (sqrDistanceToAvoidFlocks - currentSqrManitude) / sqrDistanceToAvoidFlocks;
+                avoidanceVector += (transform.position - dinosaur.transform.position) * avoidanceVectorSqrManitude;
+            }
+        }
 
         if (numToAvoid != 0)
             avoidanceVector /= numToAvoid;
@@ -156,7 +156,7 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         Ray raycast;
 
         Vector3 adjustDir = Vector3.zero;
-        Vector3 direction = ourFlock.leader.GetRandomWayPoint() - transform.position;
+        Vector3 direction = rb.velocity;
 
         raycast = new Ray(transform.position, direction);
         if (Physics.Raycast(raycast, out raycastHit, 10f))
