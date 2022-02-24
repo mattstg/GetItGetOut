@@ -100,7 +100,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 46551bf89598214eaf4f6d4e06b3b350
     GuidInternal: 
-    m_lastTime: -8585559383881345886
+    m_lastTime: -8585558877904902774
     List:
     - name: Main
       guid: b8c06a53765809428cd5b17accf3ff5d
@@ -128,7 +128,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 26858e3ef419cd4b803db2a31dcf191c
     GuidInternal: 
-    m_lastTime: -8585559426822654726
+    m_lastTime: -8585558877905072788
     List:
     - name: Grappling_Fire_Play
       guid: c73bf055b25331429eaa8aec566e9c33
@@ -266,6 +266,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Treasure_Collision
+      guid: 2e6301d360d47d49866322bbc2c6ce91
+      id: 2344555875
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26858e3ef419cd4b803db2a31dcf191c
+      - ElementName: Treasure_Collision
+        ObjectType: 3
+        guid: 2e6301d360d47d49866322bbc2c6ce91
+      Path: Events\Default Work Unit\Treasure_Collision
+      maxAttenuation: 200
+      maxDuration: 1.271713
+      minDuration: 0.713725
     - name: Treasure_Play
       guid: 21a98259912f0044ac7fa684883c23a3
       id: 1817200631
