@@ -160,11 +160,11 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         raycast = new Ray(transform.position, direction);
         if (Physics.Raycast(raycast, out raycastHit, 10f))
         {
-            if (raycastHit.collider.tag == "Grappable")
-            {
-                adjustDir = - transform.forward; //raycastHit.collider.transform.right;
-                //Debug.Log("hits");
-            }
+            //if (raycastHit.collider.tag == "Grappable")
+            //{
+            //    adjustDir = - transform.forward; //raycastHit.collider.transform.right;
+            //    //Debug.Log("hits");
+            //}
         }
 
         return adjustDir * weights.obstacleAvoidance;
