@@ -7,6 +7,7 @@ public class Flock : MonoBehaviour, IUpdaptable
     public Leader leader;
     public Dinosaur[] dinosaurs;
     List<Dinosaur> dinosaursInFlock;
+    //List<Dinosaur> allDinosaursInOtherFlocks = new List<Dinosaur>(FlockManager.Instance.GetAllDinosaurs());
 
     public void Init()
     {
@@ -58,4 +59,14 @@ public class Flock : MonoBehaviour, IUpdaptable
         temp.Remove(dinosaur);
         return temp;
     }
+
+    //public List<Dinosaur> GetOtherFlocks(List<Dinosaur> dinosaur)
+    //{
+        //List<Dinosaur> temp = new List<Dinosaur>(allDinosaursInOtherFlocks);
+        //foreach (Dinosaur dino in dinosaur)
+        //{
+        //    temp.Remove(dino);
+        //}
+        //return temp;
+    //}
 }
