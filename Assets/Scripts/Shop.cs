@@ -54,10 +54,10 @@ public class Shop : Manager
         }
         #endif
         
-        #if UNITY_ANDROID
-        inventory = new Inventory();
-        inventory.money = 1000;
-        #endif
+        //#if UNITY_ANDROID
+        //inventory = new Inventory();
+        //inventory.money = 1000;
+        //#endif
         
     }
 
