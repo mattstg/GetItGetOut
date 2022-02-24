@@ -6,6 +6,7 @@ public abstract class Manager : IUpdaptable
     public abstract void Init();
     public abstract void PostInit();
     public abstract void Refresh();
+    public abstract void Clean();
 }
 public abstract class Manager<T, E> : Manager, IManager<E> where T : class, new() where E : IUpdaptable {
 
@@ -48,32 +49,38 @@ public abstract class Manager<T, E> : Manager, IManager<E> where T : class, new(
     {
         toRemove.Push(item);
     }
+
+    public override void Clean()
+    {
+        CleanManager();
+    }
    
     #endregion
 
-    #region Private Methods
-    private void AddStackItemsToCollection()
+    #region Protected Methods
+    //Those methods are called by default but could be used by children in case of override.
+    protected void AddStackItemsToCollection()
     {
         while (toAdd.Count > 0)
         {
             colletion.Add(toAdd.Pop());
         }
     }
-    private void RemoveStackItemsFromCollection()
+    protected void RemoveStackItemsFromCollection()
     {
         while (toRemove.Count > 0)
         {
             colletion.Remove(toRemove.Pop());
         }
     }
-    private void UpdateCollection()
+    protected void UpdateCollection()
     {
         foreach (var item in colletion)
         {
             item.Refresh();
         }
     }
-    private void FixedUpdateCollection()
+    protected void FixedUpdateCollection()
     {
         foreach (var item in colletion)
         {
@@ -81,50 +88,12 @@ public abstract class Manager<T, E> : Manager, IManager<E> where T : class, new(
         }
     }
 
+    protected void CleanManager()
+    {
+        colletion.Clear();
+        toAdd.Clear();
+        toRemove.Clear();
+    }
+
     #endregion
 }
-
-// public class dinosor : IUpdaptable
-// {
-//     public void Init()
-//     {
-//         throw new System.NotImplementedException();
-//     }
-//
-//     public void PostInit()
-//     {
-//         throw new System.NotImplementedException();
-//     }
-//
-//     public void Refresh()
-//     {
-//         throw new System.NotImplementedException();
-//     }
-//
-//     public void FixedRefresh()
-//     {
-//         throw new System.NotImplementedException();
-//     }
-// }
-//
-//
-// public class DinosorManager : Manager<DinosorManager, dinosor>
-// {
-//     public override void Init()
-//     {
-//         
-//     }
-//
-//     public override void PostInit()
-//     {
-//         throw new System.NotImplementedException();
-//     }
-// }
-//
-// public class MainEntry
-// {
-//     public void createDinsosor()
-//     {
-//         DinosorManager.Instance.Add(new dinosor());
-//     }
-// }

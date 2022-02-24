@@ -34,4 +34,8 @@ public class PlayerManager : Manager
         player.FixedRefresh();
     }
 
+    public override void Clean()
+    {
+        return;
+    }
 }

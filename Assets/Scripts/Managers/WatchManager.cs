@@ -116,4 +116,8 @@ public class WatchManager : Manager
         Debug.Log("prompt");
     }
 
+    public override void Clean()
+    {
+        return;
+    }
 }
