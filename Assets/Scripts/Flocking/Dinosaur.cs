@@ -42,6 +42,7 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
 
         ApplyForces(theVector.GetAverage(), theVector);
         BuildingAvoidance();
+        DinosaursDeath();
     }
 
     public void FixedRefresh()
@@ -68,7 +69,7 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     {
         if (transform.position.y < GetLavaHeight)
         {
-            // delete this poor dinosaur
+            gameObject.SetActive(false);
         }
     }
 
