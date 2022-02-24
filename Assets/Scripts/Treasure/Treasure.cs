@@ -28,7 +28,11 @@ public class Treasure : MonoBehaviour, IUpdaptable
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Bullet"))
-        audio.StopAllAudio(gameObject);
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            audio.StopAllAudio(gameObject);
+        }
+
+        audio.PlayCollision(gameObject);
     }
 }
