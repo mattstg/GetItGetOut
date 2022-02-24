@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2871499481425736730}
   - component: {fileID: 5310375446828088131}
   - component: {fileID: 6315454688554054805}
+  - component: {fileID: 7340740889462591960}
   m_Layer: 0
   m_Name: Building_A1_cell.005
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +106,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689629036072968944}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -113,6 +114,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7340740889462591960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689629036072968944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1287455574381516015
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,9 +139,10 @@ GameObject:
   - component: {fileID: 7508260166440900972}
   - component: {fileID: 2484188860380382580}
   - component: {fileID: 6774213201486508554}
+  - component: {fileID: 4437549588225971501}
   m_Layer: 0
   m_Name: Building_A1_cell.007
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,7 +232,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287455574381516015}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -226,6 +240,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4437549588225971501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287455574381516015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1542736613968102649
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,9 +265,10 @@ GameObject:
   - component: {fileID: 2887819419244890361}
   - component: {fileID: 2091730228306884734}
   - component: {fileID: 5920689990198583616}
+  - component: {fileID: 2794243123223221784}
   m_Layer: 0
   m_Name: Building_A1_cell.010
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -331,7 +358,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542736613968102649}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -339,6 +366,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2794243123223221784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542736613968102649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1785052098560069633
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,9 +389,11 @@ GameObject:
   - component: {fileID: 1409089853434186427}
   - component: {fileID: 7697497477235413640}
   - component: {fileID: 6649302108059727496}
+  - component: {fileID: 6695217603848148425}
+  - component: {fileID: 5340145762190997399}
   m_Layer: 0
   m_Name: building_A1_Broken_Variant_1
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -407,6 +448,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.9821086, y: 2.661686, z: 2.0200982}
   m_Center: {x: 2.953398, y: 16.468195, z: -1.8303378}
+--- !u!54 &6695217603848148425
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785052098560069633}
+  serializedVersion: 2
+  m_Mass: 1000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &5340145762190997399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785052098560069633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71685bc0e2311aa438a62c3773df3875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minRandomRange: -10
+  maxRandomRange: 10
+  buildingState: 0
+  TimerBeforCollapseInSeconds: 0
 --- !u!1 &2067025228640199348
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,9 +493,10 @@ GameObject:
   - component: {fileID: 8768755750586610215}
   - component: {fileID: 171057379776758980}
   - component: {fileID: 1104756121387962276}
+  - component: {fileID: 6537464655929321697}
   m_Layer: 0
   m_Name: Building_A1_cell.012
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -512,7 +586,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067025228640199348}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -520,6 +594,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6537464655929321697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067025228640199348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3354002671904875924
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,9 +619,10 @@ GameObject:
   - component: {fileID: 247157478092962702}
   - component: {fileID: 5099835115361882655}
   - component: {fileID: 6291675183871295583}
+  - component: {fileID: 3896702162706824349}
   m_Layer: 0
   m_Name: Building_A1_cell.004
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -625,7 +712,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3354002671904875924}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -633,6 +720,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3896702162706824349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354002671904875924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5887721918016634959
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,9 +745,10 @@ GameObject:
   - component: {fileID: 6678182211276419093}
   - component: {fileID: 5755279336151478263}
   - component: {fileID: 4213890706898151605}
+  - component: {fileID: 7153333373092118864}
   m_Layer: 0
   m_Name: Building_A1_cell.003
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -738,7 +838,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5887721918016634959}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -746,6 +846,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7153333373092118864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5887721918016634959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6696710831107702782
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,9 +871,10 @@ GameObject:
   - component: {fileID: 8484354065444094054}
   - component: {fileID: 8993850488859469453}
   - component: {fileID: 4945015912830235249}
+  - component: {fileID: 5431144336793631548}
   m_Layer: 0
   m_Name: Building_A1_cell.002
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -851,7 +964,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6696710831107702782}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -859,6 +972,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5431144336793631548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6696710831107702782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6880656436614937662
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,9 +997,10 @@ GameObject:
   - component: {fileID: 3573766759126120926}
   - component: {fileID: 2129545467805075837}
   - component: {fileID: 3610352002554874310}
+  - component: {fileID: 6526277202382336045}
   m_Layer: 0
   m_Name: Building_A1_cell.001
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -964,7 +1090,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6880656436614937662}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -972,6 +1098,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6526277202382336045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6880656436614937662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9113768943528810958
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,9 +1123,10 @@ GameObject:
   - component: {fileID: 3424787488287029614}
   - component: {fileID: 237893249710458430}
   - component: {fileID: 6724744705136456378}
+  - component: {fileID: 3670986929727078222}
   m_Layer: 0
   m_Name: Building_A1_cell.009
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1077,7 +1216,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9113768943528810958}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1085,6 +1224,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3670986929727078222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9113768943528810958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9157092084683352859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,9 +1249,10 @@ GameObject:
   - component: {fileID: 7887827693111126894}
   - component: {fileID: 2314391310445921556}
   - component: {fileID: 5331412672541676044}
+  - component: {fileID: 1751537616541771694}
   m_Layer: 0
   m_Name: Building_A1_cell.006
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1190,7 +1342,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9157092084683352859}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1198,3 +1350,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1751537616541771694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9157092084683352859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61e0932db86b544f8e89dbc81e01c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10,12 +10,14 @@ public class Lava : MonoBehaviour, IUpdaptable
 
     float lavaSpeed;
     Rigidbody lavaRB;
+
+    public GameObject soundEmitter;
+
     public void Init()
     {
         lavaRB= GetComponent<Rigidbody>();
         //lavaRB.velocity = transform.up* RisingLavaSpeed(LEVEL_TIME);
         lavaSpeed = MAX_LEVEL_HEIGHT / LEVEL_TIME;
-
     }
 
     public void PostInit()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5569391320211104325}
   - component: {fileID: -3156320392565089835}
   - component: {fileID: 6270009208075730525}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tresure
   m_TagString: Treasure
   m_Icon: {fileID: 0}
@@ -50,8 +50,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 112
+  m_CollisionDetection: 2
 --- !u!114 &-3156320392565089835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,8 +75,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 2.1719208}
-  m_Center: {x: 0, y: 0, z: -0.014266968}
+  m_Size: {x: 1, y: 1.4908447, z: 2.1719208}
+  m_Center: {x: 0, y: 0.24542236, z: -0.014266968}
 --- !u!1 &1136412451355293456
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8069241971758895041}
   - component: {fileID: 3527455376787541120}
   - component: {fileID: 7213059852129162877}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: w (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 387839033755417351}
   - component: {fileID: 7601288264272057801}
   - component: {fileID: 2391346062007901747}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 6565773383561541453}
   - component: {fileID: 770119578999699504}
   - component: {fileID: 7885431525816918222}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: w
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 849802131550718723}
   - component: {fileID: 3027182960067004216}
   - component: {fileID: 6891786705235474650}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: w (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 4949289616061098930}
   - component: {fileID: 4949289616061098931}
   - component: {fileID: 4949289616061098924}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Box
   m_TagString: Treasure
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 538989670588163036}
   - component: {fileID: 6223806366817908337}
   - component: {fileID: 888791089626763612}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: w (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,8 +578,7 @@ GameObject:
   - component: {fileID: 6471675328996663024}
   - component: {fileID: 7115227062166780069}
   - component: {fileID: 8730454092193364662}
-  - component: {fileID: 7622036662215670090}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,17 +648,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7622036662215670090
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6781387479714947029}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.50000024
-  m_Height: 2.0000005
-  m_Direction: 1
-  m_Center: {x: 0.00000005960464, y: -2.7785693e-16, z: -0.00000008940699}

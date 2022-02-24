@@ -11,19 +11,22 @@ public class WatchManager : Manager
     private WatchManager() {}
     #endregion
 
-    private int cachedTime = 0;
-    private int cachedMoney = 0;
+    private int cachedTime;
+    private int cachedMoney;
     
     private TMP_Text UITime;
     private TMP_Text UIMoney;
     private Button button;
+    private GameObject quitMenu;
     
     public override void Init()
     {
         UITime = GameLinks.Instance.UITime;
         UIMoney = GameLinks.Instance.UIMoney;
         button = GameLinks.Instance.button;
-        button?.onClick.AddListener(LoadMainScene);
+        quitMenu = GameLinks.Instance.QuitMenu;
+        cachedMoney = 0;
+        cachedTime = 0;
     }
 
     public override void PostInit()
@@ -83,16 +86,41 @@ public class WatchManager : Manager
         return $"${money}";
     }
 
-
-    private void SaveMoney()
+    public void EnteredInTriggerZone()
     {
-        Shop.Instance.inventory.money += 1000;
-        Shop.Instance.WriteJSON();
+        button?.onClick.RemoveListener(OpenPrompt);
+        button?.onClick.AddListener(LoadMainScene);
     }
+
+    public void ExitedTriggerZone()
+    {
+        button?.onClick.RemoveListener(LoadMainScene);
+        button?.onClick.AddListener(OpenPrompt);
+    }
+    
 
     private void LoadMainScene()
     {
         SaveMoney();
         SceneManager.LoadScene("UIstartScene");
+    }
+    
+    private void SaveMoney()
+    {
+        Shop.Instance.inventory.money += TreasureManager.Instance.TreasureInSafeZone() * 1000;
+        Debug.Log(Shop.Instance.inventory.money);
+        Shop.Instance.WriteJSON();
+    }
+
+    private void OpenPrompt()
+    {
+        quitMenu.SetActive(true);
+    }
+
+    public override void Clean()
+    {
+        UITime = null;
+        UIMoney = null;
+        button = null;
     }
 }

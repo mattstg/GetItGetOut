@@ -12,6 +12,7 @@ namespace Audio
         private readonly string SpeedSync = "Player_Speed";
         private readonly float SPEED_THRESHOLD = 300.0f;
         private float Speed => PlayerManager.Instance.player.rb.velocity.magnitude;
+        private float Speed100 => Speed * SPEED_THRESHOLD / 100;
 
         public void PlayWind(GameObject gameObject)
         {
@@ -24,7 +25,11 @@ namespace Audio
 
             if (Speed > SPEED_THRESHOLD)
                 AkSoundEngine.SetRTPCValue(SpeedSync, 100, gameObject);
-            else AkSoundEngine.SetRTPCValue(SpeedSync, Speed, gameObject);
+            else
+            {
+
+                AkSoundEngine.SetRTPCValue(SpeedSync, Speed100, gameObject);
+            }
         }
     }
 }

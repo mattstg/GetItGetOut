@@ -163,6 +163,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 9145958469463508855, guid: 3c96b301ece8e754581fc20f4470ed61, type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c96b301ece8e754581fc20f4470ed61, type: 3}
 --- !u!1 &6649957670857959492 stripped
@@ -196,6 +200,8 @@ MonoBehaviour:
   barrel: {fileID: 5805615957252577154}
   chainGrapGun: {fileID: 19125387}
   gun: {fileID: 5805615956780237345}
+  gunRB: {fileID: 0}
+  ConnectedRBToBullet: {fileID: 0}
 --- !u!114 &1968986040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +218,8 @@ MonoBehaviour:
   barrel: {fileID: 5805615957252577154}
   chainGrapGun: {fileID: 0}
   gun: {fileID: 5805615956780237345}
+  gunRB: {fileID: 0}
+  ConnectedRBToBullet: {fileID: 0}
 --- !u!1001 &8582268546121209810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -474,3 +482,5 @@ MonoBehaviour:
   selectButton: {fileID: -3051461004423495335, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   player: {fileID: 0}
   playerRB: {fileID: 0}
+  jointToPlayer: {fileID: 0}
+  jointTreasureToPlayer: {fileID: 0}

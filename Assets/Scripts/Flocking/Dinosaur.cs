@@ -3,21 +3,19 @@ using UnityEngine;
 
 public class Dinosaur : MonoBehaviour, IUpdaptable
 {
-    [Range(1f, 10f)]
-    public float speed = 5f;
-    protected float maxSpeed = 10f;
+    [Range(1f, 500f)]
+    public float speed = 500f;
+    protected float maxSpeed = 500f;
     protected float sqrMaxDistance = 20f;
 
     protected Rigidbody rb;
     protected FlockWeights weights;
     protected Flock ourFlock;
 
-    protected Dinosaur[] GetAllDinosaurs { get { return FlockManager.Instance.GetAllDinosaurs(); } }
+    protected List< Dinosaur> GetAllDinosaurs { get { return ourFlock.GetOtherFlocks(this, GetOtherDinosaursInFlock); } }
     protected List<Dinosaur> GetOtherDinosaursInFlock { get { return ourFlock.GetOtherDinosaursInFlock(this); } }
-
     protected float GetLavaHeight { get { return LavaManager.Instance.lava.transform.position.y; } }
     protected float SqrDistanceToLeader { get { return Vector3.SqrMagnitude(transform.position - ourFlock.leader.transform.position); } }
-    //avoid obstacles by raycast
 
     public virtual void Init()
     {
@@ -36,11 +34,14 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         theVector.leaderAlignement = LeaderAlignment();
         theVector.neighborsAvoidance += NeighborsAvoidance();
         theVector.neighborsCohesion += NeighborsCohesion();
+        theVector.buildingsAvoidance += BuildingAvoidance();
 
         theVector.OutputRays(transform.position);
         UnityEngine.Debug.DrawRay(transform.position, transform.forward, Color.red);
 
         ApplyForces(theVector.GetAverage(), theVector);
+        BuildingAvoidance();
+        DinosaursDeath();
     }
 
     public void FixedRefresh()
@@ -53,7 +54,7 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         transform.forward = ourFlock.leader.transform.forward;
 
         float sqrMagnitudeOfDir = Vector3.SqrMagnitude(dir);
-        speed = maxSpeed * Mathf.Clamp01(sqrMagnitudeOfDir/sqrMaxDistance);
+        speed = maxSpeed * Mathf.Clamp01(sqrMagnitudeOfDir / sqrMaxDistance);
 
         if (!desiredPkg.ConfirmSanity())
         {
@@ -67,9 +68,10 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     {
         if (transform.position.y < GetLavaHeight)
         {
-            // delete this poor dinosaur
+            gameObject.SetActive(false);
         }
     }
+
 
     #region Flocking Calculations
 
@@ -102,23 +104,36 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         float currentSqrManitude;
         float avoidanceVectorSqrManitude;
         int numToAvoid = 1;
-        float sqrDistanceToAvoid = 25f;
+        float sqrDistanceToAvoidNeighbors = 25f;
+        float sqrDistanceToAvoidFlocks = 50f;
 
-        if (Vector3.SqrMagnitude(transform.position - ourFlock.leader.transform.position) < sqrDistanceToAvoid)
+        // for its own flock
+        if (Vector3.SqrMagnitude(transform.position - ourFlock.leader.transform.position) < sqrDistanceToAvoidNeighbors)
         {
-            avoidanceVectorSqrManitude = (sqrDistanceToAvoid - SqrDistanceToLeader) / sqrDistanceToAvoid;
+            avoidanceVectorSqrManitude = (sqrDistanceToAvoidNeighbors - SqrDistanceToLeader) / sqrDistanceToAvoidNeighbors;
             avoidanceVector += (transform.position - ourFlock.leader.transform.position) * avoidanceVectorSqrManitude;
         }
 
-
         foreach (Dinosaur dinasour in GetOtherDinosaursInFlock)
         {
-            if (Vector3.SqrMagnitude(transform.position - dinasour.transform.position) < sqrDistanceToAvoid)
+            if (Vector3.SqrMagnitude(transform.position - dinasour.transform.position) < sqrDistanceToAvoidNeighbors)
             {
                 numToAvoid++;
                 currentSqrManitude = Vector3.SqrMagnitude(transform.position - dinasour.transform.position);
-                avoidanceVectorSqrManitude = (sqrDistanceToAvoid - currentSqrManitude) / sqrDistanceToAvoid;
+                avoidanceVectorSqrManitude = (sqrDistanceToAvoidNeighbors - currentSqrManitude) / sqrDistanceToAvoidNeighbors;
                 avoidanceVector += (transform.position - dinasour.transform.position) * avoidanceVectorSqrManitude;
+            }
+        }
+
+        // for other flocks
+        foreach (Dinosaur dinosaur in GetAllDinosaurs)
+        {
+            if (Vector3.SqrMagnitude(transform.position - dinosaur.transform.position) < sqrDistanceToAvoidFlocks)
+            {
+                numToAvoid++;
+                currentSqrManitude = Vector3.SqrMagnitude(transform.position - dinosaur.transform.position);
+                avoidanceVectorSqrManitude = (sqrDistanceToAvoidFlocks - currentSqrManitude) / sqrDistanceToAvoidFlocks;
+                avoidanceVector += (transform.position - dinosaur.transform.position) * avoidanceVectorSqrManitude;
             }
         }
 
@@ -128,10 +143,31 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         if (avoidanceVector.z < -100000 || avoidanceVector.z > 100000)
         {
             Debug.Log(string.Format("avoidanceFunction, ERROR: avoidanceVector {0}, numToAvoid {1}, sqrDistanceToAvoid {2}, SqrDistanceToLeader {3}",
-                                        avoidanceVector, numToAvoid, sqrDistanceToAvoid, SqrDistanceToLeader));
+                                        avoidanceVector, numToAvoid, sqrDistanceToAvoidNeighbors, SqrDistanceToLeader));
         }
 
         return avoidanceVector * weights.avoidance;
+    }
+
+    protected virtual Vector3 BuildingAvoidance()
+    {
+        RaycastHit raycastHit = new RaycastHit();
+        Ray raycast;
+
+        Vector3 adjustDir = Vector3.zero;
+        Vector3 direction = rb.velocity;
+
+        raycast = new Ray(transform.position, direction);
+        if (Physics.Raycast(raycast, out raycastHit, 10f))
+        {
+            //if (raycastHit.collider.tag == "Grappable")
+            //{
+            //    adjustDir = - transform.forward; //raycastHit.collider.transform.right;
+            //    //Debug.Log("hits");
+            //}
+        }
+
+        return adjustDir * weights.obstacleAvoidance;
     }
     #endregion
 
@@ -141,6 +177,7 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         public Vector3 neighborsAvoidance;
         public Vector3 neighborsCohesion;
         public Vector3 leaderAlignement;
+        public Vector3 buildingsAvoidance;
 
         public Vector3 GetAverage()
         {
@@ -149,7 +186,8 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
             desireDir += neighborsCohesion;
             desireDir += neighborsAvoidance;
             desireDir += leaderAlignement;
-            desireDir /= 3f;
+            desireDir += buildingsAvoidance;
+            desireDir /= 4f;
 
             return desireDir;
         }
@@ -177,8 +215,8 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
 
         public override string ToString()
         {
-            return string.Format("ERROR: neighborsAvoidance {0}, neighborsCohesion {1}, leaderAlignement {2}, average {3}",
-                                        neighborsAvoidance, neighborsCohesion, leaderAlignement, GetAverage());
+            return string.Format("ERROR: neighborsAvoidance {0}, neighborsCohesion {1}, leaderAlignement {2}, buildingsAvoidance {3} , average {4}",
+                                        neighborsAvoidance, neighborsCohesion, leaderAlignement, buildingsAvoidance, GetAverage());
         }
     }
 }

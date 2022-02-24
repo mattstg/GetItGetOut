@@ -34,4 +34,9 @@ public class LavaManager : Manager
     {
         lava.FixedRefresh();
     }
+
+    public override void Clean()
+    {
+        return;
+    }
 }

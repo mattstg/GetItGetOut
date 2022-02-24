@@ -15,10 +15,9 @@ public class GameManager : MonoBehaviour
         managers.Add(WatchManager.Instance);
         managers.Add(DestructionManager.Instance);
         managers.Add(LavaManager.Instance);
-        managers.Add(Shop.Instance);
-        managers.Add(WaypointManager.Instance);
         managers.Add(FlockManager.Instance);
         managers.Add(TreasureManager.Instance);
+        managers.Add(Shop.Instance);
 
         InitManagers();
     }
@@ -36,6 +35,11 @@ public class GameManager : MonoBehaviour
     private void FixedUpdate()
     {
         FixedRefreshManagers();
+    }
+
+    private void OnDestroy()
+    {
+        CleanManagers();
     }
     #endregion
 
@@ -69,6 +73,14 @@ public class GameManager : MonoBehaviour
         foreach (var manager in managers)
         {
             manager.FixedRefresh();
+        }
+    }
+
+    private void CleanManagers()
+    {
+        foreach (var manager in managers)
+        {
+            manager.Clean();
         }
     }
     #endregion
