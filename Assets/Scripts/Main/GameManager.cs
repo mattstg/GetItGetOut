@@ -36,6 +36,11 @@ public class GameManager : MonoBehaviour
     {
         FixedRefreshManagers();
     }
+
+    private void OnDestroy()
+    {
+        CleanManagers();
+    }
     #endregion
 
     #region Class Methods
@@ -68,6 +73,14 @@ public class GameManager : MonoBehaviour
         foreach (var manager in managers)
         {
             manager.FixedRefresh();
+        }
+    }
+
+    private void CleanManagers()
+    {
+        foreach (var manager in managers)
+        {
+            manager.Clean();
         }
     }
     #endregion

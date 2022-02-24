@@ -28,4 +28,9 @@ public class HolsterManager : Manager
     {
         holster.FixedRefresh();
     }
+
+    public override void Clean()
+    {
+        return;
+    }
 }

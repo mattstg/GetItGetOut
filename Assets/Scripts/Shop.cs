@@ -82,4 +82,9 @@ public class Shop : Manager
         #endif
 
     }
+
+    public override void Clean()
+    {
+        return;
+    }
 }
