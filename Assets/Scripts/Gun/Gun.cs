@@ -28,6 +28,7 @@ public class Gun : MonoBehaviour
     Vector3 pos2;
 
 
+
     private float mindis = 1;
     private float maxdis = 1;
 
@@ -41,22 +42,27 @@ public class Gun : MonoBehaviour
         Audio = new Audio.GrapplingGun();
     }
 
-    public void Reeling()
+    public void GrappleHookAttachedToObject(Collider attachedObj, bool isTreasure)
     {
 
-        if (bullet.hit && bullet.collisionObj.gameObject.tag == "Grappable")
+    }
+
+    public void Reeling()
+    {
+        if (bullet.hit && bullet.thingfIhit.gameObject.tag == "Grappable")
         {
-            if (jointToPlayer)
-            {
+
                 jointToPlayer.maxDistance -= 100 * Time.fixedDeltaTime;
-            }
+          
             
         }
-        if (bullet.hit && bullet.collisionObj.gameObject.tag == "Treasure")
+        if (bullet.hit && bullet.thingfIhit.gameObject.CompareTag("Treasure"))
         {
-            Debug.Log("hey0");
-
-            jointTreasureToPlayer.maxDistance -= 10* Time.fixedDeltaTime;
+            jointTreasureToPlayer.minDistance -= 10* Time.fixedDeltaTime;
+        }
+        else
+        {
+            Debug.Log("BulletHit but not treasure: " + bullet.hit + ", " + bullet.thingfIhit.gameObject.name);
         }
     }
     private void LateUpdate()
@@ -139,8 +145,8 @@ public class Gun : MonoBehaviour
         // jointToPlayer.connectedAnchor = PointToSwing;
         float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
 
-        jointTreasureToPlayer.maxDistance = distanceFromPoint;
-        jointTreasureToPlayer.minDistance = 0;
+        jointTreasureToPlayer.maxDistance = 0;
+        jointTreasureToPlayer.minDistance = distanceFromPoint;
         jointTreasureToPlayer.enableCollision = true;
 
 

@@ -13,20 +13,21 @@ public class Bullet : MonoBehaviour
     public Rigidbody gunRB;
 
     [System.NonSerialized]
-        public bool hit;
+    public bool hit;
     [System.NonSerialized]
     public Vector3 collitionPositon;
     public Collision collisionObj;
+    public Collider thingfIhit;
     public Rigidbody ConnectedRBToBullet;
 
     private readonly Audio.Bullet audio = new Audio.Bullet();
 
     private void OnCollisionEnter(Collision collision)
     {
-        collisionObj = collision;
         if (chainGrapGun.isShoot && hit == false)
         {
-            SwingToBuildings(collisionObj);
+            thingfIhit = collision.contacts[0].otherCollider;
+            SwingToBuildings(collision);
             SwingTheTreasures(collision);
             chainGrapGun.Audio.StopShoot(chainGrapGun.gameObject);
             audio.PlayGrapplingImpact(gameObject);
@@ -62,7 +63,7 @@ public class Bullet : MonoBehaviour
             collitionPositon = collision.contacts[0].point;
             joint.connectedAnchor = collitionPositon;
             hit = true;
-            
+
 
             this.transform.position = collision.contacts[0].point;
             chainGrapGun.lr.positionCount = 2;
@@ -76,6 +77,6 @@ public class Bullet : MonoBehaviour
         hit = false;
         Destroy(joint);
     }
-    
+
 
 }
