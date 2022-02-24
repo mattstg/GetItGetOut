@@ -168,7 +168,7 @@ MonoBehaviour:
   targetDir: {fileID: 2133666820846679647}
   targetDist: 0.2
   smoothSpeed: 0.12
-  t: 350
+  trailSpeed: 350
   wiggleSpeed: 2
   wiggleMagnitude: 10
   wiggleDir: {fileID: 2133666820846679647}
@@ -401,7 +401,7 @@ MonoBehaviour:
   targetDir: {fileID: 8242525940056756912}
   targetDist: 0.2
   smoothSpeed: 0.12
-  t: 350
+  trailSpeed: 350
   wiggleSpeed: 2
   wiggleMagnitude: 10
   wiggleDir: {fileID: 8242525940056756912}
@@ -635,7 +635,7 @@ MonoBehaviour:
   targetDir: {fileID: 6932608906543614676}
   targetDist: 0.2
   smoothSpeed: 0.12
-  t: 350
+  trailSpeed: 350
   wiggleSpeed: 2
   wiggleMagnitude: 10
   wiggleDir: {fileID: 6932608906543614676}

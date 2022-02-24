@@ -16,7 +16,6 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     protected List<Dinosaur> GetOtherDinosaursInFlock { get { return ourFlock.GetOtherDinosaursInFlock(this); } }
     protected float GetLavaHeight { get { return LavaManager.Instance.lava.transform.position.y; } }
     protected float SqrDistanceToLeader { get { return Vector3.SqrMagnitude(transform.position - ourFlock.leader.transform.position); } }
-    //avoid obstacles by raycast
 
     public virtual void Init()
     {
