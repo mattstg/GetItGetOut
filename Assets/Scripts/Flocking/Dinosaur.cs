@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class Dinosaur : MonoBehaviour, IUpdaptable
 {
-    [Range(1f, 10f)]
-    public float speed = 5f;
-    protected float maxSpeed = 10f;
+    [Range(1f, 500f)]
+    public float speed = 500f;
+    protected float maxSpeed = 500f;
     protected float sqrMaxDistance = 20f;
 
     protected Rigidbody rb;
