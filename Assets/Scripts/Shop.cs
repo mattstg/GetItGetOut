@@ -24,8 +24,9 @@ public class Shop : Manager
 
     public override void Init()
     {
+        inventory = new Inventory();
+        inventory.money = 0;
         ReadJSON();
-        Debug.Log(JsonUtility.ToJson(inventory));
     }
 
     public override void PostInit()
@@ -35,9 +36,6 @@ public class Shop : Manager
 
     private void ReadJSON()
     {
-        inventory = new Inventory();
-        inventory.money = 0;
-        
         #if UNITY_EDITOR
         
         try
@@ -80,6 +78,6 @@ public class Shop : Manager
 
     public override void Clean()
     {
-        return;
+        inventory = null;
     }
 }

@@ -99,7 +99,6 @@ public class WatchManager : Manager
 
     private void LoadMainScene()
     {
-        Debug.Log(("LOAD MAIN SCENE CALLED"));
         SaveMoney();
         SceneManager.LoadScene("UIstartScene");
     }
@@ -118,6 +117,8 @@ public class WatchManager : Manager
 
     public override void Clean()
     {
-        return;
+        UITime = null;
+        UIMoney = null;
+        button = null;
     }
 }
