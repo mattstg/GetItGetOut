@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="190668917">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1901170701">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -84,6 +84,14 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="3785866374" Name="Stop_Audio" ObjectPath="\Events\Default Work Unit\Stop_Audio" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1817200631" Name="Treasure_Play" ObjectPath="\Events\Default Work Unit\Treasure_Play" MaxAttenuation="100." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="910195231" Language="SFX">
+							<ShortName>Undiscovered_Treasure.wav</ShortName>
+							<Path>SFX\Undiscovered_Treasure_69F4EDEF.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 			</IncludedEvents>
 		</SoundBank>
 	</SoundBanks>
