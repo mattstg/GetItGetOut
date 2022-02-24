@@ -35,6 +35,9 @@ public class Shop : Manager
 
     private void ReadJSON()
     {
+        inventory = new Inventory();
+        inventory.money = 0;
+        
         #if UNITY_EDITOR
         
         try
@@ -48,17 +51,9 @@ public class Shop : Manager
         catch (Exception e)
         {
             Console.WriteLine(e);
-            inventory = new Inventory();
-            inventory.money = 1000;
             throw;
         }
         #endif
-        
-        //#if UNITY_ANDROID
-        //inventory = new Inventory();
-        //inventory.money = 1000;
-        //#endif
-        
     }
 
     public void WriteJSON()
