@@ -26,6 +26,7 @@ public class Leader : Dinosaur
         dir += WayPointAttraction();
         dir += BuildingAvoidance();
         ApplyForces(dir, null);
+        DinosaursDeath();
     }
 
     protected override void ApplyForces(Vector3 dir, DesireDirectionVectors desiredPkg)
