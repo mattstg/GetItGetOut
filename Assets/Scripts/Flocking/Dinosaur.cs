@@ -31,7 +31,7 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     public virtual void Refresh()
     {
         DesireDirectionVectors theVector = new DesireDirectionVectors();
-        theVector.leaderAlignement = LeaderAlignment();
+        theVector.leaderAlignement += LeaderAlignment();
         theVector.neighborsAvoidance += NeighborsAvoidance();
         theVector.neighborsCohesion += NeighborsCohesion();
         theVector.buildingsAvoidance += BuildingAvoidance();
