@@ -60,10 +60,7 @@ public class Gun : MonoBehaviour
         {
             jointTreasureToPlayer.minDistance -= 10* Time.fixedDeltaTime;
         }
-        else
-        {
-            Debug.Log("BulletHit but not treasure: " + bullet.hit + ", " + bullet.thingfIhit.gameObject.name);
-        }
+
     }
     private void LateUpdate()
     {
