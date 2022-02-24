@@ -17,12 +17,14 @@ public class WatchManager : Manager
     private TMP_Text UITime;
     private TMP_Text UIMoney;
     private Button button;
+    private GameObject quitMenu;
     
     public override void Init()
     {
         UITime = GameLinks.Instance.UITime;
         UIMoney = GameLinks.Instance.UIMoney;
         button = GameLinks.Instance.button;
+        quitMenu = GameLinks.Instance.QuitMenu;
         cachedMoney = 0;
         cachedTime = 0;
     }
@@ -112,7 +114,7 @@ public class WatchManager : Manager
 
     private void OpenPrompt()
     {
-        Debug.Log("prompt");
+        quitMenu.SetActive(true);
     }
 
     public override void Clean()
