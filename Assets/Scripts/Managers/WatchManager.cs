@@ -23,7 +23,6 @@ public class WatchManager : Manager
         UITime = GameLinks.Instance.UITime;
         UIMoney = GameLinks.Instance.UIMoney;
         button = GameLinks.Instance.button;
-        button?.onClick.AddListener(LoadMainScene);
     }
 
     public override void PostInit()
@@ -83,16 +82,35 @@ public class WatchManager : Manager
         return $"${money}";
     }
 
-
-    private void SaveMoney()
+    public void EnteredInTriggerZone()
     {
-        Shop.Instance.inventory.money += 1000;
-        Shop.Instance.WriteJSON();
+        button?.onClick.RemoveListener(OpenPrompt);
+        button?.onClick.AddListener(LoadMainScene);
     }
+
+    public void ExitedTriggerZone()
+    {
+        button?.onClick.RemoveListener(LoadMainScene);
+        button?.onClick.AddListener(OpenPrompt);
+    }
+    
 
     private void LoadMainScene()
     {
         SaveMoney();
         SceneManager.LoadScene("UIstartScene");
     }
+    
+    private void SaveMoney()
+    {
+        Shop.Instance.inventory.money += TreasureManager.Instance.TreasureInSafeZone() * 1000;
+        Debug.Log(Shop.Instance.inventory.money);
+        Shop.Instance.WriteJSON();
+    }
+
+    private void OpenPrompt()
+    {
+        Debug.Log("prompt");
+    }
+
 }

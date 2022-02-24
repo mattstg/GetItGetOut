@@ -50,7 +50,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!114 &-3156320392565089835
 MonoBehaviour:
@@ -75,8 +75,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 2.1719208}
-  m_Center: {x: 0, y: 0, z: -0.014266968}
+  m_Size: {x: 1, y: 1.4908447, z: 2.1719208}
+  m_Center: {x: 0, y: 0.24542236, z: -0.014266968}
 --- !u!1 &1136412451355293456
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +578,6 @@ GameObject:
   - component: {fileID: 6471675328996663024}
   - component: {fileID: 7115227062166780069}
   - component: {fileID: 8730454092193364662}
-  - component: {fileID: 7622036662215670090}
   m_Layer: 13
   m_Name: r
   m_TagString: Untagged
@@ -649,17 +648,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7622036662215670090
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6781387479714947029}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.50000024
-  m_Height: 2.0000005
-  m_Direction: 1
-  m_Center: {x: 0.00000005960464, y: -2.7785693e-16, z: -0.00000008940699}

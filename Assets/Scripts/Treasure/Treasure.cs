@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Treasure : MonoBehaviour, IUpdaptable
 {
-    public void FixedRefresh()
-    {
-    }
-
+    public bool IsInSafeZone { get; set; }
+    
     public void Init()
     {
     }
 
     public void PostInit()
+    {
+    }
+
+    public void FixedRefresh()
     {
     }
 

@@ -1,10 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TreasureManager : Manager<TreasureManager, Treasure>
 {
     private GameObject treasurePrefab;
+
+    public int TreasureInSafeZone()
+    {
+        int i = 0;
+        
+        foreach (var item in colletion)
+        {
+            if (item.IsInSafeZone)
+                i++;
+        }
+
+        return i;
+    }
 
     public override void Init()
     {
