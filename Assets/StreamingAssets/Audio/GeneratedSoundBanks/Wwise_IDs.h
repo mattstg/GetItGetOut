@@ -17,6 +17,7 @@ namespace AK
         static const AkUniqueID BUILDINGPART_COLLISION = 3230276783U;
         static const AkUniqueID BUTTON_HOVER = 1701177942U;
         static const AkUniqueID BUTTON_PRESS = 2698747613U;
+        static const AkUniqueID DRAGON_SCREAM = 1288572596U;
         static const AkUniqueID GRAPPLING_FIRE_PLAY = 981501359U;
         static const AkUniqueID GRAPPLING_FIRE_STOP = 3740708781U;
         static const AkUniqueID GRAPPLING_IMPACT = 1879650260U;
