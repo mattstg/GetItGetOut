@@ -6,6 +6,12 @@ public class FlockManager : Manager<FlockManager, Flock>
 {
     Flock[] allFlocks;
     List <Dinosaur> allDinosaurs;
+    
+    #region batching
+    //const int batches = 4;
+    //int currentBatchNumber = 0;
+    #endregion
+
     public override void Init()
     {
         allDinosaurs = new List<Dinosaur>();
@@ -27,17 +33,20 @@ public class FlockManager : Manager<FlockManager, Flock>
     public override void PostInit()
     { }
 
+    #region Batching method
+    //public override void Refresh()
+    //{
+    //    for (int i = currentBatchNumber; i < allFlocks.Length; i+= batches)
+    //    {
+    //        allFlocks[i].Refresh();
+    //    }
+    //    currentBatchNumber = (currentBatchNumber + 1) % batches;
+    //}
+    #endregion
+
     public List<Dinosaur> GetAllDinosaurs()
     {
         return allDinosaurs;
     }
 
-    //public override void Refresh()
-    //{
-    //    base.Refresh();
-    //}
-    //public override void FixedRefresh()
-    //{
-    //    base.FixedRefresh();
-    //}
 }
