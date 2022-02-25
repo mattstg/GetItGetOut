@@ -69,7 +69,7 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
 
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
         }
-        Debug.Log(rb.velocity.magnitude);
+        //Debug.Log(rb.velocity.magnitude);
 
 
     }
@@ -86,6 +86,7 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            Debug.Log("scream");
             audio.PlayScream(gameObject);
         }
     }
