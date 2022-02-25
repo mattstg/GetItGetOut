@@ -105,7 +105,7 @@ public class WatchManager : Manager
     }
     
 
-    private void LoadMainScene()
+    public void LoadMainScene()
     {
         audio.PlayDefaultClick(button.gameObject);
         SaveMoney();

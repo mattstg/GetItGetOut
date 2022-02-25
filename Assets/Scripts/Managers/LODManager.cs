@@ -91,7 +91,9 @@ public class LODManager : Manager
 
     public override void Clean()
     {
-        
+        regionList.Clear();
+        listToGiveToRegion.Clear();
+       
     }
 
     private int GetRegionOfPlayer()

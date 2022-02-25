@@ -42,6 +42,12 @@ public class Player : MonoBehaviour ,IUpdaptable
 
     public void Refresh()
     {
+        bool playerUnderLava = transform.position.y - 2 < LavaManager.Instance.lava.transform.position.y;
+        bool timeExpired = LavaManager.Instance.TimeRemaining < 0;
+        if (playerUnderLava || timeExpired)
+        {
+            WatchManager.Instance.LoadMainScene();
+        }
     }
 
     private void InitAudio()
