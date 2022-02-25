@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Lava : MonoBehaviour, IUpdaptable
 {
-    public const float MAX_LEVEL_HEIGHT = 300;
-    public const float LEVEL_TIME = 300;//300 sec = 5min1
+    public const float MAX_LEVEL_HEIGHT = 427;
+    public const float LEVEL_TIME = 427;//300 sec = 5min1
     public float TimeRemaining => LEVEL_TIME - (transform.position.y * LEVEL_TIME / MAX_LEVEL_HEIGHT);
 
     float lavaSpeed;
