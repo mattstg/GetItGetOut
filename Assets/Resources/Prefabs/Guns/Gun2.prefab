@@ -287,8 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152ae7ddb509032429dd6031f43b334e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  force: 300
+  speed: 120
+  force: 50
   bullet: {fileID: 4792800312453895828}
   BulletRB: {fileID: 7088590405552682033}
   barrel: {fileID: 1302317138634458560}

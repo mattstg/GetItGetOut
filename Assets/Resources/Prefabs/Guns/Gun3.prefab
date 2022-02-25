@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
-  force: 300
+  force: 30
   bullet: {fileID: 4792800312453895828}
   BulletRB: {fileID: 7088590405552682033}
   barrel: {fileID: 1302317138634458560}
