@@ -11,8 +11,8 @@ public class DestroyBuilding : MonoBehaviour , IUpdaptable
         FullyMelted
     }
 
-    public float minRandomRange;
-    public float maxRandomRange;
+    public float minExplosionForceToParts;
+    public float maxExplosionForceToParts;
 
     public BuildingState buildingState;
     public long TimerBeforCollapseInSeconds;
@@ -89,7 +89,7 @@ public class DestroyBuilding : MonoBehaviour , IUpdaptable
         {
             meshCollider[i].enabled = true;
             parts[i].isKinematic = false;
-            Vector3 direction = new Vector3(Random.Range(minRandomRange, maxRandomRange), Random.Range(minRandomRange, maxRandomRange), Random.Range(minRandomRange, maxRandomRange));
+            Vector3 direction = new Vector3(Random.Range(minExplosionForceToParts, maxExplosionForceToParts), Random.Range(minExplosionForceToParts, maxExplosionForceToParts), Random.Range(minExplosionForceToParts, maxExplosionForceToParts));
             parts[i].AddForce(direction, ForceMode.Impulse);
             buildingParts[i].IsActive = true;
         }

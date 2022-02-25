@@ -476,8 +476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71685bc0e2311aa438a62c3773df3875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minRandomRange: -10
-  maxRandomRange: 10
+  minExplosionForceToParts: -10000
+  maxExplosionForceToParts: 10000
   buildingState: 0
   TimerBeforCollapseInSeconds: 0
 --- !u!1 &2067025228640199348
