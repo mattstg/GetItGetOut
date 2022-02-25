@@ -283,7 +283,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh138312
+  m_Name: pb_Mesh200256
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2619,6 +2619,14 @@ PrefabInstance:
     - target: {fileID: 1369403842938106029, guid: 5dbd735f83c61a34d97872a5e781984a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030261699542497880, guid: 5dbd735f83c61a34d97872a5e781984a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030261699542497880, guid: 5dbd735f83c61a34d97872a5e781984a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -168.75
       objectReference: {fileID: 0}
     - target: {fileID: 3865037017371748605, guid: 5dbd735f83c61a34d97872a5e781984a, type: 3}
       propertyPath: m_LocalPosition.x
