@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class WatchManager : Manager
 {
     #region Singleton
@@ -17,7 +18,10 @@ public class WatchManager : Manager
     private TMP_Text UITime;
     private TMP_Text UIMoney;
     private Button button;
+    
     private GameObject quitMenu;
+
+    private Audio.UI audio;
     
     public override void Init()
     {
@@ -25,13 +29,15 @@ public class WatchManager : Manager
         UIMoney = GameLinks.Instance.UIMoney;
         button = GameLinks.Instance.button;
         quitMenu = GameLinks.Instance.QuitMenu;
+       
         cachedMoney = 0;
         cachedTime = 0;
+        audio = new Audio.UI();
     }
 
     public override void PostInit()
     {
-        
+       
     }
     
     public override void Refresh()
@@ -101,6 +107,7 @@ public class WatchManager : Manager
 
     private void LoadMainScene()
     {
+        audio.PlayDefaultClick(button.gameObject);
         SaveMoney();
         SceneManager.LoadScene("UIstartScene");
     }
@@ -114,6 +121,7 @@ public class WatchManager : Manager
 
     private void OpenPrompt()
     {
+        audio.PlayDefaultClick(button.gameObject);
         quitMenu.SetActive(true);
     }
 

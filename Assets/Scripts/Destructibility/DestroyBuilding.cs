@@ -21,6 +21,7 @@ public class DestroyBuilding : MonoBehaviour , IUpdaptable
     private Rigidbody parentRb;
     private MeshCollider[] meshCollider;
     private BoxCollider[] boxCollider;
+    private BuildingPart[] buildingParts;
     private int partsDisactivated;
 
     private Audio.Building audio;
@@ -67,7 +68,7 @@ public class DestroyBuilding : MonoBehaviour , IUpdaptable
         parentRb = GetComponent<Rigidbody>();
         parts = new List<Rigidbody> (GetComponentsInChildren<Rigidbody>());
         parts.RemoveAt(0);
-
+        buildingParts = GetComponentsInChildren<BuildingPart>();
         meshCollider = GetComponentsInChildren<MeshCollider>();
     }
 
@@ -90,6 +91,7 @@ public class DestroyBuilding : MonoBehaviour , IUpdaptable
             parts[i].isKinematic = false;
             Vector3 direction = new Vector3(Random.Range(minRandomRange, maxRandomRange), Random.Range(minRandomRange, maxRandomRange), Random.Range(minRandomRange, maxRandomRange));
             parts[i].AddForce(direction, ForceMode.Impulse);
+            buildingParts[i].IsActive = true;
         }
 
         audio.PlayDestruction(gameObject);

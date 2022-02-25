@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID BUILDING_DESTROY = 2746345546U;
+        static const AkUniqueID BUILDINGPART_COLLISION = 3230276783U;
         static const AkUniqueID BUTTON_HOVER = 1701177942U;
         static const AkUniqueID BUTTON_PRESS = 2698747613U;
         static const AkUniqueID GRAPPLING_FIRE_PLAY = 981501359U;

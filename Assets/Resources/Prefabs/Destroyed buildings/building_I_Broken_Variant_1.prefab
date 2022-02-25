@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 102886430495617019}
   - component: {fileID: 102886430495617016}
   - component: {fileID: 4369596384729943516}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_I_cell.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 1627005496224332677}
   - component: {fileID: 1627005496224332730}
   - component: {fileID: 6899083977688722315}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_I_cell.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 2592199601118756886}
   - component: {fileID: 2592199601118756887}
   - component: {fileID: 4878123623878991257}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_I_cell.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,9 +391,9 @@ GameObject:
   - component: {fileID: 6594769034862855630}
   - component: {fileID: 3564081749435487930}
   - component: {fileID: 7686452421737310299}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: building_I_Broken_Variant_1
-  m_TagString: Untagged
+  m_TagString: Grappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 2767792479654094312}
   - component: {fileID: 2767792479654094313}
   - component: {fileID: 9167964500180173659}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_I_cell.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 3850009234777774516}
   - component: {fileID: 3850009234777774517}
   - component: {fileID: 7873777954072248095}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_I_cell.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 4910435059227220854}
   - component: {fileID: 4910435059227220855}
   - component: {fileID: 8898071844921785963}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_I_cell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 4926614045246947062}
   - component: {fileID: 4926614045246947063}
   - component: {fileID: 6932153732288217824}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_I_cell.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -998,7 +998,7 @@ GameObject:
   - component: {fileID: 5079386222585414513}
   - component: {fileID: 5079386222585414518}
   - component: {fileID: 3342518763747997399}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_I_cell.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1124,7 +1124,7 @@ GameObject:
   - component: {fileID: 6033226330953087387}
   - component: {fileID: 6033226330953087384}
   - component: {fileID: 1500208940633670723}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_I_cell.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1250,7 +1250,7 @@ GameObject:
   - component: {fileID: 7460379444837476316}
   - component: {fileID: 7460379444837476317}
   - component: {fileID: 4374516770864759496}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_I_cell.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
