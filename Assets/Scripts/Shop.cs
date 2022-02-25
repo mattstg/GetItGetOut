@@ -70,8 +70,6 @@ public class Shop : Manager
     {
         string filePath = Application.streamingAssetsPath + "/GameData/inventory.json";
         
-        #if UNITY_EDITOR
-        
         try
         {
             using (StreamWriter w = new StreamWriter(filePath))
@@ -85,8 +83,6 @@ public class Shop : Manager
             Console.WriteLine(e);
             throw;
         }
-        
-        #endif
 
     }
 
