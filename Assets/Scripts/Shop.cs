@@ -36,52 +36,66 @@ public class Shop : Manager
 
     private void ReadJSON()
     {
-        string filePath = Application.streamingAssetsPath + "/GameData/inventory.json";
-
-        #if UNITY_EDITOR
         try
         {
-            using (StreamReader r = new StreamReader(filePath))
+            if (!File.Exists(Application.persistentDataPath + "/inventory.json"))
             {
-                string json = r.ReadToEnd();
-                inventory = (Inventory)JsonUtility.FromJson(json, typeof(Inventory));
+
+                string path = "";
+
+#if (UNITY_EDITOR || UNITY_STANDALONE_LINUX)
+                path = "file://" + Application.streamingAssetsPath + "/gamedata/inventory.json";
+#endif
+
+                if (Application.platform == RuntimePlatform.Android)
+                {
+                    path = Application.streamingAssetsPath + "/gamedata/inventory.json";
+                }
+
+                UnityEngine.Networking.UnityWebRequest www = UnityEngine.Networking.UnityWebRequest.Get(path);
+                www.SendWebRequest();
+                while (!www.isDone)
+                {
+                }
+
+                byte[] loadBytes = www.downloadHandler.data;
+                System.IO.File.WriteAllBytes(Application.persistentDataPath + "/inventory.json", loadBytes);
             }
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            Debug.Log(e);
         }
-        #endif
         
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            Debug.Log("aaa");
-            WWW reader = new WWW(filePath);
-            while (!reader.isDone) { }
 
-            string json;
-            json = reader.text;
-            inventory = (Inventory)JsonUtility.FromJson(json, typeof(Inventory));
+        try
+        {
+            using (StreamReader r = new StreamReader(Application.persistentDataPath + "/inventory.json"))
+            {
+                string json = r.ReadToEnd();
+                inventory = (Inventory) JsonUtility.FromJson(json, typeof(Inventory));
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
         }
     }
 
     public void WriteJSON()
     {
-        string filePath = Application.streamingAssetsPath + "/GameData/inventory.json";
+        string filePath = Application.persistentDataPath + "/inventory.json";
         
         try
         {
             using (StreamWriter w = new StreamWriter(filePath))
             {
-                w.Flush();
                 w.Write(JsonUtility.ToJson(inventory));
             }
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            Debug.Log(e);
         }
 
     }
