@@ -24,6 +24,7 @@ namespace AK
         static const AkUniqueID GRAPPLING_REEL_IN_PLAY = 1696368149U;
         static const AkUniqueID GRAPPLING_REEL_IN_STOP = 4158331891U;
         static const AkUniqueID LAVA_PLAY = 2024110332U;
+        static const AkUniqueID PLAY_INTRO = 3103472528U;
         static const AkUniqueID STOP_AUDIO = 3785866374U;
         static const AkUniqueID TREASURE_COLLISION = 2344555875U;
         static const AkUniqueID TREASURE_PLAY = 1817200631U;

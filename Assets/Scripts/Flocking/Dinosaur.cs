@@ -7,7 +7,7 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     public float speed = 500f;
     protected float maxSpeed = 500f;
     protected float sqrMaxDistance = 20f;
-
+    private Audio.Dinosaur audio;
     protected Rigidbody rb;
     protected FlockWeights weights;
     protected Flock ourFlock;
@@ -19,6 +19,7 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
 
     public virtual void Init()
     {
+        audio = new Audio.Dinosaur();
         rb = GetComponent<Rigidbody>();
         ourFlock = GetComponentInParent<Flock>();
         weights = new FlockWeights();
@@ -73,6 +74,13 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            audio.PlayScream(gameObject);
+        }
+    }
 
     #region Flocking Calculations
     public virtual Vector3 WayPointAttraction()
