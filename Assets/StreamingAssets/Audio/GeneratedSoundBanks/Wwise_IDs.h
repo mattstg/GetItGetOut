@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID BUILDING_DESTROY = 2746345546U;
+        static const AkUniqueID BUILDINGPART_COLLISION = 3230276783U;
         static const AkUniqueID BUTTON_HOVER = 1701177942U;
         static const AkUniqueID BUTTON_PRESS = 2698747613U;
         static const AkUniqueID GRAPPLING_FIRE_PLAY = 981501359U;
@@ -23,6 +24,7 @@ namespace AK
         static const AkUniqueID GRAPPLING_REEL_IN_PLAY = 1696368149U;
         static const AkUniqueID GRAPPLING_REEL_IN_STOP = 4158331891U;
         static const AkUniqueID LAVA_PLAY = 2024110332U;
+        static const AkUniqueID PLAY_INTRO = 3103472528U;
         static const AkUniqueID STOP_AUDIO = 3785866374U;
         static const AkUniqueID TREASURE_COLLISION = 2344555875U;
         static const AkUniqueID TREASURE_PLAY = 1817200631U;

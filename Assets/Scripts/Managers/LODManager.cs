@@ -5,15 +5,23 @@ using UnityEngine;
 
 public class LODManager : Manager
 {
+    #region singleton
+    private static LODManager instance;
+    public static LODManager Instance => instance ??= new LODManager();
+    private LODManager() { }
+    #endregion
+
     const int nbRegion = 10;
+    const int neighboursToLoad = 1;
     Player GetPlayer { get { return PlayerManager.Instance.player; } }
     GameObject buildingParent { get { return GameLinks.Instance.staticBuildingParent; } }
     int mapHeight { get { return GameLinks.Instance.heightOfMap; } }
+    int lavaHeight { get { return (int)LavaManager.Instance.lava.transform.position.y; } }
 
 
     List<Region> regionList = new List<Region>();
     List<MeshRenderer> listToGiveToRegion = new List<MeshRenderer>();
-    Region currentRegionOfPlayer;
+    int currentRegionIndexOfPlayer;
     int regionHeight;
 
     public override void Init()
@@ -30,32 +38,33 @@ public class LODManager : Manager
 
             foreach (var mesh in everyBuildingMesh)
             {
-                if (mesh.transform.position.y > BottomOfRegion && mesh.transform.position.y < topOfRegion)
+                if (mesh.transform.position.y >= BottomOfRegion && mesh.transform.position.y < topOfRegion)
                 {
                     listToGiveToRegion.Add(mesh);
-                    Debug.Log(everyBuildingMesh.IndexOf(mesh));
+                    //Debug.Log(everyBuildingMesh.IndexOf(mesh));
                 }
             }
             regionList.Add(new Region(listToGiveToRegion, topOfRegion, BottomOfRegion));
         }
-        Debug.Log("Buidling not selected: " + everyBuildingMesh.ElementAt(56).gameObject.name + " pos: " + everyBuildingMesh.ElementAt(56).transform.position.y);
-        //currentRegionOfPlayer = GetRegionOfPlayer();
-        //currentRegionOfPlayer.ToggleMeshes(true);
+        currentRegionIndexOfPlayer = GetRegionOfPlayer();
+        ToggleSelectRegion();
 
-        Debug.Log(regionList.Count);
-        int cpt = 1;
-        int cptnNbOfBuildings = 0;
-        foreach (var region in regionList)
-        {
-            Debug.Log(cpt + "region: " + "---------------------------------------------------Bottom: " + region.bottomHeight + "Top: " + region.topHeight);
-            foreach (var mesh in region.GetMeshes())
-            {
-                Debug.Log("Building: " + mesh.gameObject.name + "pos:" + mesh.transform.position.y);
-                cptnNbOfBuildings ++;
-            }
-            cpt++;
-        }
-        Debug.Log("nb of buildings regionned: " + cptnNbOfBuildings + " ---nb of buildings total in map: " + everyBuildingMesh.Count);
+        //Debug.Log("Buidling not selected: " + everyBuildingMesh.ElementAt(56).gameObject.name + " pos: " + everyBuildingMesh.ElementAt(56).transform.position.y);
+
+        //Debug.Log(regionList.Count);
+        //int cpt = 1;
+        //int cptnNbOfBuildings = 0;
+        //foreach (var region in regionList)
+        //{
+        //    Debug.Log(cpt + "region: " + "---------------------------------------------------Bottom: " + region.bottomHeight + "Top: " + region.topHeight);
+        //    foreach (var mesh in region.GetMeshes())
+        //    {
+        //        Debug.Log("Building: " + mesh.gameObject.name + "pos:" + mesh.transform.position.y);
+        //        cptnNbOfBuildings ++;
+        //    }
+        //    cpt++;
+        //}
+        //Debug.Log("nb of buildings regionned: " + cptnNbOfBuildings + " ---nb of buildings total in map: " + everyBuildingMesh.Count);
     }
 
     public override void PostInit()
@@ -67,12 +76,12 @@ public class LODManager : Manager
 
     public override void Refresh()
     {
-       //if (GetPlayer.transform.position.y < currentRegionOfPlayer.bottomHeight || GetPlayer.transform.position.y > currentRegionOfPlayer.topHeight)
-       //{
-       //    currentRegionOfPlayer = GetRegionOfPlayer();
-       //    currentRegionOfPlayer.ToggleMeshes(true);
-       //}
-        
+       if (GetPlayer.transform.position.y < regionList.ElementAt(currentRegionIndexOfPlayer).bottomHeight || GetPlayer.transform.position.y > regionList.ElementAt(currentRegionIndexOfPlayer).topHeight)
+       {
+            currentRegionIndexOfPlayer = GetRegionOfPlayer();
+            ToggleSelectRegion();
+            ToggleOffRegionUnderLava();
+       }
     }
 
     public override void FixedRefresh()
@@ -85,25 +94,55 @@ public class LODManager : Manager
         
     }
 
-    private Region GetRegionOfPlayer()
+    private int GetRegionOfPlayer()
     {
         foreach (var region in regionList)
         {
-            if (GetPlayer.transform.position.y > region.bottomHeight && GetPlayer.transform.position.y < region.topHeight)
+            if (GetPlayer.transform.position.y >= region.bottomHeight && GetPlayer.transform.position.y < region.topHeight)
             {
-                return region;
+                return regionList.IndexOf(region);
             }
         }
-        //Temporairely Null
-        return null;
+        Debug.LogError("Player outside of all Regions. Returned 0 as default.");
+        return 0;
     }
 
-    private List<Region> GetNeigbourRegion()
+    private void ToggleSelectRegion()
     {
+        int minRegionToLoad = currentRegionIndexOfPlayer - neighboursToLoad;
+        int maxRegionToLoad = currentRegionIndexOfPlayer + neighboursToLoad;
 
+        if (minRegionToLoad < 0)
+        {
+            minRegionToLoad = 0;
+        }
+        if (maxRegionToLoad > nbRegion - 1)
+        {
+            maxRegionToLoad = nbRegion - 1;
+        }
 
-        //Temporairely Null
-        return null;
+        for (int i = 0; i < regionList.Count; i++)
+        {
+            if (i >= minRegionToLoad && i <= maxRegionToLoad)
+            {
+                regionList.ElementAt(i).ToggleMeshes(true);
+            }
+            else
+            {
+                regionList.ElementAt(i).ToggleMeshes(false);
+            }
+        }
+    }
+
+    private void ToggleOffRegionUnderLava()
+    {
+        foreach (var region in regionList)
+        {
+            if (region.topHeight + regionHeight == lavaHeight)
+            {
+                region.ToggleOffRegion();
+            }
+        }
     }
 
     private class Region
@@ -111,16 +150,24 @@ public class LODManager : Manager
         public List<MeshRenderer> meshes = new List<MeshRenderer>();
         public int topHeight { get; private set; }
         public int bottomHeight { get; private set; }
+        public bool isActive { get; private set; }
 
         public Region(List<MeshRenderer> meshes, int topHeight, int bottomHeight)
         {
             this.meshes = meshes;
             this.topHeight = topHeight;
             this.bottomHeight = bottomHeight;
+            isActive = true;
         }
 
         public void ToggleMeshes(bool value)
         {
+            if (value == isActive)
+            {
+                return;
+            }
+
+            isActive = value;
             foreach (var mesh in meshes)
             {
                 mesh.enabled = value;
@@ -134,11 +181,9 @@ public class LODManager : Manager
                 mesh.gameObject.SetActive(false);
             }
         }
-
         public List<MeshRenderer> GetMeshes()
         {
             return meshes;
         }
-
     }
 }

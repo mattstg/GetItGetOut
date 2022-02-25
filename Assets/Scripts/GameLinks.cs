@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+
 using UnityEngine.UI;
 
 public class GameLinks : MonoBehaviour
@@ -16,6 +17,7 @@ public class GameLinks : MonoBehaviour
     public TMP_Text UITime;
     public TMP_Text UIMoney;
     public Button button;
+    
     public GameObject QuitMenu;
     public Transform[] dinosaurWayPoints;
     public GameObject staticBuildingParent;
