@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
             thingfIhit = collision.contacts[0].otherCollider;
             SwingToBuildings(collision);
             SwingTheTreasures(collision);
+            SwingTheDragons(collision);
             chainGrapGun.Audio.StopShoot(chainGrapGun.gameObject);
             audio.PlayGrapplingImpact(gameObject);
         }
@@ -50,7 +51,6 @@ public class Bullet : MonoBehaviour
 
             chainGrapGun.lr.positionCount = 2;
             chainGrapGun.AddSpringJoint(collitionPositon + collision.contacts[0].normal, collision.gameObject.GetComponent<Rigidbody>());
-            Debug.Log("hitBuilding");
         }
     }
     void SwingTheTreasures(Collision collision)
@@ -71,11 +71,32 @@ public class Bullet : MonoBehaviour
         }
 
     }
+    void SwingTheDragons(Collision collision)
+    {
+        if (collision.gameObject.tag == "Dragon")
+        {
+            ConnectedRBToBullet = collision.gameObject.GetComponent<Rigidbody>();
+            joint = gameObject.AddComponent<FixedJoint>();
+            joint.connectedBody = ConnectedRBToBullet;
+            collitionPositon = collision.contacts[0].point;
+            joint.connectedAnchor = collitionPositon;
+            hit = true;
+
+
+            this.transform.position = collision.contacts[0].point;
+
+            chainGrapGun.lr.positionCount = 2;
+            chainGrapGun.AddSpringJointToDragon(collitionPositon + collision.contacts[0].normal, collision.gameObject.GetComponent<Rigidbody>());
+        }
+
+    }
 
     public void DestroyJoint()
     {
         hit = false;
         Destroy(joint);
+
+        thingfIhit = null;
     }
 
 

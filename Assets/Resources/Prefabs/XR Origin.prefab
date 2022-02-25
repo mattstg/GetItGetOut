@@ -3168,13 +3168,13 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.02
+    widthMultiplier: 0.005
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.00390625
-        value: 0.09321976
+        time: 0
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3183,7 +3183,7 @@ LineRenderer:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 0.18644142
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3687,13 +3687,13 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.02
+    widthMultiplier: 0.005
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.1822033
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3702,7 +3702,7 @@ LineRenderer:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 0.20339012
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
