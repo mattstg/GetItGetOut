@@ -222,7 +222,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 844df6008f51c47458f038d91741e340, type: 2}
+  - {fileID: 4807817147350053817, guid: 6c117af5a44239345b87d18875db1566, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -344,6 +344,8 @@ MonoBehaviour:
   selectButton: {fileID: -3051461004423495335, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   player: {fileID: 0}
   playerRB: {fileID: 0}
+  jointToPlayer: {fileID: 0}
+  jointTreasureToPlayer: {fileID: 0}
 --- !u!1001 &6928488942422637937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -555,6 +557,7 @@ MonoBehaviour:
   chainGrapGun: {fileID: 4792800311837656777}
   gun: {fileID: 1302317138168320099}
   gunRB: {fileID: 0}
+  thingfIhit: {fileID: 0}
   ConnectedRBToBullet: {fileID: 0}
 --- !u!114 &8252951426658691353
 MonoBehaviour:

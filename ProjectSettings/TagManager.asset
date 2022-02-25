@@ -8,6 +8,7 @@ TagManager:
   - Treasure
   - Dinasour
   - Bullet
+  - Dragon
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - TriggerZone
   - Lava
   - Treasure
-  - 
+  - DestructibleBuilding
   - 
   - 
   - 

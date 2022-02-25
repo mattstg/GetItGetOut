@@ -20,7 +20,7 @@ public class FlockManager : Manager<FlockManager, Flock>
         foreach (Flock flock in allFlocks)
         {
             allDinosaurs.Add(flock.GetComponentInChildren<Dinosaur>());
-            //allDinosaurs.Add(flock.GetComponentInChildren<Leader>());
+            allDinosaurs.Add(flock.GetComponentInChildren<Leader>());
         }
     }
 
@@ -31,4 +31,13 @@ public class FlockManager : Manager<FlockManager, Flock>
     {
         return allDinosaurs;
     }
+
+    //public override void Refresh()
+    //{
+    //    base.Refresh();
+    //}
+    //public override void FixedRefresh()
+    //{
+    //    base.FixedRefresh();
+    //}
 }

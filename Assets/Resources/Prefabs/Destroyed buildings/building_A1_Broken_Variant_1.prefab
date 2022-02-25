@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5310375446828088131}
   - component: {fileID: 6315454688554054805}
   - component: {fileID: 7340740889462591960}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_A1_cell.005
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 2484188860380382580}
   - component: {fileID: 6774213201486508554}
   - component: {fileID: 4437549588225971501}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_A1_cell.007
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 2091730228306884734}
   - component: {fileID: 5920689990198583616}
   - component: {fileID: 2794243123223221784}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_A1_cell.010
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 6649302108059727496}
   - component: {fileID: 6695217603848148425}
   - component: {fileID: 5340145762190997399}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: building_A1_Broken_Variant_1
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -476,8 +476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71685bc0e2311aa438a62c3773df3875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minRandomRange: -10
-  maxRandomRange: 10
+  minExplosionForceToParts: -10000
+  maxExplosionForceToParts: 10000
   buildingState: 0
   TimerBeforCollapseInSeconds: 0
 --- !u!1 &2067025228640199348
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 171057379776758980}
   - component: {fileID: 1104756121387962276}
   - component: {fileID: 6537464655929321697}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_A1_cell.012
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 5099835115361882655}
   - component: {fileID: 6291675183871295583}
   - component: {fileID: 3896702162706824349}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_A1_cell.004
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 5755279336151478263}
   - component: {fileID: 4213890706898151605}
   - component: {fileID: 7153333373092118864}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_A1_cell.003
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 8993850488859469453}
   - component: {fileID: 4945015912830235249}
   - component: {fileID: 5431144336793631548}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_A1_cell.002
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -998,7 +998,7 @@ GameObject:
   - component: {fileID: 2129545467805075837}
   - component: {fileID: 3610352002554874310}
   - component: {fileID: 6526277202382336045}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_A1_cell.001
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -1124,7 +1124,7 @@ GameObject:
   - component: {fileID: 237893249710458430}
   - component: {fileID: 6724744705136456378}
   - component: {fileID: 3670986929727078222}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_A1_cell.009
   m_TagString: Grappable
   m_Icon: {fileID: 0}
@@ -1250,7 +1250,7 @@ GameObject:
   - component: {fileID: 2314391310445921556}
   - component: {fileID: 5331412672541676044}
   - component: {fileID: 1751537616541771694}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Building_A1_cell.006
   m_TagString: Grappable
   m_Icon: {fileID: 0}

@@ -100,7 +100,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 46551bf89598214eaf4f6d4e06b3b350
     GuidInternal: 
-    m_lastTime: -8585558639758422403
+    m_lastTime: -8585557974324084468
     List:
     - name: Main
       guid: b8c06a53765809428cd5b17accf3ff5d
@@ -128,7 +128,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 26858e3ef419cd4b803db2a31dcf191c
     GuidInternal: 
-    m_lastTime: -8585558639758592396
+    m_lastTime: -8585557974324444471
     List:
     - name: Building_Destroy
       guid: a1998f9b1126b9459e805a4a7816fc82
@@ -147,6 +147,23 @@ MonoBehaviour:
       maxAttenuation: 100
       maxDuration: 5.01551
       minDuration: 5.01551
+    - name: BuildingPart_Collision
+      guid: d10d631b07e1c44b94759f65be814105
+      id: 3230276783
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26858e3ef419cd4b803db2a31dcf191c
+      - ElementName: BuildingPart_Collision
+        ObjectType: 3
+        guid: d10d631b07e1c44b94759f65be814105
+      Path: Events\Default Work Unit\BuildingPart_Collision
+      maxAttenuation: 100
+      maxDuration: 4.987306
+      minDuration: 1.869208
     - name: Button_Hover
       guid: cd4cabf9916b4946839fe93df5dc72d8
       id: 1701177942
@@ -300,6 +317,23 @@ MonoBehaviour:
       maxAttenuation: 500
       maxDuration: -1
       minDuration: -1
+    - name: Play_Intro
+      guid: 0631cad7a0deb34a97eb67b91ff80478
+      id: 3103472528
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26858e3ef419cd4b803db2a31dcf191c
+      - ElementName: Play_Intro
+        ObjectType: 3
+        guid: 0631cad7a0deb34a97eb67b91ff80478
+      Path: Events\Default Work Unit\Play_Intro
+      maxAttenuation: 0
+      maxDuration: 49.94612
+      minDuration: 49.94612
     - name: Stop_Audio
       guid: 177ba112c141854cbad5b48ef8d11926
       id: 3785866374

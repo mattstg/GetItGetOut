@@ -7,8 +7,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Gun : MonoBehaviour
 {
-    public float speed = 100;
-    public float force = 100;
+    public float Bulletspeed = 100;
+    public float Reelingforce = 100;
 
     public Bullet bullet;
     public Rigidbody BulletRB;
@@ -22,6 +22,7 @@ public class Gun : MonoBehaviour
     public Rigidbody playerRB;
     public SpringJoint jointToPlayer;
     public SpringJoint jointTreasureToPlayer;
+    public SpringJoint jointTreasureToDragon;
 
     [System.NonSerialized]
     public bool isShoot;
@@ -52,13 +53,22 @@ public class Gun : MonoBehaviour
         if (bullet.hit && bullet.thingfIhit.gameObject.tag == "Grappable")
         {
 
-                jointToPlayer.maxDistance -= 100 * Time.fixedDeltaTime;
+                jointToPlayer.maxDistance -= Reelingforce * Time.fixedDeltaTime;
+                jointToPlayer.minDistance -= Reelingforce * Time.fixedDeltaTime;
+
+
           
             
         }
         if (bullet.hit && bullet.thingfIhit.gameObject.CompareTag("Treasure"))
         {
-            jointTreasureToPlayer.minDistance -= 10* Time.fixedDeltaTime;
+            jointTreasureToPlayer.minDistance -= Reelingforce * Time.fixedDeltaTime;
+            jointTreasureToPlayer.maxDistance -= Reelingforce * Time.fixedDeltaTime;
+        }
+        if (bullet.hit && bullet.thingfIhit.gameObject.CompareTag("Dragon"))
+        {
+            jointTreasureToDragon.minDistance -= Reelingforce * Time.fixedDeltaTime;
+            jointTreasureToDragon.maxDistance -= Reelingforce * Time.fixedDeltaTime;
         }
 
     }
@@ -91,7 +101,7 @@ public class Gun : MonoBehaviour
         bullet.gameObject.transform.rotation = barrel.rotation;
         //  controller.gameObject.GetComponent<XRDirectInteractor>().playHapticsOnSelectEnter = true;
         isShoot = true;
-        BulletRB.velocity = speed * barrel.forward;
+        BulletRB.velocity = Bulletspeed * barrel.forward;
         Audio.PlayShoot(gameObject);
     }
 
@@ -103,13 +113,14 @@ public class Gun : MonoBehaviour
         lr.positionCount = 0;
         Destroy(jointToPlayer);
         Destroy(jointTreasureToPlayer);
+        Destroy(jointTreasureToDragon);
         Audio.StopShoot(gameObject);
 
     }
     private void Update()
     {
         CheckIfObjectStillExistToGrap();
-        MakeRayCastToHit();
+      //  MakeRayCastToHit();
     }
 
     public void AddSpringJoint(Vector3 PointToSwing, Rigidbody rbConnected)
@@ -124,11 +135,31 @@ public class Gun : MonoBehaviour
         float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
         jointToPlayer.enableCollision = true;
         jointToPlayer.maxDistance = distanceFromPoint * 0.9f;
-        jointToPlayer.minDistance =3;
+        jointToPlayer.minDistance = distanceFromPoint * 0.9f;
 
 
         jointToPlayer.spring = 100f;
         jointToPlayer.damper = 60f;
+        //  jointToPlayer.massScale = 4.5f;
+
+    }
+    public void AddSpringJointToDragon(Vector3 PointToSwing, Rigidbody rbConnected)
+    {
+        Transform obj = rbConnected.GetComponent<Transform>();
+        jointTreasureToDragon = player.gameObject.AddComponent<SpringJoint>();
+        jointTreasureToDragon.autoConfigureConnectedAnchor = false;
+        jointTreasureToDragon.connectedBody = rbConnected;
+        jointTreasureToDragon.connectedAnchor = new Vector3(0, 0, 0);
+        jointTreasureToDragon.anchor = new Vector3(0, 0, 0);
+        // jointToPlayer.connectedAnchor = PointToSwing;
+        float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
+        jointTreasureToDragon.enableCollision = true;
+        jointTreasureToDragon.maxDistance = distanceFromPoint * 0.9f;
+        jointTreasureToDragon.minDistance = distanceFromPoint *0.9f;
+
+
+        jointTreasureToDragon.spring = 100f;
+        jointTreasureToDragon.damper = 60f;
         //  jointToPlayer.massScale = 4.5f;
 
     }
@@ -142,8 +173,8 @@ public class Gun : MonoBehaviour
         // jointToPlayer.connectedAnchor = PointToSwing;
         float distanceFromPoint = Vector3.Distance(player.transform.position, PointToSwing);
 
-        jointTreasureToPlayer.maxDistance = 0;
-        jointTreasureToPlayer.minDistance = distanceFromPoint;
+        jointTreasureToPlayer.maxDistance = distanceFromPoint * 0.9f;
+        jointTreasureToPlayer.minDistance = distanceFromPoint * 0.9f;
         jointTreasureToPlayer.enableCollision = true;
 
 
@@ -182,14 +213,15 @@ public class Gun : MonoBehaviour
     }
     void CheckIfObjectStillExistToGrap()
     {
-        //if(bullet.hit) {
-        //    if (bullet.collisionObj.contacts[0].otherCollider.gameObject.(//////destuctionFunction ==true )
-        //    {
-        //        DestroySpringJoint();
-        //    }
+        if (bullet.hit)
+        {
+            if (!bullet.thingfIhit.enabled)
+            {
+                DestroySpringJoint();
+            }
 
 
-        //}
+        }
 
 
 

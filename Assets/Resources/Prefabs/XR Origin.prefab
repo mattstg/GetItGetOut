@@ -2022,8 +2022,6 @@ GameObject:
   - component: {fileID: 2018512211}
   - component: {fileID: 2018512210}
   - component: {fileID: 2018512209}
-  - component: {fileID: 1370510736}
-  - component: {fileID: 3735434549017259008}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2133,32 +2131,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1370510736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018512207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdbd2f7b84ac66f498457137060bebd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3599189904097756690}
---- !u!114 &3735434549017259008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018512207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdbd2f7b84ac66f498457137060bebd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3599189904097756690}
 --- !u!1 &2045458671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2520,7 +2492,6 @@ GameObject:
   - component: {fileID: 3599189904097756693}
   - component: {fileID: 3599189904097756691}
   - component: {fileID: 3599189904097756688}
-  - component: {fileID: 483322785}
   - component: {fileID: 483322781}
   - component: {fileID: 483322786}
   m_Layer: 6
@@ -2608,19 +2579,6 @@ MonoBehaviour:
   gunLeftForward: {fileID: 0}
   rightControllerRotation: {fileID: 3599189904869181533}
   leftControllerRotation: {fileID: 3599189905580929810}
---- !u!65 &483322785
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3599189904097756692}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.81921023, y: 2.1765723, z: 1}
-  m_Center: {x: -0.20632812, y: 0.067261934, z: -0.31785518}
 --- !u!114 &483322781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3210,13 +3168,13 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.02
+    widthMultiplier: 0.005
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.00390625
-        value: 0.09321976
+        time: 0
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3225,7 +3183,7 @@ LineRenderer:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 0.18644142
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3729,13 +3687,13 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.02
+    widthMultiplier: 0.005
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.1822033
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -3744,7 +3702,7 @@ LineRenderer:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 0.20339012
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0

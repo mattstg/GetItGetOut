@@ -287,8 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152ae7ddb509032429dd6031f43b334e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
-  force: 300
+  speed: 120
+  force: 50
   bullet: {fileID: 4792800312453895828}
   BulletRB: {fileID: 7088590405552682033}
   barrel: {fileID: 1302317138634458560}
@@ -296,6 +296,8 @@ MonoBehaviour:
   selectButton: {fileID: -3051461004423495335, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   player: {fileID: 0}
   playerRB: {fileID: 0}
+  jointToPlayer: {fileID: 0}
+  jointTreasureToPlayer: {fileID: 0}
 --- !u!114 &6457500107634136648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,24 +484,6 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 178266666606987584, guid: 3c96b301ece8e754581fc20f4470ed61, type: 3}
   m_PrefabInstance: {fileID: 6928488942422637937}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4792800312453895828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2218611301180750342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1acdb899beaa2034391515f543dfe8fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  joint: {fileID: 0}
-  barrel: {fileID: 1302317138634458560}
-  chainGrapGun: {fileID: 4792800311837656777}
-  gun: {fileID: 1302317138168320099}
-  gunRB: {fileID: 0}
-  ConnectedRBToBullet: {fileID: 0}
 --- !u!114 &1035684089605215086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,3 +506,22 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &4792800312453895828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218611301180750342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1acdb899beaa2034391515f543dfe8fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joint: {fileID: 0}
+  barrel: {fileID: 1302317138634458560}
+  chainGrapGun: {fileID: 4792800311837656777}
+  gun: {fileID: 1302317138168320099}
+  gunRB: {fileID: 0}
+  thingfIhit: {fileID: 0}
+  ConnectedRBToBullet: {fileID: 0}
