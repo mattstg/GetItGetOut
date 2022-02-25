@@ -19,22 +19,23 @@ public class Leader : Dinosaur
         wayPoints = GameLinks.Instance.dinosaurWayPoints;
     }
 
-    public override void Refresh()
+    public override void FixedRefresh()
     {
         UnityEngine.Debug.DrawRay(transform.position, transform.forward, Color.red); // for debug
 
         Vector3 dir = Vector3.zero;
         dir += WayPointAttraction();
         dir += BuildingAvoidance();
-        dir /= 2f;
+        dir += NeighborsAvoidance();
+        dir /= 3f;
         ApplyForces(dir, null);
         DinosaursDeath();
     }
 
     protected override void ApplyForces(Vector3 dir, DesireDirectionVectors desiredPkg)
     {   
-        transform.forward = dir;
-        rb.AddForce(dir.normalized * speed);
+        //transform.forward = dir;
+        rb.AddForce(dir.normalized * force);
 
         #region For Debug
         if (dir.z < -100000 || dir.z > 100000)
@@ -56,6 +57,31 @@ public class Leader : Dinosaur
             currentWaypoint = GetRandomWayPoint();
         }
         return (currentWaypoint - transform.position) * weights.targetPos;
+    }
+
+    public override Vector3 NeighborsAvoidance()
+    {
+        Vector3 avoidanceVector = Vector3.zero;
+        float currentSqrManitude;
+        float avoidanceVectorSqrManitude;
+        int numToAvoid = 1;
+        float sqrDistanceToAvoidFlocks = 50f;
+
+        foreach (Dinosaur dinosaur in GetAllDinosaurs)
+        {
+            if (Vector3.SqrMagnitude(transform.position - dinosaur.transform.position) < sqrDistanceToAvoidFlocks)
+            {
+                numToAvoid++;
+                currentSqrManitude = Vector3.SqrMagnitude(transform.position - dinosaur.transform.position);
+                avoidanceVectorSqrManitude = (sqrDistanceToAvoidFlocks - currentSqrManitude) / sqrDistanceToAvoidFlocks;
+                avoidanceVector += (transform.position - dinosaur.transform.position) * avoidanceVectorSqrManitude;
+            }
+        }
+
+        if (numToAvoid != 0)
+            avoidanceVector /= numToAvoid;
+
+        return avoidanceVector * weights.avoidance;
     }
 
     protected override Vector3 BuildingAvoidance()

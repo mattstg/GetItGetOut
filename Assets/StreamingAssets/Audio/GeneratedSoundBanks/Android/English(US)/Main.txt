@@ -1,0 +1,38 @@
+Event	ID	Name			Wwise Object Path	Notes
+	981501359	Grappling_Fire_Play			\Default Work Unit\Grappling_Fire_Play	
+	1696368149	Grappling_Reel_In_Play			\Default Work Unit\Grappling_Reel_In_Play	
+	1701177942	Button_Hover			\Default Work Unit\Button_Hover	
+	1817200631	Treasure_Play			\Default Work Unit\Treasure_Play	
+	1879650260	Grappling_Impact			\Default Work Unit\Grappling_Impact	
+	2024110332	Lava_Play			\Default Work Unit\Lava_Play	
+	2344555875	Treasure_Collision			\Default Work Unit\Treasure_Collision	
+	2698747613	Button_Press			\Default Work Unit\Button_Press	
+	2746345546	Building_Destroy			\Default Work Unit\Building_Destroy	
+	3103472528	Play_Intro			\Default Work Unit\Play_Intro	
+	3230276783	BuildingPart_Collision			\Default Work Unit\BuildingPart_Collision	
+	3740708781	Grappling_Fire_Stop			\Default Work Unit\Grappling_Fire_Stop	
+	3785866374	Stop_Audio			\Default Work Unit\Stop_Audio	
+	4158331891	Grappling_Reel_In_Stop			\Default Work Unit\Grappling_Reel_In_Stop	
+	4210482921	Grappling_Recharge			\Default Work Unit\Grappling_Recharge	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	44020876	Reel-In	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\B7K3LFC-grappling-gun-shoot-55067_C53E6E9E.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\Reel-In		262852
+	210638857	Intro	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\Voices\English(US)\Intro_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voice\Intro		8810560
+	410168434	Building Collapse	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\Floor Collapse Sound Effect_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Other\Building\Building Collapse		884800
+	434105911	ButtonPress	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\UI Hits Game4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Button\ButtonPress		160532
+	509653952	grappling-hook-impact2	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\XVBDQX8-grappling-hook-impact-55073_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\HookImpact\grappling-hook-impact2		91320
+	586683046	grappling-gun-shoot00	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\Grapple Shot + lineExtend+Impact_5E2C7EC4.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\FireGrappling\RopeExtending\grappling-gun-shoot00		185292
+	694376916	grappling-gun-shoot01	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\DBZ3KQ3-grappling-gun-shoot-55069_893E3009.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\FireGrappling\FireShoot\grappling-gun-shoot01		41404
+	704706914	grappling-gun-shoot00	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\Grapple Shot + lineExtend+Impact_A5769BED.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\FireGrappling\FireShoot\grappling-gun-shoot00		26640
+	735211357	grappling-hook-impact1	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\KWR93A5-grappling-hook-impact-55076_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\HookImpact\grappling-hook-impact1		141184
+	774745785	Recharge Energy1	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\Recharge Energy1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Button\ButtonHover\Recharge Energy1		79496
+	796072402	Lava	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\Lava_0897FA58.wem		\Actor-Mixer Hierarchy\Default Work Unit\Environnement\Lava		1190712
+	833629464	Concrete_Impact_SFX	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\Concrete_Impact_SFX_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Other\Building\Concrete_Impact_SFX		358952
+	886720638	grappling-hook-impact0	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\57PX6L5-grappling-hook-impact-55075_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\HookImpact\grappling-hook-impact0		141184
+	910195231	TreasureAmbiant	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\Undiscovered_Treasure_69F4EDEF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Other\Treasure\TreasureAmbiant		384456
+	1025440588	Grapple Recharge	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\Grapple Recharge+Shoot_9F9A4DDC.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\Grapple Recharge		54568
+	1046284357	Recharge Energy2	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\Recharge Energy2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Button\ButtonHover\Recharge Energy2		54148
+	1054454978	CollisionTreasure	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\Wood Hit Metal Crash - Sound Effect (HD)_554F3651.wem		\Actor-Mixer Hierarchy\Default Work Unit\Other\Treasure\CollisionTreasure		199920
+	1066110273	Recharge Energy3	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\Recharge Energy3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Button\ButtonHover\Recharge Energy3		84836
+	1072113921	grappling-gun-shoot02	C:\Users\charl\OneDrive\Documents\WwiseProjects\GetItGetOut\.cache\Android\SFX\B7K3LFC-grappling-gun-shoot-55067_211DE044.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrapplingGun\GrapplingGun\FireGrappling\FireShoot\grappling-gun-shoot02		21560
+

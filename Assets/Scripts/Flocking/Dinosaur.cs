@@ -4,21 +4,22 @@ using UnityEngine;
 public class Dinosaur : MonoBehaviour, IUpdaptable
 {
     [Range(1f, 500f)]
-    public float speed = 500f;
-    protected float maxSpeed = 500f;
+    public float force = 500f;
+    protected float maxSpeed = 30f;
     protected float sqrMaxDistance = 20f;
-
+    private Audio.Dinosaur audio;
     protected Rigidbody rb;
     protected FlockWeights weights;
     protected Flock ourFlock;
 
-    protected List< Dinosaur> GetAllDinosaurs { get { return ourFlock.GetOtherFlocks(this, GetOtherDinosaursInFlock); } }
+    protected List<Dinosaur> GetAllDinosaurs { get { return ourFlock.GetOtherFlocks(this, GetOtherDinosaursInFlock); } }
     protected List<Dinosaur> GetOtherDinosaursInFlock { get { return ourFlock.GetOtherDinosaursInFlock(this); } }
     protected float GetLavaHeight { get { return LavaManager.Instance.lava.transform.position.y; } }
     protected float SqrDistanceToLeader { get { return Vector3.SqrMagnitude(transform.position - ourFlock.leader.transform.position); } }
 
     public virtual void Init()
     {
+        audio = new Audio.Dinosaur();
         rb = GetComponent<Rigidbody>();
         ourFlock = GetComponentInParent<Flock>();
         weights = new FlockWeights();
@@ -28,6 +29,9 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     { }
 
     public virtual void Refresh()
+    { }
+
+    public virtual void FixedRefresh()
     {
         DesireDirectionVectors theVector = new DesireDirectionVectors();
         theVector.leaderAlignement += LeaderAlignment();
@@ -45,15 +49,12 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         DinosaursDeath();
     }
 
-    public void FixedRefresh()
-    { }
-
     protected virtual void ApplyForces(Vector3 dir, DesireDirectionVectors desiredPkg)
     {
-        transform.forward = ourFlock.leader.transform.forward;
+        //transform.forward = ourFlock.leader.transform.forward;
 
         float sqrMagnitudeOfDir = Vector3.SqrMagnitude(dir);
-        speed = maxSpeed * Mathf.Clamp01(sqrMagnitudeOfDir / sqrMaxDistance);
+        force = 500 * Mathf.Clamp01(sqrMagnitudeOfDir / sqrMaxDistance);
 
         #region For Debug
         if (!desiredPkg.ConfirmSanity())
@@ -62,7 +63,15 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         }
         #endregion
 
-        rb.AddForce(dir.normalized * speed);
+        rb.AddForce(dir.normalized * force);
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        }
+        //Debug.Log(rb.velocity.magnitude);
+
+
     }
 
     protected virtual void DinosaursDeath()
@@ -73,6 +82,14 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Debug.Log("scream");
+            audio.PlayScream(gameObject);
+        }
+    }
 
     #region Flocking Calculations
     public virtual Vector3 WayPointAttraction()
