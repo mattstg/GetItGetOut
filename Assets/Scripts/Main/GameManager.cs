@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
         managers.Add(FlockManager.Instance);
         managers.Add(TreasureManager.Instance);
         managers.Add(Shop.Instance);
+        managers.Add(LODManager.Instance);
 
         InitManagers();
     }

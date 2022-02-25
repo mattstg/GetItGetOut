@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.08409969, g: 0.2790599, b: 0.483765, a: 1}
+  m_IndirectSpecularColor: {r: 0.085245974, g: 0.27900007, b: 0.48329502, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -856,9 +856,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 483322786}
     - target: {fileID: 6009447707776134602, guid: 1c1cad2fcdcf0b54891508910f0aa475, type: 3}
+      propertyPath: heightOfMap
+      value: 470
+      objectReference: {fileID: 0}
+    - target: {fileID: 6009447707776134602, guid: 1c1cad2fcdcf0b54891508910f0aa475, type: 3}
       propertyPath: TreasursParents
       value: 
       objectReference: {fileID: 716856378}
+    - target: {fileID: 6009447707776134602, guid: 1c1cad2fcdcf0b54891508910f0aa475, type: 3}
+      propertyPath: staticBuildingParent
+      value: 
+      objectReference: {fileID: 3030261699469994362}
     - target: {fileID: 6009447707776134602, guid: 1c1cad2fcdcf0b54891508910f0aa475, type: 3}
       propertyPath: respawnPositions.Array.size
       value: 6
@@ -2252,6 +2260,11 @@ PrefabInstance:
       objectReference: {fileID: 296151754}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dbd735f83c61a34d97872a5e781984a, type: 3}
+--- !u!1 &3030261699469994362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7096318353304427140, guid: 5dbd735f83c61a34d97872a5e781984a, type: 3}
+  m_PrefabInstance: {fileID: 3030261699469994361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5558007124496085944
 PrefabInstance:
   m_ObjectHideFlags: 0
