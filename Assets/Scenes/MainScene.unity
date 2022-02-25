@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.08409969, g: 0.2790599, b: 0.483765, a: 1}
+  m_IndirectSpecularColor: {r: 0.085245974, g: 0.27900007, b: 0.48329502, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1594,6 +1594,18 @@ PrefabInstance:
     - target: {fileID: 3599189904097756692, guid: 59c82f4ff58dd3545a67b85aa80187fc, type: 3}
       propertyPath: m_Name
       value: XR Origin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599189904184634407, guid: 59c82f4ff58dd3545a67b85aa80187fc, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599189904184634407, guid: 59c82f4ff58dd3545a67b85aa80187fc, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599189904184634407, guid: 59c82f4ff58dd3545a67b85aa80187fc, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c82f4ff58dd3545a67b85aa80187fc, type: 3}
