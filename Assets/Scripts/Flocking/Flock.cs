@@ -16,12 +16,6 @@ public class Flock : MonoBehaviour, IUpdaptable
 
         allDinosaursInOtherFlocks = new List<Dinosaur>(FlockManager.Instance.GetAllDinosaurs());
 
-        foreach (Dinosaur dinosaur in transform.GetComponentsInChildren<Dinosaur>())
-        {
-            // add them to the list then the array
-            // I think i will delete it
-        }
-
         foreach (Dinosaur dinosaur in dinosaurs)
         {
             dinosaur.Init();
