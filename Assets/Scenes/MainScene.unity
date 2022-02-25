@@ -2445,7 +2445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5340145762190997399, guid: 3f2a5204a1a7295438911314e7c5b1f2, type: 3}
       propertyPath: TimerBeforCollapseInSeconds
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f2a5204a1a7295438911314e7c5b1f2, type: 3}
