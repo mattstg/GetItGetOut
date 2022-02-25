@@ -44,12 +44,12 @@ public class Shop : Manager
                 string path = "";
 
 #if (UNITY_EDITOR || UNITY_STANDALONE_LINUX)
-                path = "file://" + Application.streamingAssetsPath + "/gamedata/inventory.json";
+                path = "file://" + Application.streamingAssetsPath + "/GameData/inventory.json";
 #endif
 
                 if (Application.platform == RuntimePlatform.Android)
                 {
-                    path = Application.streamingAssetsPath + "/gamedata/inventory.json";
+                    path = Application.streamingAssetsPath + "/GameData/inventory.json";
                 }
 
                 UnityEngine.Networking.UnityWebRequest www = UnityEngine.Networking.UnityWebRequest.Get(path);

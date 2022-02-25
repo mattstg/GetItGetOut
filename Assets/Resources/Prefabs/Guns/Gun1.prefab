@@ -222,7 +222,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4807817147350053817, guid: 6c117af5a44239345b87d18875db1566, type: 2}
+  - {fileID: 2100000, guid: d2ece15c27b1b3e42af178de8034e3be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -335,8 +335,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152ae7ddb509032429dd6031f43b334e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
-  force: 300
+  Bulletspeed: 100
+  Reelingforce: 100
   bullet: {fileID: 4792800312453895828}
   BulletRB: {fileID: 7088590405552682033}
   barrel: {fileID: 1302317138634458560}
@@ -346,6 +346,7 @@ MonoBehaviour:
   playerRB: {fileID: 0}
   jointToPlayer: {fileID: 0}
   jointTreasureToPlayer: {fileID: 0}
+  jointTreasureToDragon: {fileID: 0}
 --- !u!1001 &6928488942422637937
 PrefabInstance:
   m_ObjectHideFlags: 0
