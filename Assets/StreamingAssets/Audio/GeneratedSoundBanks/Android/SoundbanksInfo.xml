@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="English(US)" Hash="3242010298">
+		<SoundBank Id="3161908922" Language="English(US)" Hash="3466823551">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>English(US)\Main.bnk</Path>
@@ -58,6 +58,14 @@
 						<File Id="434105911" Language="SFX">
 							<ShortName>UI Hits Game4.wav</ShortName>
 							<Path>SFX\UI Hits Game4_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1288572596" Name="Dragon_Scream" ObjectPath="\Events\Default Work Unit\Dragon_Scream" MaxAttenuation="100." DurationType="OneShot" DurationMin="3.108225" DurationMax="3.108225">
+					<IncludedMemoryFiles>
+						<File Id="736284489" Language="SFX">
+							<ShortName>[BTCLOD.COM] Dragon Sound Effect (Free)-HQ.wav</ShortName>
+							<Path>SFX\[BTCLOD.COM] Dragon Sound Effect (Free)-HQ_A06E95D3.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
