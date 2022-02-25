@@ -81,7 +81,7 @@ public class Bullet : MonoBehaviour
             collitionPositon = collision.contacts[0].point;
             joint.connectedAnchor = collitionPositon;
             hit = true;
-
+            collision.gameObject.GetComponent<Dinosaur>().Scream();
 
             this.transform.position = collision.contacts[0].point;
 

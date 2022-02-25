@@ -11,7 +11,6 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
     protected Rigidbody rb;
     protected FlockWeights weights;
     protected Flock ourFlock;
-
     protected List<Dinosaur> GetAllDinosaurs { get { return ourFlock.GetOtherFlocks(this, GetOtherDinosaursInFlock); } }
     protected List<Dinosaur> GetOtherDinosaursInFlock { get { return ourFlock.GetOtherDinosaursInFlock(this); } }
     protected float GetLavaHeight { get { return LavaManager.Instance.lava.transform.position.y; } }
@@ -19,10 +18,10 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
 
     public virtual void Init()
     {
-        audio = new Audio.Dinosaur();
         rb = GetComponent<Rigidbody>();
         ourFlock = GetComponentInParent<Flock>();
         weights = new FlockWeights();
+        audio = new Audio.Dinosaur();
     }
 
     public void PostInit()
@@ -82,13 +81,9 @@ public class Dinosaur : MonoBehaviour, IUpdaptable
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void Scream()
     {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            Debug.Log("scream");
-            audio.PlayScream(gameObject);
-        }
+        audio.PlayScream(gameObject);
     }
 
     #region Flocking Calculations
