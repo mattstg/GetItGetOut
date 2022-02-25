@@ -12,7 +12,7 @@ public class LODManager : Manager
     #endregion
 
     const int nbRegion = 10;
-    const int neighboursToLoad = 1;
+    const int neighboursToLoad = 3;
     Player GetPlayer { get { return PlayerManager.Instance.player; } }
     GameObject buildingParent { get { return GameLinks.Instance.staticBuildingParent; } }
     int mapHeight { get { return GameLinks.Instance.heightOfMap; } }
