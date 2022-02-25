@@ -100,7 +100,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 46551bf89598214eaf4f6d4e06b3b350
     GuidInternal: 
-    m_lastTime: -8585558877904902774
+    m_lastTime: -8585558639758422403
     List:
     - name: Main
       guid: b8c06a53765809428cd5b17accf3ff5d
@@ -128,8 +128,59 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 26858e3ef419cd4b803db2a31dcf191c
     GuidInternal: 
-    m_lastTime: -8585558877905072788
+    m_lastTime: -8585558639758592396
     List:
+    - name: Building_Destroy
+      guid: a1998f9b1126b9459e805a4a7816fc82
+      id: 2746345546
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26858e3ef419cd4b803db2a31dcf191c
+      - ElementName: Building_Destroy
+        ObjectType: 3
+        guid: a1998f9b1126b9459e805a4a7816fc82
+      Path: Events\Default Work Unit\Building_Destroy
+      maxAttenuation: 100
+      maxDuration: 5.01551
+      minDuration: 5.01551
+    - name: Button_Hover
+      guid: cd4cabf9916b4946839fe93df5dc72d8
+      id: 1701177942
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26858e3ef419cd4b803db2a31dcf191c
+      - ElementName: Button_Hover
+        ObjectType: 3
+        guid: cd4cabf9916b4946839fe93df5dc72d8
+      Path: Events\Default Work Unit\Button_Hover
+      maxAttenuation: 0
+      maxDuration: 0.480567
+      minDuration: 0.216798
+    - name: Button_Press
+      guid: 1145c3944f7f9e4a965f38f18cfe6576
+      id: 2698747613
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26858e3ef419cd4b803db2a31dcf191c
+      - ElementName: Button_Press
+        ObjectType: 3
+        guid: 1145c3944f7f9e4a965f38f18cfe6576
+      Path: Events\Default Work Unit\Button_Press
+      maxAttenuation: 0
+      maxDuration: 0.909229
+      minDuration: 0.909229
     - name: Grappling_Fire_Play
       guid: c73bf055b25331429eaa8aec566e9c33
       id: 981501359
@@ -280,7 +331,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 2e6301d360d47d49866322bbc2c6ce91
       Path: Events\Default Work Unit\Treasure_Collision
-      maxAttenuation: 200
+      maxAttenuation: 100
       maxDuration: 1.271713
       minDuration: 0.713725
     - name: Treasure_Play
@@ -388,7 +439,7 @@ MonoBehaviour:
     m_lastTime: -8585564502341730478
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

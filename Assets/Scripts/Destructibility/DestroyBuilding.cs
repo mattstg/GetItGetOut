@@ -23,6 +23,8 @@ public class DestroyBuilding : MonoBehaviour , IUpdaptable
     private BoxCollider[] boxCollider;
     private int partsDisactivated;
 
+    private Audio.Building audio;
+
     private long timeCountDown;
 
     public void Init()
@@ -36,6 +38,8 @@ public class DestroyBuilding : MonoBehaviour , IUpdaptable
             TimerBeforCollapseInSeconds = 0;
 
         timeCountDown = (long)Time.time + TimerBeforCollapseInSeconds;
+
+        audio = new Audio.Building();
     }
 
     public void Refresh()
@@ -86,7 +90,9 @@ public class DestroyBuilding : MonoBehaviour , IUpdaptable
             parts[i].isKinematic = false;
             Vector3 direction = new Vector3(Random.Range(minRandomRange, maxRandomRange), Random.Range(minRandomRange, maxRandomRange), Random.Range(minRandomRange, maxRandomRange));
             parts[i].AddForce(direction, ForceMode.Impulse);
-        } 
+        }
+
+        audio.PlayDestruction(gameObject);
     }
     
     private void LavaCollision()

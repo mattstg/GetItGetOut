@@ -21,7 +21,7 @@ public class Leader : Dinosaur
 
     public override void Refresh()
     {
-        UnityEngine.Debug.DrawRay(transform.position, transform.forward, Color.red);
+        UnityEngine.Debug.DrawRay(transform.position, transform.forward, Color.red); // for debug
 
         Vector3 dir = Vector3.zero;
         dir += WayPointAttraction();
@@ -36,10 +36,12 @@ public class Leader : Dinosaur
         transform.forward = dir;
         rb.AddForce(dir.normalized * speed);
 
+        #region For Debug
         if (dir.z < -100000 || dir.z > 100000)
         {
             Debug.Log("LEADER BROKEN");
         }
+        #endregion
     }
 
     protected override void DinosaursDeath()

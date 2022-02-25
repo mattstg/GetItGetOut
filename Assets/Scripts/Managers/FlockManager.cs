@@ -31,13 +31,4 @@ public class FlockManager : Manager<FlockManager, Flock>
     {
         return allDinosaurs;
     }
-
-    //public override void Refresh()
-    //{
-    //    base.Refresh();
-    //}
-    //public override void FixedRefresh()
-    //{
-    //    base.FixedRefresh();
-    //}
 }
