@@ -2520,7 +2520,6 @@ GameObject:
   - component: {fileID: 3599189904097756693}
   - component: {fileID: 3599189904097756691}
   - component: {fileID: 3599189904097756688}
-  - component: {fileID: 483322785}
   - component: {fileID: 483322781}
   - component: {fileID: 483322786}
   m_Layer: 6
@@ -2608,19 +2607,6 @@ MonoBehaviour:
   gunLeftForward: {fileID: 0}
   rightControllerRotation: {fileID: 3599189904869181533}
   leftControllerRotation: {fileID: 3599189905580929810}
---- !u!65 &483322785
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3599189904097756692}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.81921023, y: 2.1765723, z: 1}
-  m_Center: {x: -0.20632812, y: 0.067261934, z: -0.31785518}
 --- !u!114 &483322781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4512,14 +4498,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f08b0ac1d0041c45a573e17f6e270da, type: 3}
---- !u!4 &3924989721908257964 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0f08b0ac1d0041c45a573e17f6e270da, type: 3}
-  m_PrefabInstance: {fileID: 3599189905019487047}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4410024555676368406 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f08b0ac1d0041c45a573e17f6e270da, type: 3}
+  m_PrefabInstance: {fileID: 3599189905019487047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3924989721908257964 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0f08b0ac1d0041c45a573e17f6e270da, type: 3}
   m_PrefabInstance: {fileID: 3599189905019487047}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &313702497
